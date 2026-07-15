@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landscaping Outreach — Silver Spring, MD</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #f5f7f5; color: #1a2a1a; padding: 24px; }
+  .container { max-width: 1400px; margin: 0 auto; }
+  h1 { font-size: 1.5rem; font-weight: 700; }
+  .subtitle { color: #5a6a5a; font-size: 0.9rem; margin-bottom: 4px; }
+
+  .my-brand {
+    background: linear-gradient(135deg, #059669, #10B981); color: #fff;
+    padding: 20px 24px; border-radius: 12px; margin: 12px 0 20px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .my-brand h2 { font-size: 1.2rem; font-weight: 700; }
+  .my-brand a { color: #fff; text-decoration: underline; font-size: 0.9rem; }
+  .my-brand span { font-size: 0.85rem; opacity: 0.85; }
+
+  .progress-bar { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding: 10px 16px; background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); font-size: 0.85rem; }
+  .progress-track { flex: 1; height: 8px; background: #e8ede4; border-radius: 10px; overflow: hidden; }
+  .progress-fill { height: 100%; background: #2d6a2d; border-radius: 10px; transition: width 0.3s; width: 0%; }
+  .progress-text { font-weight: 600; white-space: nowrap; }
+  
+  table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); font-size: 0.85rem; }
+  th { text-align: left; padding: 12px 14px; background: #2d6a2d; color: #fff; font-weight: 600; white-space: nowrap; }
+  td { padding: 10px 14px; border-bottom: 1px solid #e8ede4; vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr.done td { background: #f0f7f0; opacity: 0.6; }
+  tr.done td:first-child input { opacity: 1; }
+  tr:hover td { background: #f0f7f0; }
+  tr.done:hover td { background: #e8f0e8; }
+  input[type=checkbox] { width: 18px; height: 18px; cursor: pointer; accent-color: #2d6a2d; }
+  .badge-old { display: inline-block; padding: 2px 8px; border-radius: 20px; background: #d4edda; color: #155724; font-size: 0.75rem; font-weight: 600; }
+  .badge-new { display: inline-block; padding: 2px 8px; border-radius: 20px; background: #fff3cd; color: #856404; font-size: 0.75rem; font-weight: 600; }
+  a { color: #2d6a2d; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .phone { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  @media (max-width: 768px) {
+    td, th { padding: 6px 8px; font-size: 0.75rem; }
+    body { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1> Silver Spring Landscaping — Outreach List</h1>
+  <p class="subtitle">Check off each business after sending the pitch. Progress saves automatically.</p>
+
+  <div class="my-brand">
+    <div>
+      <h2> Marquez Landscape Solutions</h2>
+      <span>Your brand — use this as your reference site when pitching</span>
+    </div>
+    <div style="text-align:right">
+      <a href="https://marquez-landscape-solutions.vercel.app" target="_blank">marquez-landscape-solutions.vercel.app →</a><br>
+      <span style="font-size:0.8rem;opacity:0.7">mmarquezlandscapesolutions.com</span>
+    </div>
+  </div>
+
+  <div class="progress-bar">
+    <span class="progress-text" id="progressText">0/19 sent</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span id="progressPct" style="color:#5a6a5a">0%</span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:32px">✓</th>
+        <th>#</th>
+        <th>Business</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Site</th>
+        <th>Maps</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<script>
+const data = [
+  [1, "American Landscaping Inc", "(301) 384-4486", "15530 Peach Orchard Rd, Silver Spring, MD 20905", "american-landscaping", "15530+Peach+Orchard+Rd+Silver+Spring+MD+20905", "old"],
+  [2, "Binghamton Land Design", "(301) 587-4643", "301 Indian Spring Dr, Silver Spring, MD 20901", "binghamton-land-design", "301+Indian+Spring+Dr+Silver+Spring+MD+20901", "old"],
+  [3, "Colonial Lawn Landscape", "(301) 519-3150", "Silver Spring, MD", "colonial-lawn-landscape", "Colonial+Lawn+Landscape+Silver+Spring+MD", "old"],
+  [4, "Diaz Hardscaping LLC", "(240) 649-1583", "Silver Spring, MD", "diaz-hardscaping-llc", "Diaz+Hardscaping+LLC+Silver+Spring+MD", "new"],
+  [5, "D&L Landscaping", "(240) 460-0525", "Silver Spring, MD", "dl-landscaping", "D%26L+Landscaping+Silver+Spring+MD", "old"],
+  [6, "E&G Landscape", "(301) 326-5400", "Silver Spring, MD", "eg-landscape", "E%26G+Landscape+Silver+Spring+MD", "old"],
+  [7, "The Fine Garden Specialist", "(202) 328-6657", "8811 Colesville Rd #103, Silver Spring, MD", "fine-garden-specialist", "8811+Colesville+Rd+%23103+Silver+Spring+MD", "old"],
+  [8, "Genesis Landscaping", "(240) 424-6174", "11626 Gail St, Silver Spring, MD", "genesis-landscaping", "11626+Gail+St+Silver+Spring+MD", "old"],
+  [9, "Green Lake Landscaping", "(301) 661-1814", "Silver Spring, MD", "green-lake-landscaping", "Green+Lake+Landscaping+Silver+Spring+MD", "new"],
+  [10, "Jack Spenser Landscaping", "(301) 384-3285", "PO Box 4470, Silver Spring, MD 20914", "jack-spenser-landscaping", "Jack+Spenser+Landscaping+Silver+Spring+MD+20914", "old"],
+  [11, "Miller Landscapes LLC", "(301) 512-6572", "8913 Brookville Rd, Silver Spring, MD 20910", "miller-landscapes-llc", "8913+Brookville+Rd+Silver+Spring+MD+20910", "old"],
+  [12, "R&G Landscape Construction", "(240) 505-2341", "Silver Spring, MD", "rg-landscape-construction", "R%26G+Landscape+Construction+Silver+Spring+MD", "new"],
+  [13, "Rock Creek Landscaping Inc", "(301) 949-5023", "8326 Fenton St, Silver Spring, MD 20910", "rock-creek-landscaping", "8326+Fenton+St+Silver+Spring+MD+20910", "old"],
+  [14, "Solis Lawn & Landscaping", "(301) 625-9100", "200 Quaint Acres Dr, Silver Spring, MD 20904", "solis-lawn", "200+Quaint+Acres+Dr+Silver+Spring+MD+20904", "old"],
+  [15, "Stone Garden Landscaping", "(301) 213-7136", "Silver Spring, MD", "stone-garden-landscaping", "Stone+Garden+Landscaping+Silver+Spring+MD", "new"],
+  [16, "Timothy's Garden Inc", "(301) 585-7546", "9106 Flower Ave, Silver Spring, MD 20901", "timothys-garden", "9106+Flower+Ave+Silver+Spring+MD+20901", "old"],
+  [17, "Togo Landscaping LLC", "(301) 879-3786", "3030 Memory Lane, Silver Spring, MD 20904", "togo-landscaping", "3030+Memory+Lane+Silver+Spring+MD+20904", "new"],
+  [18, "Tulio's Landscaping", "(301) 565-2399", "723 Thayer Ave, Silver Spring, MD 20910", "tulios-landscaping", "723+Thayer+Ave+Silver+Spring+MD+20910", "old"],
+  [19, "Villeda Landscaping", "(240) 354-3766", "1002 Hollywood Ave, Silver Spring, MD 20904", "villeda-landscaping", "1002+Hollywood+Ave+Silver+Spring+MD+20904", "old"],
+];
+
+const saved = JSON.parse(localStorage.getItem('outreachDone') || '{}');
+
+function render() {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+  let done = 0;
+  data.forEach(row => {
+    const isDone = saved[row[0]] || false;
+    if (isDone) done++;
+    const tr = document.createElement('tr');
+    tr.className = isDone ? 'done' : '';
+    tr.innerHTML = `
+      <td><input type="checkbox" ${isDone ? 'checked' : ''} data-id="${row[0]}"></td>
+      <td>${row[0]}</td>
+      <td><strong>${row[1]}</strong></td>
+      <td class="phone">${row[2]}</td>
+      <td>${row[3]}</td>
+      <td><a href="https://${row[4]}.vercel.app" target="_blank">Site →</a></td>
+      <td><a href="https://www.google.com/maps/search/?api=1&query=${row[5]}" target="_blank">Maps →</a></td>
+      <td>${row[6] === 'old' ? '<span class="badge-old">Old</span>' : '<span class="badge-new">New</span>'}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+  updateProgress(done);
+  attachEvents();
+}
+
+function attachEvents() {
+  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const id = cb.dataset.id;
+      saved[id] = cb.checked;
+      localStorage.setItem('outreachDone', JSON.stringify(saved));
+      const tr = cb.closest('tr');
+      tr.className = cb.checked ? 'done' : '';
+      const done = Object.values(saved).filter(Boolean).length;
+      updateProgress(done);
+    });
+  });
+}
+
+function updateProgress(done) {
+  const total = data.length;
+  document.getElementById('progressText').textContent = `${done}/${total} sent`;
+  document.getElementById('progressFill').style.width = `${(done/total)*100}%`;
+  document.getElementById('progressPct').textContent = `${Math.round((done/total)*100)}%`;
+}
+
+render();
+</script>
+</body>
+</html>
