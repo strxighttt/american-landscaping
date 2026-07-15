@@ -179,6 +179,18 @@ footer ul li a:hover{color:#C6582A}
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -197,7 +209,7 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section data-reveal class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="container">
     <h1>Hardscaping That<br><span>Stands Strong</span></h1>
@@ -209,7 +221,7 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </section>
 
-<div class="stats-bar">
+<div class="stats-bar" data-reveal>
   <div class="container">
     <div class="stat-item"><strong>600+</strong><span>Projects</span></div>
     <div class="stat-item"><strong>18</strong><span>Years Experience</span></div>
@@ -218,23 +230,23 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </div>
 
-<section class="services section" id="services">
+<section data-reveal class="services section" id="services">
   <div class="container">
     <h2 class="section-title"><span class="thick-border">Our Services</span></h2>
     <p class="section-subtitle">Premium hardscaping and landscape construction services across Maryland.</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="icon">🪨</span><h3>Stone Patios & Walkways</h3><p>Custom flagstone, bluestone, and travertine patios designed for lasting beauty and structural integrity.</p></div>
-      <div class="service-card"><span class="icon">🧱</span><h3>Retaining Walls</h3><p>Engineered segmental and natural stone walls that manage grade changes and add dimension to your yard.</p></div>
-      <div class="service-card"><span class="icon">🔥</span><h3>Fire Pits & Outdoor Kitchens</h3><p>Built-in grills, fire features, and full outdoor kitchens crafted from stone and premium materials.</p></div>
-      <div class="service-card"><span class="icon">🚧</span><h3>Driveways & Pathways</h3><p>Permeable pavers, concrete, and gravel driveways that combine durability with curb appeal.</p></div>
-      <div class="service-card"><span class="icon">🌊</span><h3>Water Features</h3><p>Natural stone waterfalls, ponds, and fountains that bring sound and motion to your outdoor space.</p></div>
-      <div class="service-card"><span class="icon">🏗️</span><h3>Site Prep & Grading</h3><p>Professional excavation, grading, and drainage solutions to prepare your site for construction.</p></div>
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2"><span class="icon">🪨</span><h3>Stone Patios & Walkways</h3><p>Custom flagstone, bluestone, and travertine patios designed for lasting beauty and structural integrity.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🧱</span><h3>Retaining Walls</h3><p>Engineered segmental and natural stone walls that manage grade changes and add dimension to your yard.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🔥</span><h3>Fire Pits & Outdoor Kitchens</h3><p>Built-in grills, fire features, and full outdoor kitchens crafted from stone and premium materials.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🚧</span><h3>Driveways & Pathways</h3><p>Permeable pavers, concrete, and gravel driveways that combine durability with curb appeal.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🌊</span><h3>Water Features</h3><p>Natural stone waterfalls, ponds, and fountains that bring sound and motion to your outdoor space.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🏗️</span><h3>Site Prep & Grading</h3><p>Professional excavation, grading, and drainage solutions to prepare your site for construction.</p></div>
     </div>
   </div>
 </section>
 
-<section class="about section" id="about">
-  <div class="container">
+<section data-reveal class="about section" id="about">
+  <div class="container" data-reveal="d1">
     <div class="about-image">
       <img src="https://picsum.photos/seed/diaz-about/640/480" alt="Diaz Landscape & Construction team" loading="lazy">
     </div>
@@ -247,27 +259,27 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </section>
 
-<section class="process section" id="process">
+<section data-reveal class="process section" id="process">
   <div class="container">
     <h2 class="section-title"><span class="thick-border">Our Process</span></h2>
     <p class="section-subtitle">From concept to completion, we keep every phase organized and transparent.</p>
-    <div class="process-grid">
-      <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">
         <div class="step-num">1</div>
         <h3>Site Assessment</h3>
         <p>We visit your property to take measurements, evaluate soil and drainage, and discuss your vision.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d2">
         <div class="step-num">2</div>
         <h3>Proposal</h3>
         <p>You receive a detailed quote with material options, timeline, and a 3D concept rendering.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <div class="step-num">3</div>
         <h3>Construction</h3>
         <p>Our crew executes the build with precision — from base prep and grading to final installation.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <div class="step-num">4</div>
         <h3>Final Walk</h3>
         <p>We review the completed work together, answer questions, and provide care and maintenance tips.</p>
@@ -276,27 +288,27 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </section>
 
-<section class="reviews section" id="reviews">
+<section data-reveal class="reviews section" id="reviews">
   <div class="container">
     <h2 class="section-title"><span class="thick-border">Testimonials</span></h2>
     <p class="section-subtitle">What our clients say about working with Diaz Landscape & Construction.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">
         <div class="stars">★★★★★</div>
         <blockquote>"The retaining wall and patio Diaz built for us completely transformed our backyard. The stonework is absolutely beautiful and the team was professional throughout."</blockquote>
         <cite>Carlos M. <span>Homeowner, Wheaton</span></cite>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d2">
         <div class="stars">★★★★★</div>
         <blockquote>"We hired Diaz for a full driveway and walkway project. They were on time, on budget, and the craftsmanship is top-notch. Highly recommend for any hardscaping work."</blockquote>
         <cite>Janet K. <span>Homeowner, Aspen Hill</span></cite>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="stars">★★★★★</div>
         <blockquote>"The outdoor kitchen and fire pit are the highlight of our home. Every detail was handled with care. Diaz knows stone better than anyone in Maryland."</blockquote>
         <cite>Mike Delgado <span>Homeowner, Germantown</span></cite>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="stars">★★★★★</div>
         <blockquote>"Professional, honest, and talented. They rebuilt our crumbling front steps and it looks like a completely new entrance. Couldn't be happier with the result."</blockquote>
         <cite>Rachel S. <span>Homeowner, Silver Spring</span></cite>
@@ -305,8 +317,8 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </section>
 
-<section class="contact section" id="contact">
-  <div class="container">
+<section data-reveal class="contact section" id="contact">
+  <div class="container" data-reveal="d1">
     <div class="contact-info">
       <h2>Let's Build</h2>
       <p>Ready to start your hardscaping project? Contact us for a free consultation and estimate.</p>
@@ -338,7 +350,7 @@ footer ul li a:hover{color:#C6582A}
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -427,5 +439,6 @@ document.querySelector('.contact-form').addEventListener('submit', function(e){
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

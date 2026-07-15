@@ -178,6 +178,18 @@ footer ul li a:hover{color:#C8A951}
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -196,7 +208,7 @@ footer ul li a:hover{color:#C8A951}
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section class="hero" id="home" data-reveal>
   <div class="container">
     <h1>Beautiful Landscapes<br>Rooted in Tradition</h1>
     <div class="gold-divider"></div>
@@ -211,23 +223,23 @@ footer ul li a:hover{color:#C8A951}
   </div>
 </section>
 
-<section class="services section" id="services">
+<section class="services section" id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">Comprehensive landscaping services for residential and commercial properties across Maryland.</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Thoughtful, site-specific designs that enhance architecture and natural surroundings with enduring style.</p></div>
-      <div class="service-card"><span class="icon">🪨</span><h3>Stone & Masonry</h3><p>Natural stone patios, walkways, retaining walls, and columns built to complement your home's character.</p></div>
-      <div class="service-card"><span class="icon">🌳</span><h3>Tree Services</h3><p>Expert pruning, removal, and planting to maintain healthy trees that frame your property beautifully.</p></div>
-      <div class="service-card"><span class="icon">💧</span><h3>Water Features</h3><p>Ponds, fountains, and waterfalls that add tranquility and movement to any outdoor space.</p></div>
-      <div class="service-card"><span class="icon">🏡</span><h3>Porch & Deck</h3><p>Custom-designed porches and decks that create inviting outdoor rooms for relaxation and entertaining.</p></div>
-      <div class="service-card"><span class="icon">🌱</span><h3>Seasonal Color</h3><p>Annual and perennial plantings designed to deliver vibrant color from spring through fall.</p></div>
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Thoughtful, site-specific designs that enhance architecture and natural surroundings with enduring style.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🪨</span><h3>Stone & Masonry</h3><p>Natural stone patios, walkways, retaining walls, and columns built to complement your home's character.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🌳</span><h3>Tree Services</h3><p>Expert pruning, removal, and planting to maintain healthy trees that frame your property beautifully.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">💧</span><h3>Water Features</h3><p>Ponds, fountains, and waterfalls that add tranquility and movement to any outdoor space.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🏡</span><h3>Porch & Deck</h3><p>Custom-designed porches and decks that create inviting outdoor rooms for relaxation and entertaining.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🌱</span><h3>Seasonal Color</h3><p>Annual and perennial plantings designed to deliver vibrant color from spring through fall.</p></div>
     </div>
   </div>
   <div class="leaf-divider">── ✦ ──</div>
 </section>
 
-<section class="about section" id="about">
+<section class="about section" id="about" data-reveal>
   <div class="container">
     <div class="about-image">
       <img src="https://picsum.photos/seed/colonial-about/640/460" alt="Colonial Lawn Landscape team" loading="lazy">
@@ -242,29 +254,21 @@ footer ul li a:hover{color:#C8A951}
   </div>
 </section>
 
-<section class="process section" id="process">
+<section class="process section" id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">How We Work</h2>
     <p class="section-subtitle">A collaborative process that ensures your vision becomes reality.</p>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h3>Discover</h3>
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">01</div>\n        <h3>Discover</h3>
         <p>We listen to your ideas, evaluate the site, and discuss goals, style preferences, and budget.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h3>Design</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">02</div>\n        <h3>Design</h3>
         <p>We create detailed landscape plans with plant selections, material choices, and visual mockups.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h3>Install</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">03</div>\n        <h3>Install</h3>
         <p>Our skilled crews bring the design to life with careful installation and minimal site disruption.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h3>Nurture</h3>
+      <div class="process-step" data-reveal="d3">\n        <div class="step-num">04</div>\n        <h3>Nurture</h3>
         <p>We follow up with care instructions and ongoing maintenance options to keep your landscape thriving.</p>
       </div>
     </div>
@@ -272,36 +276,28 @@ footer ul li a:hover{color:#C8A951}
   <div class="leaf-divider">── ✦ ──</div>
 </section>
 
-<section class="section" id="reviews">
+<section class="section" id="reviews" data-reveal>
   <div class="container" style="padding:0 24px">
     <h2 class="section-title" style="padding-left:24px">Client Testimonials</h2>
     <p class="section-subtitle" style="padding-left:24px">Hear from the homeowners and businesses we've served.</p>
   </div>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"Colonial Lawn transformed our dull backyard into a gorgeous garden retreat. Their design sense is impeccable and the crew was a pleasure to work with."</blockquote>
+  <div class="reviews-grid" data-reveal="d1">
+    <div class="review-card" data-reveal="d2">\n      <div class="stars">★★★★★</div>\n      <blockquote>"Colonial Lawn transformed our dull backyard into a gorgeous garden retreat. Their design sense is impeccable and the crew was a pleasure to work with."</blockquote>
       <cite>Margaret O. <span>Homeowner, Olney</span></cite>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"They rebuilt our front walkway and planted a beautiful mix of native shrubs and perennials. The quality of the stonework is exceptional. Highly recommend."</blockquote>
+    <div class="review-card" data-reveal="d2">\n      <div class="stars">★★★★★</div>\n      <blockquote>"They rebuilt our front walkway and planted a beautiful mix of native shrubs and perennials. The quality of the stonework is exceptional. Highly recommend."</blockquote>
       <cite>Tom W. <span>Homeowner, Kensington</span></cite>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"We hired Colonial for our commercial property's landscaping. Professional, punctual, and the results have drawn compliments from tenants and visitors alike."</blockquote>
+    <div class="review-card" data-reveal="d2">\n      <div class="stars">★★★★★</div>\n      <blockquote>"We hired Colonial for our commercial property's landscaping. Professional, punctual, and the results have drawn compliments from tenants and visitors alike."</blockquote>
       <cite>Patricia Nguyen <span>Property Owner, Takoma Park</span></cite>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <blockquote>"From the first consultation to final walkthrough, everything was seamless. They listened carefully and delivered exactly what we envisioned for our home."</blockquote>
+    <div class="review-card" data-reveal="d3">\n      <div class="stars">★★★★★</div>\n      <blockquote>"From the first consultation to final walkthrough, everything was seamless. They listened carefully and delivered exactly what we envisioned for our home."</blockquote>
       <cite>Jonathan Reed <span>Homeowner, Silver Spring</span></cite>
     </div>
   </div>
 </section>
 
-<section class="contact section" id="contact">
+<section class="contact section" id="contact" data-reveal>
   <div class="container">
     <div class="contact-info">
       <h2>Start Your Landscape Journey</h2>
@@ -334,7 +330,7 @@ footer ul li a:hover{color:#C8A951}
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -423,5 +419,6 @@ document.querySelector('.contact-form').addEventListener('submit', function(e){
     </div>
   </div>
 </div>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();
 </body>
 </html>

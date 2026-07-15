@@ -192,6 +192,18 @@ footer ul li a:hover{color:#7a9e8a}
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -210,7 +222,7 @@ footer ul li a:hover{color:#7a9e8a}
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section class="hero" id="home" data-reveal>
   <div class="container">
     <div class="hero-content">
       <h1>Your Yard, <span>Reimagined</span></h1>
@@ -231,7 +243,7 @@ footer ul li a:hover{color:#7a9e8a}
   </div>
 </section>
 
-<div class="stats-row">
+<div class="stats-row" data-reveal>
   <div class="container">
     <div class="stat-item"><strong>500</strong><span>Projects Completed</span></div>
     <div class="stat-item"><strong>15</strong><span>Years in Business</span></div>
@@ -240,22 +252,22 @@ footer ul li a:hover{color:#7a9e8a}
   </div>
 </div>
 
-<section class="services section" id="services">
+<section class="services section" id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">What We Do</h2>
     <p class="section-subtitle">Full-service landscaping from design through installation and maintenance.</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Modern, sustainable designs that maximize curb appeal and outdoor livability for your property.</p></div>
-      <div class="service-card"><span class="icon">🪨</span><h3>Hardscaping</h3><p>Patios, walkways, and walls using premium pavers, flagstone, and natural stone materials.</p></div>
-      <div class="service-card"><span class="icon">🌱</span><h3>Sod & Seeding</h3><p>New lawn installation and renovation services for thick, healthy grass that thrives year-round.</p></div>
-      <div class="service-card"><span class="icon">✂️</span><h3>Lawn Maintenance</h3><p>Weekly or bi-weekly mowing, edging, blowing, and weed control to keep your yard pristine.</p></div>
-      <div class="service-card"><span class="icon">🌳</span><h3>Tree & Shrub Care</h3><p>Pruning, fertilization, pest management, and removal by certified arborists.</p></div>
-      <div class="service-card"><span class="icon">💧</span><h3>Drainage Solutions</h3><p>French drains, grading, and downspout extensions to protect your foundation and landscape.</p></div>
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Modern, sustainable designs that maximize curb appeal and outdoor livability for your property.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🪨</span><h3>Hardscaping</h3><p>Patios, walkways, and walls using premium pavers, flagstone, and natural stone materials.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🌱</span><h3>Sod & Seeding</h3><p>New lawn installation and renovation services for thick, healthy grass that thrives year-round.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">✂️</span><h3>Lawn Maintenance</h3><p>Weekly or bi-weekly mowing, edging, blowing, and weed control to keep your yard pristine.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🌳</span><h3>Tree & Shrub Care</h3><p>Pruning, fertilization, pest management, and removal by certified arborists.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">💧</span><h3>Drainage Solutions</h3><p>French drains, grading, and downspout extensions to protect your foundation and landscape.</p></div>
     </div>
   </div>
 </section>
 
-<section class="about section" id="about">
+<section class="about section" id="about" data-reveal>
   <div class="container">
     <div class="about-image">
       <img src="https://picsum.photos/seed/dland-about/640/460" alt="D&L Landscaping team" loading="lazy">
@@ -264,7 +276,7 @@ footer ul li a:hover{color:#7a9e8a}
       <h2>Fresh Perspective, Proven Results</h2>
       <p>D&L Landscaping was founded with a mission to bring thoughtful, modern landscaping to Maryland homeowners. We believe your outdoor space should be as functional and beautiful as the inside of your home.</p>
       <p>Our team combines creative design with solid construction practices. We use sustainable materials, water-efficient plants, and smart grading to create landscapes that look great and work hard.</p>
-      <div class="about-stats">
+      <div class="about-stats" data-reveal>
         <div class="about-stat"><strong>500</strong><span>Projects</span></div>
         <div class="about-stat"><strong>15</strong><span>Years</span></div>
         <div class="about-stat"><strong>98%</strong><span>Satisfied</span></div>
@@ -273,65 +285,49 @@ footer ul li a:hover{color:#7a9e8a}
   </div>
 </section>
 
-<section class="process section" id="process">
+<section class="process section" id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">How It Works</h2>
     <p class="section-subtitle">Simple, transparent process from start to finish.</p>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h3>Consultation</h3>
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">1</div>\n        <h3>Consultation</h3>
         <p>Free on-site visit to discuss your goals, assess the property, and explore ideas together.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h3>Proposal</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">2</div>\n        <h3>Proposal</h3>
         <p>Itemized quote with design concepts, material selections, and a clear project timeline.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h3>Installation</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">3</div>\n        <h3>Installation</h3>
         <p>Professional crews execute the plan efficiently, keeping your property clean and organized.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <h3>Follow-Up</h3>
+      <div class="process-step" data-reveal="d3">\n        <div class="step-num">4</div>\n        <h3>Follow-Up</h3>
         <p>We check in after completion to ensure everything meets your expectations and answer questions.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews section" id="reviews">
+<section class="reviews section" id="reviews" data-reveal>
   <div class="container">
     <h2 class="section-title">Client Feedback</h2>
     <p class="section-subtitle">Real reviews from homeowners across the area.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"D&L transformed our chaotic yard into a beautifully organized landscape. The design is modern yet warm, and the installation was seamless. We couldn't be happier."</blockquote>
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"D&L transformed our chaotic yard into a beautifully organized landscape. The design is modern yet warm, and the installation was seamless. We couldn't be happier."</blockquote>
         <cite>Amanda Torres <span>Homeowner, Silver Spring</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Great communication, fair pricing, excellent work. They installed a new patio and lawn for us and the results are stunning. Highly recommend D&L."</blockquote>
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"Great communication, fair pricing, excellent work. They installed a new patio and lawn for us and the results are stunning. Highly recommend D&L."</blockquote>
         <cite>Brian Harper <span>Homeowner, Takoma Park</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"We've used D&L for both design and ongoing maintenance. They're reliable, creative, and really care about doing a great job. Our yard has never looked better."</blockquote>
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"We've used D&L for both design and ongoing maintenance. They're reliable, creative, and really care about doing a great job. Our yard has never looked better."</blockquote>
         <cite>Nicole Wu <span>Homeowner, Hyattsville</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"From the initial consultation to the final walkthrough, everything was professional and well-organized. They listened to what we wanted and delivered perfectly."</blockquote>
+      <div class="review-card" data-reveal="d3">\n        <div class="stars">★★★★★</div>\n        <blockquote>"From the initial consultation to the final walkthrough, everything was professional and well-organized. They listened to what we wanted and delivered perfectly."</blockquote>
         <cite>Kevin O'Brien <span>Homeowner, College Park</span></cite>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact section" id="contact">
+<section class="contact section" id="contact" data-reveal>
   <div class="container">
     <div class="contact-info">
       <h2>Get in Touch</h2>
@@ -364,7 +360,7 @@ footer ul li a:hover{color:#7a9e8a}
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -453,5 +449,6 @@ document.querySelector('.contact-form').addEventListener('submit', function(e){
     </div>
   </div>
 </div>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();
 </body>
 </html>

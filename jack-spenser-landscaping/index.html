@@ -412,6 +412,18 @@ footer .copyright {
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -427,7 +439,7 @@ footer .copyright {
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
     <h1>Jack Spenser Landscaping</h1>
     <hr class="ruled-heading">
     <div class="pull-quote">&ldquo;Good landscaping is not about trends — it&rsquo;s about timeless design, quality materials, and honest work.&rdquo;</div>
@@ -437,36 +449,36 @@ footer .copyright {
 
 <div class="ruled-sep"></div>
 
-<section class="services" id="services">
+<section class="services" id="services" data-reveal>
     <h2 class="section-title">Our Services</h2>
     <div class="ruled-sep"></div>
-    <div class="services-grid">
-        <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/jack-1/128/128" alt="" loading="lazy">
             <h3>Landscape Design</h3>
             <p>Classic landscape plans drawn by hand, with an eye for proportion, balance, and enduring style.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/jack-2/128/128" alt="" loading="lazy">
             <h3>Stonework &amp; Masonry</h3>
             <p>Natural stone patios, walkways, retaining walls, and traditional dry-stack construction.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/jack-3/128/128" alt="" loading="lazy">
             <h3>Garden Beds</h3>
             <p>Perennial, shrub, and mixed border planting with compost-rich soil preparation.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/jack-4/128/128" alt="" loading="lazy">
             <h3>Lawn Installation</h3>
             <p>Sod, seed, and hydroseeding services for new lawns and lawn restoration.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/jack-5/128/128" alt="" loading="lazy">
             <h3>Tree Care</h3>
             <p>Pruning, cabling, removal, and planting for trees of all sizes and species.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/jack-6/128/128" alt="" loading="lazy">
             <h3>Seasonal Cleanup</h3>
             <p>Thorough spring and fall cleanup with leaf removal, cutting back, and hauling.</p>
@@ -476,7 +488,7 @@ footer .copyright {
 
 <div class="ruled-sep"></div>
 
-<section class="about" id="about">
+<section class="about" id="about" data-reveal>
     <div class="about-inner">
         <h2 class="section-title">About Jack Spenser</h2>
         <div class="ruled-sep"></div>
@@ -486,26 +498,26 @@ footer .copyright {
 
 <div class="ruled-sep"></div>
 
-<section class="process" id="process">
+<section class="process" id="process" data-reveal>
     <h2 class="section-title">Our Process</h2>
     <div class="ruled-sep"></div>
-    <div class="process-grid">
-        <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+        <div class="process-step" data-reveal="d2">
             <div class="num">I</div>
             <h4>Measure</h4>
             <p>We visit your property, take measurements, and discuss your needs.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d2">
             <div class="num">II</div>
             <h4>Design</h4>
             <p>You receive a hand-drawn plan with a clear itemized estimate.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">III</div>
             <h4>Execute</h4>
             <p>We complete the work on schedule, with minimal disruption.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">IV</div>
             <h4>Follow Up</h4>
             <p>We check in after the job and offer ongoing maintenance.</p>
@@ -515,26 +527,26 @@ footer .copyright {
 
 <div class="ruled-sep"></div>
 
-<section class="reviews" id="reviews">
+<section class="reviews" id="reviews" data-reveal>
     <h2 class="section-title">Testimonials</h2>
     <div class="ruled-sep"></div>
-    <div class="reviews-grid">
-        <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>&ldquo;Jack and his team rebuilt our crumbling stone patio. It looks like it has been there for a hundred years. Masterful work.&rdquo;</blockquote>
             <cite>— Richard S., Silver Spring</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>&ldquo;We have used Jack Spenser for years. They are reliable, fair, and the quality is always outstanding. Our garden has never looked better.&rdquo;</blockquote>
             <cite>— Margaret C., Takoma Park</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>&ldquo;Jack helped us design a perennial garden from scratch. His plant knowledge is incredible and everything is thriving.&rdquo;</blockquote>
             <cite>— Thomas B., Kensington</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>&ldquo;They showed up when they said they would, finished on time, and cleaned up every last leaf. A true professional operation.&rdquo;</blockquote>
             <cite>— Diane L., Silver Spring</cite>
@@ -544,7 +556,7 @@ footer .copyright {
 
 <div class="ruled-sep"></div>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-reveal>
     <h2 class="section-title">Contact Jack Spenser</h2>
     <div class="ruled-sep"></div>
     <p style="text-align:center;color:#666;">PO Box 4470, Silver Spring, MD 20914</p>
@@ -557,7 +569,7 @@ footer .copyright {
     </form>
 </section>
 
-<footer>
+<footer data-reveal>
     <p><strong>Jack Spenser Landscaping</strong></p>
     <p>PO Box 4470, Silver Spring, MD 20914</p>
     <p><a href="tel:+13013843285">(301) 384-3285</a> &bull; <a href="mailto:info@jackspenserlandscaping.com">info@jackspenserlandscaping.com</a></p>
@@ -601,5 +613,6 @@ footer .copyright {
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

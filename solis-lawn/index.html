@@ -137,6 +137,18 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -152,7 +164,7 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
   <div class="hero-content">
     <span class="sun">☀️</span>
     <h1>Let Your Landscape Shine</h1>
@@ -161,37 +173,37 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="services">
+<section id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Services</h2>
     <p class="section-sub">Full-service lawn and landscape care</p>
-    <div class="services-grid">
-      <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#127793;</span>
         <h3>Lawn Mowing</h3>
         <p>Weekly and biweekly mowing with precision edging and clean-up.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#127800;</span>
         <h3>Garden Design</h3>
         <p>Custom flower beds, shrub borders, and sunny garden layouts.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#127795;</span>
         <h3>Fertilization</h3>
         <p>Organic and conventional programs for a lush, green lawn.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#127796;</span>
         <h3>Mulching</h3>
         <p>Fresh bark and hardwood mulch to protect and beautify beds.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#128167;</span>
         <h3>Irrigation</h3>
         <p>Sprinkler system installation, repair, and seasonal start-up.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#127963;</span>
         <h3>Leaf Removal</h3>
         <p>Fall clean-ups and spring tidying to keep your yard pristine.</p>
@@ -200,7 +212,7 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="about">
+<section id="about" data-reveal>
   <div class="container">
     <h2 class="section-title">About Solis</h2>
     <p class="section-sub">Serving Silver Spring with sunshine</p>
@@ -217,27 +229,27 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="process">
+<section id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">How We Work</h2>
     <p class="section-sub">Simple and sunny</p>
-    <div class="process-grid">
-      <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">
         <span class="num">01</span>
         <h3>Warm Welcome</h3>
         <p>We meet you on-site for a friendly chat about your vision.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d2">
         <span class="num">02</span>
         <h3>Plan</h3>
         <p>Clear proposal with options that fit your style and budget.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">03</span>
         <h3>Create</h3>
         <p>Our crew brings the plan to life with skill and care.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">04</span>
         <h3>Enjoy</h3>
         <p>Sit back and relax while your landscape grows beautiful.</p>
@@ -246,27 +258,27 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="reviews">
+<section id="reviews" data-reveal>
   <div class="container">
     <h2 class="section-title">Happy Clients</h2>
     <p class="section-sub">Sunshine reviews</p>
-    <div class="reviews-grid">
-      <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>Solis is fantastic! Our lawn has never looked greener. The team is always punctual, friendly, and thorough.</p>
         <div class="author">— Amy W., Silver Spring</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>They designed a beautiful flower garden for our front yard. Every neighbor has complimented it. Love working with Solis!</p>
         <div class="author">— Carlos R., Takoma Park</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>Reliable, affordable, and they actually listen. Our yard has been transformed and the maintenance is top-notch.</p>
         <div class="author">— Jenna T., Wheaton</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>Great irrigation install. Everything was explained clearly and the system works perfectly. Highly recommend Solis.</p>
         <div class="author">— Dave M., Silver Spring</div>
@@ -275,7 +287,7 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-reveal>
   <div class="container">
     <h2 class="section-title">Get in Touch</h2>
     <p class="section-sub">We'd love to hear from you</p>
@@ -309,7 +321,7 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <p>&copy; 2026 Solis Lawn &amp; Landscaping. All rights reserved.</p>
 </footer>
 
@@ -350,5 +362,6 @@ footer p { color: rgba(255,255,255,0.85); font-size: 0.9rem; }
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

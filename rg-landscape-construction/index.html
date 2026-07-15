@@ -141,6 +141,18 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -156,7 +168,7 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
   <div class="hero-content">
     <h1>Built to Last</h1>
     <p>Heavy-duty landscape construction for Silver Spring and beyond.</p>
@@ -164,37 +176,37 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<section id="services">
+<section id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">Heavy-<span>Duty</span> Services</h2>
     <p class="section-sub">Building landscapes that endure</p>
-    <div class="services-grid">
-      <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2">
         <div class="icon">&#9925;</div>
         <h3>Hardscaping</h3>
         <p>Retaining walls, patios, walkways built with industrial-grade materials and precision.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <div class="icon">&#127796;</div>
         <h3>Land Clearing</h3>
         <p>Heavy brush removal, grading, and site prep for new construction projects.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <div class="icon">&#128736;</div>
         <h3>Concrete Work</h3>
         <p>Stamped concrete, driveways, foundations — poured and finished to last.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <div class="icon">&#127800;</div>
         <h3>Planting</h3>
         <p>Specimen trees, shrub beds, and erosion control planting for commercial sites.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <div class="icon">&#9881;</div>
         <h3>Drainage</h3>
         <p>French drains, catch basins, and grading solutions for water management.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <div class="icon">&#127963;</div>
         <h3>Fencing</h3>
         <p>Heavy-duty wood, vinyl, and metal fencing for privacy and security.</p>
@@ -203,7 +215,7 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<section id="about">
+<section id="about" data-reveal>
   <div class="container">
     <h2 class="section-title">About <span>R&amp;G</span></h2>
     <p class="section-sub">Silver Spring's construction experts</p>
@@ -220,27 +232,27 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<section id="process">
+<section id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">Our <span>Process</span></h2>
     <p class="section-sub">Four steps to a finished site</p>
-    <div class="process-grid">
-      <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">
         <span class="num">01</span>
         <h3>Consult</h3>
         <p>On-site walkthrough to assess terrain, soil, and project scope.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d2">
         <span class="num">02</span>
         <h3>Design</h3>
         <p>Blueprints and material specs with detailed cost breakdown.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">03</span>
         <h3>Build</h3>
         <p>Heavy equipment and skilled crews execute the plan on schedule.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">04</span>
         <h3>Finish</h3>
         <p>Final grading, clean-up, and walk-through before sign-off.</p>
@@ -249,27 +261,27 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<section id="reviews">
+<section id="reviews" data-reveal>
   <div class="container">
     <h2 class="section-title">What <span>Clients</span> Say</h2>
     <p class="section-sub">Real reviews from real projects</p>
-    <div class="reviews-grid">
-      <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>R&amp;G transformed our backyard with a massive retaining wall and new patio. The quality is unmatched — you can feel how solid everything is.</p>
         <div class="author">— David M., Silver Spring</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>They cleared a heavily wooded lot for our new home build. Fast, professional, and left the site perfectly graded. Highly recommend.</p>
         <div class="author">— Karen T., Takoma Park</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>Had them pour a stamped concrete driveway. The attention to detail is incredible. It's been two years and still looks brand new.</p>
         <div class="author">— James L., Silver Spring</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>These guys mean business. Showed up on time, finished on budget, and the work is rock solid. No complaints whatsoever.</p>
         <div class="author">— Patricia H., Wheaton</div>
@@ -278,7 +290,7 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-reveal>
   <div class="container">
     <h2 class="section-title">Get In <span>Touch</span></h2>
     <p class="section-sub">Start your project today</p>
@@ -313,7 +325,7 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <p>&copy; 2026 R&amp;G Landscape Construction. All rights reserved.</p>
 </footer>
 
@@ -354,5 +366,6 @@ footer p { color: #666; font-size: 0.9rem; font-weight: 400; }
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

@@ -414,6 +414,18 @@ footer .copyright {
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -429,7 +441,7 @@ footer .copyright {
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
     <div class="hero-text">
         <h1>Green Lake Landscaping</h1>
         <div class="sub">Creating beautiful outdoor spaces</div>
@@ -443,35 +455,35 @@ footer .copyright {
 
 <div class="wave-divider"></div>
 
-<section class="services" id="services">
+<section class="services" id="services" data-reveal>
     <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-        <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/gl-1/128/128" alt="" loading="lazy">
             <h3>Landscape Design</h3>
             <p>Custom landscape plans blending beauty, function, and sustainability for your property.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/gl-2/128/128" alt="" loading="lazy">
             <h3>Planting &amp; Gardens</h3>
             <p>Perennial beds, shrub borders, native plantings, and edible garden installations.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/gl-3/128/128" alt="" loading="lazy">
             <h3>Patios &amp; Decks</h3>
             <p>Custom patio and deck construction using premium hardwoods, pavers, and stone.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/gl-4/128/128" alt="" loading="lazy">
             <h3>Lawn Care</h3>
             <p>Full-service lawn maintenance including mowing, fertilization, aeration, and overseeding.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/gl-5/128/128" alt="" loading="lazy">
             <h3>Water Features</h3>
             <p>Ponds, fountains, waterfalls, and rain gardens to add tranquility to your yard.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/gl-6/128/128" alt="" loading="lazy">
             <h3>Tree &amp; Shrub Care</h3>
             <p>Pruning, removal, planting, and health care for trees and shrubs of all sizes.</p>
@@ -479,7 +491,7 @@ footer .copyright {
     </div>
 </section>
 
-<section class="about" id="about">
+<section class="about" id="about" data-reveal>
     <div class="about-inner">
         <h2 class="section-title">About Green Lake Landscaping</h2>
         <p>We are a family-owned landscaping company serving Silver Spring and surrounding communities. Our team brings years of hands-on experience in landscape design, hardscaping, and horticulture. We take pride in creating outdoor environments that are as functional as they are beautiful — from cozy backyard retreats to expansive front-yard transformations. Every project is built on trust, quality, and a genuine love for the craft.</p>
@@ -488,25 +500,25 @@ footer .copyright {
 
 <div class="wave-divider" style="--divider-bg: #EBF5FB;"></div>
 
-<section class="process" id="process">
+<section class="process" id="process" data-reveal>
     <h2 class="section-title">How We Work</h2>
-    <div class="process-grid">
-        <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+        <div class="process-step" data-reveal="d2">
             <div class="num">1</div>
             <h4>Consultation</h4>
             <p>We listen to your ideas and assess the space together.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d2">
             <div class="num">2</div>
             <h4>Design</h4>
             <p>We create a tailored plan with material selections.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">3</div>
             <h4>Build</h4>
             <p>Our crew brings the design to life with expert craftsmanship.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">4</div>
             <h4>Enjoy</h4>
             <p>Your new landscape is ready to enjoy for years to come.</p>
@@ -514,25 +526,25 @@ footer .copyright {
     </div>
 </section>
 
-<section class="reviews" id="reviews">
+<section class="reviews" id="reviews" data-reveal>
     <h2 class="section-title">Happy Customers</h2>
-    <div class="reviews-grid">
-        <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>"Green Lake designed and built our dream patio. The attention to detail was incredible and the team was a pleasure to work with."</blockquote>
             <cite>— Amy R., Silver Spring</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>"They transformed our overgrown front yard into a beautiful native garden. We get compliments from neighbors every week."</blockquote>
             <cite>— Tom W., Takoma Park</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>"Professional, punctual, and talented. Our new water feature is the centerpiece of the backyard. Highly recommend."</blockquote>
             <cite>— Jennifer L., Bethesda</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>"Excellent lawn care service. Our grass has never looked greener. The team is reliable and communicates well."</blockquote>
             <cite>— Kevin M., Silver Spring</cite>
@@ -540,7 +552,7 @@ footer .copyright {
     </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-reveal>
     <h2 class="section-title">Contact Us</h2>
     <p style="text-align:center;color:#666;margin-top:0.5rem;">Silver Spring, MD</p>
     <form>
@@ -552,7 +564,7 @@ footer .copyright {
     </form>
 </section>
 
-<footer>
+<footer data-reveal>
     <p><strong>Green Lake Landscaping</strong></p>
     <p>Silver Spring, MD</p>
     <p><a href="tel:+13016611814">(301) 661-1814</a> &bull; <a href="mailto:info@greenlakelandscaping.com">info@greenlakelandscaping.com</a></p>
@@ -596,5 +608,6 @@ footer .copyright {
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

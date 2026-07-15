@@ -393,6 +393,18 @@ footer .copyright {
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -408,7 +420,7 @@ footer .copyright {
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
     <h1>The Fine Garden Specialist</h1>
     <div class="gold-line"></div>
     <p>Fine gardening &amp; landscape design for those who expect more. We create refined outdoor spaces that reflect timeless elegance.</p>
@@ -417,38 +429,26 @@ footer .copyright {
 
 <div class="section-divider">&#10039;</div>
 
-<section class="services" id="services">
+<section class="services" id="services" data-reveal>
     <h2 class="section-title">Our Services</h2>
     <div class="section-divider" style="font-size:0.8rem;">&#10039;</div>
-    <div class="services-grid">
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-1/128/128" alt="" loading="lazy">
-            <h3>Garden Design</h3>
+    <div class="services-grid" data-reveal="d1">
+        <div class="service-card" data-reveal="d2">\n            <img src="https://picsum.photos/seed/finegarden-1/128/128" alt="" loading="lazy">\n            <h3>Garden Design</h3>
             <p>Custom perennial borders, formal parterres, and cottage garden compositions tailored to your property.</p>
         </div>
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-2/128/128" alt="" loading="lazy">
-            <h3>Planting &amp; Horticulture</h3>
+        <div class="service-card" data-reveal="d2">\n            <img src="https://picsum.photos/seed/finegarden-2/128/128" alt="" loading="lazy">\n            <h3>Planting &amp; Horticulture</h3>
             <p>Expert plant selection, soil preparation, and installation with heirloom varieties and native species.</p>
         </div>
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-3/128/128" alt="" loading="lazy">
-            <h3>Hardscaping</h3>
+        <div class="service-card" data-reveal="d2">\n            <img src="https://picsum.photos/seed/finegarden-3/128/128" alt="" loading="lazy">\n            <h3>Hardscaping</h3>
             <p>Flagstone pathways, garden walls, stone terraces, and decorative gravel installations.</p>
         </div>
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-4/128/128" alt="" loading="lazy">
-            <h3>Garden Maintenance</h3>
+        <div class="service-card" data-reveal="d3">\n            <img src="https://picsum.photos/seed/finegarden-4/128/128" alt="" loading="lazy">\n            <h3>Garden Maintenance</h3>
             <p>Ongoing care including pruning, weeding, mulching, seasonal cleanups, and plant health management.</p>
         </div>
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-5/128/128" alt="" loading="lazy">
-            <h3>Container Gardens</h3>
+        <div class="service-card" data-reveal="d3">\n            <img src="https://picsum.photos/seed/finegarden-5/128/128" alt="" loading="lazy">\n            <h3>Container Gardens</h3>
             <p>Designed seasonal container arrangements for entrances, patios, and courtyards.</p>
         </div>
-        <div class="service-card">
-            <img src="https://picsum.photos/seed/finegarden-6/128/128" alt="" loading="lazy">
-            <h3>Garden Lighting</h3>
+        <div class="service-card" data-reveal="d3">\n            <img src="https://picsum.photos/seed/finegarden-6/128/128" alt="" loading="lazy">\n            <h3>Garden Lighting</h3>
             <p>Subtle low-voltage lighting to highlight specimen plants, pathways, and architectural features.</p>
         </div>
     </div>
@@ -456,7 +456,7 @@ footer .copyright {
 
 <div class="section-divider">&#10039;</div>
 
-<section class="about" id="about">
+<section class="about" id="about" data-reveal>
     <div class="about-inner">
         <h2 class="section-title">About The Fine Garden Specialist</h2>
         <div class="section-divider" style="font-size:0.8rem;">&#10039;</div>
@@ -466,28 +466,20 @@ footer .copyright {
 
 <div class="section-divider">&#10039;</div>
 
-<section class="process" id="process">
+<section class="process" id="process" data-reveal>
     <h2 class="section-title">Our Process</h2>
     <div class="section-divider" style="font-size:0.8rem;">&#10039;</div>
-    <div class="process-grid">
-        <div class="process-step">
-            <div class="num">I</div>
-            <h4>Consultation</h4>
+    <div class="process-grid" data-reveal="d1">
+        <div class="process-step" data-reveal="d2">\n            <div class="num">I</div>\n            <h4>Consultation</h4>
             <p>We tour your property, discuss your vision, and evaluate site conditions.</p>
         </div>
-        <div class="process-step">
-            <div class="num">II</div>
-            <h4>Design</h4>
+        <div class="process-step" data-reveal="d2">\n            <div class="num">II</div>\n            <h4>Design</h4>
             <p>A detailed planting plan and layout is developed with your feedback.</p>
         </div>
-        <div class="process-step">
-            <div class="num">III</div>
-            <h4>Installation</h4>
+        <div class="process-step" data-reveal="d2">\n            <div class="num">III</div>\n            <h4>Installation</h4>
             <p>Our skilled team brings the design to life with precision and care.</p>
         </div>
-        <div class="process-step">
-            <div class="num">IV</div>
-            <h4>Care</h4>
+        <div class="process-step" data-reveal="d3">\n            <div class="num">IV</div>\n            <h4>Care</h4>
             <p>Ongoing maintenance ensures your garden matures beautifully.</p>
         </div>
     </div>
@@ -495,28 +487,20 @@ footer .copyright {
 
 <div class="section-divider">&#10039;</div>
 
-<section class="reviews" id="reviews">
+<section class="reviews" id="reviews" data-reveal>
     <h2 class="section-title">What Our Clients Say</h2>
     <div class="section-divider" style="font-size:0.8rem;">&#10039;</div>
-    <div class="reviews-grid">
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <blockquote>&ldquo;The Fine Garden Specialist transformed our overgrown yard into a stunning English-style garden. Every season brings new delights.&rdquo;</blockquote>
+    <div class="reviews-grid" data-reveal="d1">
+        <div class="review-card" data-reveal="d2">\n            <div class="stars">★★★★★</div>\n            <blockquote>&ldquo;The Fine Garden Specialist transformed our overgrown yard into a stunning English-style garden. Every season brings new delights.&rdquo;</blockquote>
             <cite>— Eleanor H., Silver Spring</cite>
         </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <blockquote>&ldquo;Impeccable attention to detail. The design exceeded our expectations and the installation was seamless.&rdquo;</blockquote>
+        <div class="review-card" data-reveal="d2">\n            <div class="stars">★★★★★</div>\n            <blockquote>&ldquo;Impeccable attention to detail. The design exceeded our expectations and the installation was seamless.&rdquo;</blockquote>
             <cite>— David M., Takoma Park</cite>
         </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <blockquote>&ldquo;Their knowledge of plants is remarkable. Our garden has never looked better. Highly recommend.&rdquo;</blockquote>
+        <div class="review-card" data-reveal="d2">\n            <div class="stars">★★★★★</div>\n            <blockquote>&ldquo;Their knowledge of plants is remarkable. Our garden has never looked better. Highly recommend.&rdquo;</blockquote>
             <cite>— Patricia W., Bethesda</cite>
         </div>
-        <div class="review-card">
-            <div class="stars">★★★★★</div>
-            <blockquote>&ldquo;A true artist in the garden. Our container arrangements are the talk of the neighborhood.&rdquo;</blockquote>
+        <div class="review-card" data-reveal="d3">\n            <div class="stars">★★★★★</div>\n            <blockquote>&ldquo;A true artist in the garden. Our container arrangements are the talk of the neighborhood.&rdquo;</blockquote>
             <cite>— Robert K., Silver Spring</cite>
         </div>
     </div>
@@ -524,7 +508,7 @@ footer .copyright {
 
 <div class="section-divider">&#10039;</div>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-reveal>
     <h2 class="section-title">Get in Touch</h2>
     <div class="section-divider" style="font-size:0.8rem;">&#10039;</div>
     <p style="text-align:center;color:#555;">8811 Colesville Rd #103, Silver Spring, MD &bull; <a href="mailto:info@thefinegardenspecialist.com" style="color:#4A2952;">info@thefinegardenspecialist.com</a></p>
@@ -537,7 +521,7 @@ footer .copyright {
     </form>
 </section>
 
-<footer>
+<footer data-reveal>
     <p><strong>The Fine Garden Specialist</strong></p>
     <p>8811 Colesville Rd #103, Silver Spring, MD</p>
     <p><a href="tel:+12023286657">(202) 328-6657</a> &bull; <a href="mailto:info@thefinegardenspecialist.com">info@thefinegardenspecialist.com</a></p>
@@ -581,5 +565,6 @@ footer .copyright {
     </div>
   </div>
 </div>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();
 </body>
 </html>

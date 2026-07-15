@@ -143,6 +143,18 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -158,7 +170,7 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
   <div class="container">
     <div class="hero-text">
       <h1>Built on Solid Ground</h1>
@@ -171,37 +183,37 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="services">
+<section id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Services</h2>
     <p class="section-sub">Stone, soil, and skilled hands</p>
-    <div class="services-grid">
-      <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#9968;</span>
         <h3>Flagstone Patios</h3>
         <p>Natural flagstone laid by hand for timeless outdoor living spaces.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#127963;</span>
         <h3>Retaining Walls</h3>
         <p>Mortared and dry-stack stone walls for structure and beauty.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d2">
         <span class="icon">&#128167;</span>
         <h3>Water Features</h3>
         <p>Natural stone fountains, ponds, and cascades for tranquil gardens.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#127795;</span>
         <h3>Garden Beds</h3>
         <p>Raised stone-edged beds for vegetables, perennials, and shrubs.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#9969;</span>
         <h3>Stone Steps</h3>
         <p>Granite and bluestone steps that gracefully navigate slopes.</p>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-reveal="d3">
         <span class="icon">&#127796;</span>
         <h3>Landscape Design</h3>
         <p>Full property plans that integrate stone, plants, and terrain.</p>
@@ -210,7 +222,7 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="about">
+<section id="about" data-reveal>
   <div class="container">
     <h2 class="section-title">About Stone Garden</h2>
     <p class="section-sub">Craftsmen of natural stone</p>
@@ -227,27 +239,27 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="process">
+<section id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Process</h2>
     <p class="section-sub">Methodical from the ground up</p>
-    <div class="process-grid">
-      <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">
         <span class="num">01</span>
         <h3>Site Survey</h3>
         <p>We assess grade, drainage, and stone material requirements on-site.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d2">
         <span class="num">02</span>
         <h3>Stone Selection</h3>
         <p>Choose from local granite, bluestone, and fieldstone matched to your project.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">03</span>
         <h3>Installation</h3>
         <p>Skilled masons place every stone with precision and care.</p>
       </div>
-      <div class="process-step">
+      <div class="process-step" data-reveal="d3">
         <span class="num">04</span>
         <h3>Finish &amp; Seal</h3>
         <p>Joint sanding, sealing, and final clean-up for a lasting finish.</p>
@@ -256,27 +268,27 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="reviews">
+<section id="reviews" data-reveal>
   <div class="container">
     <h2 class="section-title">Client Reviews</h2>
     <p class="section-sub">Hear from our clients</p>
-    <div class="reviews-grid">
-      <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>Stone Garden built a beautiful flagstone patio for us. The workmanship is exceptional — every stone fits perfectly. Highly recommend.</p>
         <div class="author">— Rachel S., Silver Spring</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d2">
         <div class="quote">&ldquo;</div>
         <p>We hired them for a retaining wall and ended up doing the whole backyard. The natural stone look is exactly what we wanted.</p>
         <div class="author">— Mark D., Kensington</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>The water feature they installed is the centerpiece of our garden. It sounds amazing and looks completely natural.</p>
         <div class="author">— Helen T., Takoma Park</div>
       </div>
-      <div class="review-card">
+      <div class="review-card" data-reveal="d3">
         <div class="quote">&ldquo;</div>
         <p>True craftsmen. They take pride in their work and it shows. Our stone steps and paths are absolutely gorgeous.</p>
         <div class="author">— Bob K., Silver Spring</div>
@@ -285,7 +297,7 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" data-reveal>
   <div class="container">
     <h2 class="section-title">Get in Touch</h2>
     <p class="section-sub">Let's build something lasting</p>
@@ -319,7 +331,7 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <p>&copy; 2026 Stone Garden Landscaping. All rights reserved.</p>
 </footer>
 
@@ -360,5 +372,6 @@ footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

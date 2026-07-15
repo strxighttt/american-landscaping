@@ -152,6 +152,18 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -170,7 +182,7 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
   </div>
 </nav>
 
-<section class="hero">
+<section data-reveal class="hero">
   <div class="hero-bg">
     <img src="https://picsum.photos/id/159/1600/900" alt="" loading="lazy">
   </div>
@@ -181,26 +193,26 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
   </div>
 </section>
 
-<section class="services" id="services">
+<section data-reveal class="services" id="services">
   <div class="section-inner">
     <div class="section-header">
       <h2>What We Offer</h2>
       <p>Comprehensive landscaping services tailored to your needs</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Creative, sustainable garden plans blending native plants with curated ornamental species for year-round beauty.</p></div>
-      <div class="service-card"><span class="icon">🏗️</span><h3>Hardscaping</h3><p>Patios, walkways, retaining walls, and driveways using premium stone, pavers, and concrete.</p></div>
-      <div class="service-card"><span class="icon">🌳</span><h3>Tree Services</h3><p>Pruning, removal, stump grinding, and health assessments by certified arborists.</p></div>
-      <div class="service-card"><span class="icon">💧</span><h3>Irrigation Systems</h3><p>Smart sprinkler and drip irrigation design, installation, and maintenance for water efficiency.</p></div>
-      <div class="service-card"><span class="icon">🌱</span><h3>Lawn Care</h3><p>Fertilization, aeration, overseeding, and weed management programs for a thick, green lawn.</p></div>
-      <div class="service-card"><span class="icon">✨</span><h3>Seasonal Services</h3><p>Spring cleanup, mulching, leaf removal, snow plowing, and winterization packages.</p></div>
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Creative, sustainable garden plans blending native plants with curated ornamental species for year-round beauty.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🏗️</span><h3>Hardscaping</h3><p>Patios, walkways, retaining walls, and driveways using premium stone, pavers, and concrete.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🌳</span><h3>Tree Services</h3><p>Pruning, removal, stump grinding, and health assessments by certified arborists.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">💧</span><h3>Irrigation Systems</h3><p>Smart sprinkler and drip irrigation design, installation, and maintenance for water efficiency.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🌱</span><h3>Lawn Care</h3><p>Fertilization, aeration, overseeding, and weed management programs for a thick, green lawn.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">✨</span><h3>Seasonal Services</h3><p>Spring cleanup, mulching, leaf removal, snow plowing, and winterization packages.</p></div>
     </div>
   </div>
 </section>
 
-<section id="about">
+<section data-reveal id="about">
   <div class="section-inner">
-    <div class="about-grid">
+    <div class="about-grid" data-reveal="d1">
       <div class="about-text">
         <h2>Crafted with <span>Purpose</span>,<br>Built to Last</h2>
         <p>Marquez Landscape Solutions is a family-owned business dedicated to transforming outdoor spaces in the Silver Spring community. We combine horticultural expertise with construction precision to deliver landscapes that thrive.</p>
@@ -212,43 +224,43 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
   </div>
 </section>
 
-<section class="services" id="process">
+<section data-reveal class="services" id="process">
   <div class="section-inner">
     <div class="section-header">
       <h2>How We Work</h2>
       <p>A straightforward process from start to finish</p>
     </div>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-num">1</div><h3>Consult</h3><p>Free on-site assessment to understand your vision, budget, and timeline.</p></div>
-      <div class="process-step"><div class="step-num">2</div><h3>Plan</h3><p>Detailed proposal with designs, material options, and a transparent cost estimate.</p></div>
-      <div class="process-step"><div class="step-num">3</div><h3>Execute</h3><p>Professional installation by our experienced crew with minimal disruption.</p></div>
-      <div class="process-step"><div class="step-num">4</div><h3>Support</h3><p>Ongoing maintenance and follow-up to ensure your landscape stays beautiful.</p></div>
+    <div class="process-steps" data-reveal="d1">
+      <div class="process-step" data-reveal="d2"><div class="step-num">1</div><h3>Consult</h3><p>Free on-site assessment to understand your vision, budget, and timeline.</p></div>
+      <div class="process-step" data-reveal="d2"><div class="step-num">2</div><h3>Plan</h3><p>Detailed proposal with designs, material options, and a transparent cost estimate.</p></div>
+      <div class="process-step" data-reveal="d3"><div class="step-num">3</div><h3>Execute</h3><p>Professional installation by our experienced crew with minimal disruption.</p></div>
+      <div class="process-step" data-reveal="d3"><div class="step-num">4</div><h3>Support</h3><p>Ongoing maintenance and follow-up to ensure your landscape stays beautiful.</p></div>
     </div>
   </div>
 </section>
 
-<section class="reviews" id="reviews">
+<section data-reveal class="reviews" id="reviews">
   <div class="section-inner">
     <div class="section-header">
       <h2>Hear From Our Clients</h2>
       <p>Real feedback from real neighbors</p>
     </div>
-    <div class="reviews-grid">
-      <div class="review-card"><div class="stars">★★★★★</div><blockquote>"Marquez transformed our overgrown yard into a beautiful outdoor living space. Professional, on-time, and fair pricing."</blockquote><cite>— Angela T., Silver Spring</cite></div>
-      <div class="review-card"><div class="stars">★★★★★</div><blockquote>"They installed a full irrigation system and new sod. Our lawn has never looked better. Highly recommend!"</blockquote><cite>— Kevin R., Burtonsville</cite></div>
-      <div class="review-card"><div class="stars">★★★★★</div><blockquote>"We hired them for a complete backyard redesign. The team was communicative, clean, and the results are stunning."</blockquote><cite>— Lisa M., Colesville</cite></div>
-      <div class="review-card"><div class="stars">★★★★★</div><blockquote>"Reliable, skilled, and honest. They handle our commercial property and the quality is always top-notch."</blockquote><cite>— Brian C., Takoma Park</cite></div>
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2"><div class="stars">★★★★★</div><blockquote>"Marquez transformed our overgrown yard into a beautiful outdoor living space. Professional, on-time, and fair pricing."</blockquote><cite>— Angela T., Silver Spring</cite></div>
+      <div class="review-card" data-reveal="d2"><div class="stars">★★★★★</div><blockquote>"They installed a full irrigation system and new sod. Our lawn has never looked better. Highly recommend!"</blockquote><cite>— Kevin R., Burtonsville</cite></div>
+      <div class="review-card" data-reveal="d3"><div class="stars">★★★★★</div><blockquote>"We hired them for a complete backyard redesign. The team was communicative, clean, and the results are stunning."</blockquote><cite>— Lisa M., Colesville</cite></div>
+      <div class="review-card" data-reveal="d3"><div class="stars">★★★★★</div><blockquote>"Reliable, skilled, and honest. They handle our commercial property and the quality is always top-notch."</blockquote><cite>— Brian C., Takoma Park</cite></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section data-reveal id="contact">
   <div class="section-inner">
     <div class="section-header">
       <h2>Get in Touch</h2>
       <p>Ready to transform your outdoor space? Let's talk.</p>
     </div>
-    <div class="contact-grid">
+    <div class="contact-grid" data-reveal="d1">
       <div class="contact-info">
         <h3>Contact Us</h3>
         <div class="info-item"><span class="label">Location</span><span>Silver Spring, MD</span></div>
@@ -266,7 +278,7 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <div class="footer-inner">
     <p>&copy; 2026 Marquez Landscape Solutions. All rights reserved.</p>
     <div class="footer-links">
@@ -315,5 +327,6 @@ footer { background: var(--forest); color: rgba(255,255,255,0.85); padding: 40px
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

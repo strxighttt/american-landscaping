@@ -181,6 +181,18 @@ footer ul li a:hover{color:#b8d4c2}
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -199,7 +211,7 @@ footer ul li a:hover{color:#b8d4c2}
   </div>
 </nav>
 
-<section class="hero" id="home">
+<section class="hero" id="home" data-reveal>
   <div class="container">
     <div class="hero-content">
       <h1>Nature Meets <span>Design</span></h1>
@@ -218,22 +230,22 @@ footer ul li a:hover{color:#b8d4c2}
   </div>
 </section>
 
-<section class="services section" id="services">
+<section class="services section" id="services" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Services</h2>
     <p class="section-subtitle">Eco-conscious landscaping services designed for Maryland's unique climate and ecosystem.</p>
-    <div class="services-grid">
-      <div class="service-card"><span class="icon">🌿</span><h3>Native Garden Design</h3><p>Beautiful, low-maintenance gardens using native plants that support local pollinators and wildlife.</p></div>
-      <div class="service-card"><span class="icon">🪨</span><h3>Natural Hardscapes</h3><p>Permeable patios, reclaimed stone walls, and walkways that blend with the natural surroundings.</p></div>
-      <div class="service-card"><span class="icon">🌳</span><h3>Woodland Restoration</h3><p>Invasive removal, understory planting, and forest edge management for healthier wooded areas.</p></div>
-      <div class="service-card"><span class="icon">💧</span><h3>Rain Gardens</h3><p>Beautiful stormwater management gardens that filter runoff and prevent erosion in your yard.</p></div>
-      <div class="service-card"><span class="icon">🐝</span><h3>Pollinator Habitats</h3><p>Purpose-built habitats with flowering perennials and host plants for bees, butterflies, and birds.</p></div>
-      <div class="service-card"><span class="icon">🏡</span><h3>Garden Maintenance</h3><p>Gentle, organic maintenance including pruning, mulching, composting, and seasonal cleanups.</p></div>
+    <div class="services-grid" data-reveal="d1">
+      <div class="service-card" data-reveal="d2"><span class="icon">🌿</span><h3>Native Garden Design</h3><p>Beautiful, low-maintenance gardens using native plants that support local pollinators and wildlife.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🪨</span><h3>Natural Hardscapes</h3><p>Permeable patios, reclaimed stone walls, and walkways that blend with the natural surroundings.</p></div>
+      <div class="service-card" data-reveal="d2"><span class="icon">🌳</span><h3>Woodland Restoration</h3><p>Invasive removal, understory planting, and forest edge management for healthier wooded areas.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">💧</span><h3>Rain Gardens</h3><p>Beautiful stormwater management gardens that filter runoff and prevent erosion in your yard.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🐝</span><h3>Pollinator Habitats</h3><p>Purpose-built habitats with flowering perennials and host plants for bees, butterflies, and birds.</p></div>
+      <div class="service-card" data-reveal="d3"><span class="icon">🏡</span><h3>Garden Maintenance</h3><p>Gentle, organic maintenance including pruning, mulching, composting, and seasonal cleanups.</p></div>
     </div>
   </div>
 </section>
 
-<section class="about section" id="about">
+<section class="about section" id="about" data-reveal>
   <div class="container">
     <div class="about-image">
       <img src="https://picsum.photos/seed/egland-about/640/460" alt="E&G Landscape team" loading="lazy">
@@ -247,65 +259,49 @@ footer ul li a:hover{color:#b8d4c2}
   </div>
 </section>
 
-<section class="process section" id="process">
+<section class="process section" id="process" data-reveal>
   <div class="container">
     <h2 class="section-title">Our Approach</h2>
     <p class="section-subtitle">A thoughtful process rooted in ecological understanding and collaborative design.</p>
-    <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">1</div>
-        <h3>Observe</h3>
+    <div class="process-grid" data-reveal="d1">
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">1</div>\n        <h3>Observe</h3>
         <p>We study your property's microclimate, soil, drainage, and existing plant communities to inform every decision.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">2</div>
-        <h3>Plan</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">2</div>\n        <h3>Plan</h3>
         <p>We create a detailed design concept with plant palettes, material selections, and a phased implementation timeline.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">3</div>
-        <h3>Install</h3>
+      <div class="process-step" data-reveal="d2">\n        <div class="step-num">3</div>\n        <h3>Install</h3>
         <p>Our crew brings the design to life with careful installation, minimal waste, and respect for the existing landscape.</p>
       </div>
-      <div class="process-step">
-        <div class="step-num">4</div>
-        <h3>Grow</h3>
+      <div class="process-step" data-reveal="d3">\n        <div class="step-num">4</div>\n        <h3>Grow</h3>
         <p>We provide ongoing support and maintenance guidance to help your landscape mature and thrive naturally.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="reviews section" id="reviews">
+<section class="reviews section" id="reviews" data-reveal>
   <div class="container">
     <h2 class="section-title">What Clients Share</h2>
     <p class="section-subtitle">Feedback from homeowners who chose a more natural approach to landscaping.</p>
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"E&G designed a native pollinator garden for our front yard and it's absolutely alive with butterflies and bees. Beautiful and meaningful — exactly what we wanted."</blockquote>
+    <div class="reviews-grid" data-reveal="d1">
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"E&G designed a native pollinator garden for our front yard and it's absolutely alive with butterflies and bees. Beautiful and meaningful — exactly what we wanted."</blockquote>
         <cite>Emily Foster <span>Homeowner, Takoma Park</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"They restored our overgrown wooded lot into a beautiful woodland garden with native ferns and wildflowers. The transformation is breathtaking."</blockquote>
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"They restored our overgrown wooded lot into a beautiful woodland garden with native ferns and wildflowers. The transformation is breathtaking."</blockquote>
         <cite>Stephen Gray <span>Homeowner, Olney</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"We love that our landscape is beautiful AND sustainable. The rain garden they installed handles our roof runoff perfectly and looks gorgeous doing it."</blockquote>
+      <div class="review-card" data-reveal="d2">\n        <div class="stars">★★★★★</div>\n        <blockquote>"We love that our landscape is beautiful AND sustainable. The rain garden they installed handles our roof runoff perfectly and looks gorgeous doing it."</blockquote>
         <cite>Maya Patel <span>Homeowner, Silver Spring</span></cite>
       </div>
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"A truly thoughtful team. They took time to understand our property and designed something that feels like it's always been there. Exceptional work."</blockquote>
+      <div class="review-card" data-reveal="d3">\n        <div class="stars">★★★★★</div>\n        <blockquote>"A truly thoughtful team. They took time to understand our property and designed something that feels like it's always been there. Exceptional work."</blockquote>
         <cite>Tom & Lisa B. <span>Homeowners, Kensington</span></cite>
       </div>
     </div>
   </div>
 </section>
 
-<section class="contact section" id="contact">
+<section class="contact section" id="contact" data-reveal>
   <div class="container">
     <div class="contact-info">
       <h2>Let's Create Together</h2>
@@ -338,7 +334,7 @@ footer ul li a:hover{color:#b8d4c2}
   </div>
 </section>
 
-<footer>
+<footer data-reveal>
   <div class="container">
     <div class="footer-grid">
       <div>
@@ -427,5 +423,6 @@ document.querySelector('.contact-form').addEventListener('submit', function(e){
     </div>
   </div>
 </div>
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();
 </body>
 </html>

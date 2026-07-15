@@ -401,6 +401,18 @@ footer .copyright {
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -416,7 +428,7 @@ footer .copyright {
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
     <h1>Genesis Landscaping</h1>
     <div class="accent-line"></div>
     <p>Modern landscapes designed from the ground up. We bring clean, sustainable outdoor spaces to life across Silver Spring.</p>
@@ -425,36 +437,36 @@ footer .copyright {
 
 <div class="section-accent"></div>
 
-<section class="services" id="services">
+<section class="services" id="services" data-reveal>
     <h2 class="section-title">Our Services</h2>
     <div class="section-sub">Full-service landscape design &amp; construction</div>
-    <div class="services-grid">
-        <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/genesis-1/128/128" alt="" loading="lazy">
             <h3>Landscape Design</h3>
             <p>Modern, sustainable landscape plans with 3D renderings and plant-by-plant specifications.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/genesis-2/128/128" alt="" loading="lazy">
             <h3>Lawn &amp; Turf</h3>
             <p>New sod installation, hydroseeding, aeration, and organic lawn care programs.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/genesis-3/128/128" alt="" loading="lazy">
             <h3>Patios &amp; Walkways</h3>
             <p>Natural stone, concrete pavers, and permeable hardscape systems for modern homes.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/genesis-4/128/128" alt="" loading="lazy">
             <h3>Planting &amp; Mulch</h3>
             <p>Native and adaptive plantings with professional-grade mulch and edging.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/genesis-5/128/128" alt="" loading="lazy">
             <h3>Retaining Walls</h3>
             <p>Structural retaining walls with integrated drainage for sloping properties.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/genesis-6/128/128" alt="" loading="lazy">
             <h3>Seasonal Cleanups</h3>
             <p>Spring and fall cleanup including leaf removal, pruning, and debris hauling.</p>
@@ -464,7 +476,7 @@ footer .copyright {
 
 <div class="section-accent"></div>
 
-<section class="about" id="about">
+<section class="about" id="about" data-reveal>
     <div class="about-inner">
         <h2 class="section-title">About Genesis Landscaping</h2>
         <div class="section-sub">Building better landscapes since 2012</div>
@@ -474,26 +486,26 @@ footer .copyright {
 
 <div class="section-accent"></div>
 
-<section class="process" id="process">
+<section class="process" id="process" data-reveal>
     <h2 class="section-title">Our Process</h2>
     <div class="section-sub">How we bring your vision to life</div>
-    <div class="process-grid">
-        <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+        <div class="process-step" data-reveal="d2">
             <div class="num">01</div>
             <h4>Site Visit</h4>
             <p>We assess your property, take measurements, and discuss your goals.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d2">
             <div class="num">02</div>
             <h4>Proposal</h4>
             <p>You receive a detailed plan with materials, timeline, and pricing.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">03</div>
             <h4>Construction</h4>
             <p>Our crew executes the plan with professional-grade equipment.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">04</div>
             <h4>Follow-Up</h4>
             <p>We check in after completion and offer ongoing maintenance options.</p>
@@ -503,26 +515,26 @@ footer .copyright {
 
 <div class="section-accent"></div>
 
-<section class="reviews" id="reviews">
+<section class="reviews" id="reviews" data-reveal>
     <h2 class="section-title">Client Reviews</h2>
     <div class="section-sub">Hear from homeowners we&rsquo;ve worked with</div>
-    <div class="reviews-grid">
-        <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>Genesis transformed our muddy backyard into a beautiful patio and lawn. The team was professional and on schedule the entire time.</blockquote>
             <cite>— Mark T., Silver Spring</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>We hired them for a full front-yard redesign and could not be happier. The design was modern and exactly what we wanted.</blockquote>
             <cite>— Sarah J., Takoma Park</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>Excellent communication and high-quality work. Our retaining wall looks fantastic and the drainage is perfect now.</blockquote>
             <cite>— James L., Kensington</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>Reliable, hardworking, and creative. They turned our sloped lot into usable terraced garden space. Highly recommend.</blockquote>
             <cite>— Linda P., Silver Spring</cite>
@@ -532,7 +544,7 @@ footer .copyright {
 
 <div class="section-accent"></div>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-reveal>
     <h2 class="section-title">Get in Touch</h2>
     <div class="section-sub">11626 Gail St, Silver Spring, MD</div>
     <form>
@@ -544,7 +556,7 @@ footer .copyright {
     </form>
 </section>
 
-<footer>
+<footer data-reveal>
     <p><strong>Genesis Landscaping</strong></p>
     <p>11626 Gail St, Silver Spring, MD</p>
     <p><a href="tel:+12404246174">(240) 424-6174</a> &bull; <a href="mailto:info@genesislandscaping.com">info@genesislandscaping.com</a></p>
@@ -588,5 +600,6 @@ footer .copyright {
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

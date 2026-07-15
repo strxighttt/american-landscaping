@@ -425,6 +425,18 @@ footer .copyright {
 .modal .success-msg h4{font-size:17px;margin-bottom:4px}
 .modal .success-msg p{color:rgba(255,255,255,0.3);font-size:13px;margin:0}
 @media(max-width:900px){.quote-btn{display:none}}
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none!important}}
 </style>
 </head>
 <body>
@@ -440,7 +452,7 @@ footer .copyright {
     </ul>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
     <div class="hero-text">
         <div class="tagline">Sharp. Modern. Built to last.</div>
         <h1>Miller<br><span>Landscapes</span> LLC</h1>
@@ -452,35 +464,35 @@ footer .copyright {
     </div>
 </section>
 
-<section class="services" id="services">
+<section class="services" id="services" data-reveal>
     <h2 class="section-title">Our Services</h2>
-    <div class="services-grid">
-        <div class="service-card">
+    <div class="services-grid" data-reveal="d1">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/miller-1/128/128" alt="" loading="lazy">
             <h3>Landscape Architecture</h3>
             <p>Bold, site-specific landscape plans with modern material palettes and clean geometric forms.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/miller-2/128/128" alt="" loading="lazy">
             <h3>Hardscaping</h3>
             <p>Concrete pavers, steel edging, aggregate pathways, and precision stone installations.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d2">
             <img src="https://picsum.photos/seed/miller-3/128/128" alt="" loading="lazy">
             <h3>Outdoor Structures</h3>
             <p>Pergolas, modern fences, privacy screens, and custom planter boxes.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/miller-4/128/128" alt="" loading="lazy">
             <h3>Native Planting</h3>
             <p>Low-maintenance native and drought-tolerant planting schemes for sustainable gardens.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/miller-5/128/128" alt="" loading="lazy">
             <h3>Drainage Solutions</h3>
             <p>French drains, dry wells, grading, and surface water management systems.</p>
         </div>
-        <div class="service-card">
+        <div class="service-card" data-reveal="d3">
             <img src="https://picsum.photos/seed/miller-6/128/128" alt="" loading="lazy">
             <h3>Site Preparation</h3>
             <p>Demolition, grading, soil amendment, and excavation for new landscape construction.</p>
@@ -488,32 +500,32 @@ footer .copyright {
     </div>
 </section>
 
-<section class="about" id="about">
+<section class="about" id="about" data-reveal>
     <div class="about-inner">
         <h2 class="section-title light">About Miller Landscapes LLC</h2>
         <p>Miller Landscapes LLC is a modern landscape design-build firm based in Silver Spring, MD. We focus on clean lines, sustainable materials, and functional outdoor spaces tailored to contemporary living. Our team brings together design expertise and construction precision on every project — from intimate courtyard gardens to full property transformations. We don't cut corners. We build landscapes that last.</p>
     </div>
 </section>
 
-<section class="process" id="process">
+<section class="process" id="process" data-reveal>
     <h2 class="section-title">Our Process</h2>
-    <div class="process-grid">
-        <div class="process-step">
+    <div class="process-grid" data-reveal="d1">
+        <div class="process-step" data-reveal="d2">
             <div class="num">01</div>
             <h4>Scope</h4>
             <p>We define the project goals, budget, and site constraints together.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d2">
             <div class="num">02</div>
             <h4>Design</h4>
             <p>Detailed CAD plans, material specifications, and 3D visualizations.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">03</div>
             <h4>Build</h4>
             <p>On-site construction managed by our experienced crew.</p>
         </div>
-        <div class="process-step">
+        <div class="process-step" data-reveal="d3">
             <div class="num">04</div>
             <h4>Finish</h4>
             <p>Final walkthrough, punch list, and ongoing support if needed.</p>
@@ -521,25 +533,25 @@ footer .copyright {
     </div>
 </section>
 
-<section class="reviews" id="reviews">
+<section class="reviews" id="reviews" data-reveal>
     <h2 class="section-title light">Client Reviews</h2>
-    <div class="reviews-grid">
-        <div class="review-card">
+    <div class="reviews-grid" data-reveal="d1">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>"Miller Landscapes completely transformed our backyard. The design is modern and functional — exactly what we wanted. Flawless execution."</blockquote>
             <cite>— Chris D., Silver Spring</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d2">
             <div class="stars">★★★★★</div>
             <blockquote>"These guys know their stuff. The drainage solution they designed fixed years of flooding issues. Professional from start to finish."</blockquote>
             <cite>— Natalie K., Takoma Park</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>"We love our new patio and native garden. The team was efficient, clean, and a pleasure to work with. Highly recommend."</blockquote>
             <cite>— Alex R., Bethesda</cite>
         </div>
-        <div class="review-card">
+        <div class="review-card" data-reveal="d3">
             <div class="stars">★★★★★</div>
             <blockquote>"Sharp design, solid construction, great communication. Miller Landscapes delivered on time and on budget. Will hire again."</blockquote>
             <cite>— Jordan M., Silver Spring</cite>
@@ -547,7 +559,7 @@ footer .copyright {
     </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-reveal>
     <h2 class="section-title">Contact Us</h2>
     <p style="text-align:center;color:#64748B;margin-top:0.5rem;">8913 Brookville Rd, Silver Spring, MD 20910</p>
     <form>
@@ -559,7 +571,7 @@ footer .copyright {
     </form>
 </section>
 
-<footer>
+<footer data-reveal>
     <p><strong>Miller Landscapes LLC</strong></p>
     <p>8913 Brookville Rd, Silver Spring, MD 20910</p>
     <p><a href="tel:+13015126572">(301) 512-6572</a> &bull; <a href="mailto:info@millerlandscapes.com">info@millerlandscapes.com</a></p>
@@ -603,5 +615,6 @@ footer .copyright {
     </div>
   </div>
 </div>
+<script>(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();</script>
 </body>
 </html>

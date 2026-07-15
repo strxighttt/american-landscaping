@@ -145,8 +145,20 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
 .modal .success-msg h4 { color:#E8E3D8; font-size:17px; margin-bottom:4px; font-family:'Playfair Display',Georgia,serif; }
 .modal .success-msg p { color:rgba(232,227,216,0.3); font-size:13px; margin:0; }
 
+[data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+[data-reveal=d1]{transition-delay:.1s}
+[data-reveal=d2]{transition-delay:.2s}
+[data-reveal=d3]{transition-delay:.3s}
+[data-reveal=d4]{transition-delay:.4s}
+[data-reveal=d5]{transition-delay:.5s}
+[data-reveal=l]{transform:translateX(-30px)}
+[data-reveal=l].revealed{transform:translateX(0)}
+[data-reveal=r]{transform:translateX(30px)}
+[data-reveal=r].revealed{transform:translateX(0)}
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation-duration:1ms!important; transition-duration:1ms!important; }
+  [data-reveal]{opacity:1;transform:none!important}
   .page-loader { display:none; }
   html { scroll-behavior:auto; }
 }
@@ -202,7 +214,7 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </nav>
 
-<section class="hero">
+<section class="hero" data-reveal>
   <div class="container">
     <div>
       <h1>The yard everyone notices <span>starts here.</span></h1>
@@ -223,13 +235,13 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </section>
 
-<section id="services" class="section" style="padding-top:64px">
+<section id="services" class="section" style="padding-top:64px" data-reveal>
   <div class="container">
     <div class="section-header">
       <h2>What we do</h2>
       <p>Six core services. One standard of quality.</p>
     </div>
-    <div class="services-grid">
+    <div class="services-grid" data-reveal="d1">
       <div class="srv-card"><span class="icon">🌿</span><h3>Lawn Maintenance</h3><p>Mowing, edging, fertilization, weed control — regular care that keeps your yard looking its best.</p></div>
       <div class="srv-card"><span class="icon">🌱</span><h3>Mulching &amp; Planting</h3><p>Seasonal flowers, shrubs, trees, and mulch chosen for Silver Spring's climate.</p></div>
       <div class="srv-card"><span class="icon">🪨</span><h3>Stone &amp; Patios</h3><p>Natural stone walkways and patios built to drain properly and stay level for years.</p></div>
@@ -240,7 +252,7 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </section>
 
-<section id="about" class="section" style="border-top:1px solid rgba(232,227,216,0.06)">
+<section id="about" class="section" style="border-top:1px solid rgba(232,227,216,0.06)" data-reveal>
   <div class="container">
     <div class="section-header">
       <h2>About us</h2>
@@ -263,7 +275,7 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
       <h2>How it works</h2>
       <p>Four steps from first call to finished yard.</p>
     </div>
-    <div class="steps-grid" style="counter-reset:s">
+    <div class="steps-grid" style="counter-reset:s" data-reveal="d1">
       <div class="step"><h3>Call or text</h3><p>Tell us what you're thinking about. We'll set a time to come take a look.</p></div>
       <div class="step"><h3>Free quote</h3><p>We walk the property, talk through options, and send a written estimate within 24 hours.</p></div>
       <div class="step"><h3>Schedule</h3><p>Pick a start date that works for you. Most projects begin within a week.</p></div>
@@ -272,13 +284,13 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </section>
 
-<section id="reviews" class="section" style="border-top:1px solid rgba(232,227,216,0.06)">
+<section id="reviews" class="section" style="border-top:1px solid rgba(232,227,216,0.06)" data-reveal>
   <div class="container">
     <div class="section-header">
       <h2>What neighbors say</h2>
       <p>Real homeowners in Silver Spring. Unscripted, un-retouched.</p>
     </div>
-    <div class="testimonials-grid">
+    <div class="testimonials-grid" data-reveal="d1">
       <div class="test-card">
         <div class="stars">★★★★★</div>
         <blockquote>"They transformed our overgrown backyard into a space we actually use every weekend. Showed up on time, finished on budget, cleaned up every last scrap."</blockquote>
@@ -303,7 +315,7 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </section>
 
-<div class="cta-section section">
+<div class="cta-section section" data-reveal>
   <div class="container">
     <h2>Ready for a yard that stands out?</h2>
     <p>Free estimate within 24 hours. No obligation, no hard sell.</p>
@@ -311,7 +323,7 @@ footer h4 { color:rgba(232,227,216,0.4); font-size:12px; font-weight:600; text-t
   </div>
 </div>
 
-<section id="contact" class="section">
+<section id="contact" class="section" data-reveal>
   <div class="container">
     <div class="section-header">
       <h2>Contact us</h2>
@@ -432,6 +444,7 @@ document.getElementById('quoteForm')?.addEventListener('submit',function(e){
 });
 
 document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.querySelector('.nav-links')?.classList.remove('active')));
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('revealed');o.unobserve(e.target)}})},{threshold:0.1});document.querySelectorAll('[data-reveal]').forEach(function(e){o.observe(e)})})();
 </script>
 </body>
 </html>
