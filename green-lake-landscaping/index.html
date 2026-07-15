@@ -1,490 +1,538 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Green Lake Landscaping | Fresh. Green. Flowing.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Outfit', sans-serif;
-      background: #FFFFFF;
-      color: #1F2937;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-    /* Nav */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,0.72);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(13,148,136,0.08);
-    }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #1F2937;
-      letter-spacing: -0.3px;
-    }
-    .logo i { color: #0D9488; margin-right: 6px; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #6B7280;
-      font-weight: 500;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #0D9488; }
-    .btn-cta {
-      background: #0D9488;
-      color: #fff;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Outfit', sans-serif;
-      transition: background 0.2s;
-    }
-    .btn-cta:hover { background: #0F766E; }
-    .hamburger { display: none; font-size: 24px; cursor: pointer; color: #1F2937; }
-
-    /* Hero */
-    .hero {
-      padding: 100px 0 80px;
-    }
-    .hero .container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .hero h1 {
-      font-size: 52px;
-      font-weight: 700;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-    }
-    .hero h1 span { color: #0D9488; }
-    .hero p {
-      font-size: 17px;
-      color: #6B7280;
-      max-width: 480px;
-      margin: 16px 0 32px;
-    }
-    .hero-buttons { display: flex; gap: 16px; }
-    .btn-outline {
-      background: transparent;
-      color: #0D9488;
-      border: 2px solid #0D9488;
-      padding: 10px 24px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Outfit', sans-serif;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { background: #0D9488; color: #fff; }
-    .hero-visual {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-circle {
-      width: 340px;
-      height: 340px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #0D9488 0%, #14B8A6 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 100px;
-      color: rgba(255,255,255,0.35);
-      box-shadow: 0 20px 60px rgba(13,148,136,0.2);
-    }
-
-    /* Tag Bar */
-    .tag-bar {
-      background: #ECFDF5;
-      padding: 20px 0;
-    }
-    .tag-bar .container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      text-align: center;
-    }
-    .tag-bar span {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      font-weight: 600;
-      font-size: 15px;
-      color: #0F766E;
-    }
-    .tag-bar i { font-size: 20px; }
-
-    /* Sections */
-    section { padding: 80px 0; }
-    section:nth-child(even) { background: #ECFDF5; }
-    .section-title {
-      font-size: 34px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 48px;
-      letter-spacing: -0.5px;
-    }
-    .section-title span { color: #0D9488; }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 32px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-      transition: box-shadow 0.2s;
-    }
-    .service-card:hover { box-shadow: 0 6px 24px rgba(13,148,136,0.08); }
-    .service-card i {
-      font-size: 28px;
-      color: #0D9488;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: #6B7280;
-    }
-
-    /* About */
-    .about-content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .about-content h2 { font-size: 34px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px; }
-    .about-content h2 span { color: #0D9488; }
-    .about-content p { color: #6B7280; font-size: 15px; margin-bottom: 12px; }
-
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 28px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
-    .testimonial-card p {
-      font-size: 14px;
-      color: #6B7280;
-      font-style: italic;
-      margin-bottom: 12px;
-    }
-    .testimonial-card .name {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .stars i { color: #D1D5DB; margin-right: 2px; font-size: 13px; }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-    .contact-info-card {
-      background: #fff;
-      border-radius: 10px;
-      padding: 32px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-    }
-    .contact-info-card h3 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-    .contact-info-card h3 span { color: #0D9488; }
-    .contact-info-card .detail {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: #6B7280;
-      margin-bottom: 14px;
-    }
-    .contact-info-card i {
-      color: #0D9488;
-      width: 20px;
-      text-align: center;
-    }
-    .contact-form label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #1F2937;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #E5E7EB;
-      border-radius: 10px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 14px;
-      background: #fff;
-      margin-bottom: 16px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: #0D9488; }
-    .contact-form textarea { height: 120px; resize: vertical; }
-
-    /* Footer */
-    footer {
-      background: #0F766E;
-      color: #fff;
-      padding: 48px 0 32px;
-    }
-    footer .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    footer h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
-    footer p, footer a { font-size: 14px; color: rgba(255,255,255,0.75); text-decoration: none; line-height: 2; }
-    footer a:hover { color: #fff; }
-    footer .copy { grid-column: 1 / -1; text-align: center; padding-top: 32px; font-size: 13px; color: rgba(255,255,255,0.5); }
-
-    /* Floating Quote */
-    .floating-quote {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: linear-gradient(135deg, #0D9488, #0F766E);
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(13,148,136,0.35);
-      z-index: 200;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    .floating-quote:hover { transform: scale(1.03); }
-    .floating-quote i { font-size: 18px; }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(255,255,255,0.96); backdrop-filter: blur(16px); flex-direction: column; padding: 20px 24px; gap: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-      .nav-links.open { display: flex; }
-      .hamburger { display: block; }
-      .hero .container { grid-template-columns: 1fr; gap: 40px; }
-      .hero h1 { font-size: 34px; }
-      .hero { padding: 64px 0 48px; }
-      .hero-buttons { flex-wrap: wrap; }
-      .hero-circle { width: 220px; height: 220px; font-size: 60px; }
-      .tag-bar .container { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      footer .container { grid-template-columns: 1fr; gap: 24px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Lake Landscaping | Silver Spring, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    color: #1E3B5C;
+    background: #EBF5FB;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+h1, h2, h3, h4 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+}
+/* WAVY DIVIDER */
+.wave-divider {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin-top: -1px;
+}
+.wave-divider::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: #fff;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23fff' d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23fff' d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z'/%3E%3C/svg%3E") no-repeat bottom center;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+}
+/* NAV */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    padding: 0.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(30,59,92,0.08);
+}
+nav .logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #1E3B5C;
+}
+nav .logo span {
+    color: #3A7CB8;
+}
+nav .nav-links {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+}
+nav .nav-links a {
+    color: #1E3B5C;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+nav .nav-links a:hover {
+    color: #3A7CB8;
+}
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    background: #fff;
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 3rem 4rem 4rem;
+}
+.hero-text h1 {
+    font-size: 3rem;
+    color: #1E3B5C;
+    margin-bottom: 0.5rem;
+}
+.hero-text .sub {
+    font-size: 1.1rem;
+    color: #3A7CB8;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.hero-text p {
+    font-size: 1rem;
+    color: #555;
+    max-width: 480px;
+    margin-bottom: 2rem;
+}
+.hero-text .btn {
+    display: inline-block;
+    background: #1E3B5C;
+    color: #fff;
+    padding: 0.9rem 2.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.3s;
+    align-self: flex-start;
+}
+.hero-text .btn:hover {
+    background: #3A7CB8;
+    transform: translateY(-2px);
+}
+.hero-img {
+    background: #EBF5FB;
+    overflow: hidden;
+}
+.hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+/* SECTION HEADINGS */
+.section-title {
+    font-size: 2.2rem;
+    text-align: center;
+    color: #1E3B5C;
+    margin-bottom: 0.3rem;
+}
+/* SERVICES */
+.services {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(30,59,92,0.06);
+    transition: 0.3s;
+}
+.service-card:hover {
+    box-shadow: 0 8px 28px rgba(30,59,92,0.14);
+    transform: translateY(-4px);
+}
+.service-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.service-card h3 {
+    font-size: 1.3rem;
+    color: #1E3B5C;
+    margin-bottom: 0.4rem;
+}
+.service-card p {
+    font-size: 0.92rem;
+    color: #666;
+}
+/* ABOUT */
+.about {
+    background: #fff;
+    padding: 4rem 2rem;
+    position: relative;
+}
+.about-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.about-inner p {
+    font-size: 1.02rem;
+    color: #555;
+    margin-top: 1rem;
+}
+/* PROCESS */
+.process {
+    padding: 4rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.process-step {
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 12px rgba(30,59,92,0.04);
+}
+.process-step .num {
+    font-weight: 800;
+    font-size: 2.4rem;
+    color: #3A7CB8;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+}
+.process-step h4 {
+    font-size: 1.15rem;
+    color: #1E3B5C;
+}
+.process-step p {
+    font-size: 0.88rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+/* REVIEWS */
+.reviews {
+    background: #D6E8F5;
+    padding: 4rem 2rem;
+}
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto 0;
+}
+.review-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(30,59,92,0.04);
+}
+.review-card .stars {
+    color: #3A7CB8;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+.review-card blockquote {
+    font-size: 1rem;
+    color: #444;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.review-card cite {
+    font-style: normal;
+    font-size: 0.84rem;
+    color: #888;
+    font-weight: 600;
+}
+/* CONTACT */
+.contact {
+    padding: 4rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.contact input,
+.contact textarea {
+    font-family: 'Nunito', sans-serif;
+    padding: 0.85rem 1.2rem;
+    border: 1px solid #d0dce8;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    background: #fff;
+    transition: 0.3s;
+}
+.contact textarea {
+    border-radius: 20px;
+    min-height: 120px;
+    resize: vertical;
+}
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #1E3B5C;
+    box-shadow: 0 0 0 3px rgba(30,59,92,0.1);
+}
+.contact .btn {
+    background: #1E3B5C;
+    color: #fff;
+    padding: 0.9rem 2.8rem;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: 0.3s;
+}
+.contact .btn:hover {
+    background: #3A7CB8;
+}
+/* FOOTER */
+footer {
+    background: #1E3B5C;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 2.5rem 2rem 5rem;
+}
+footer p {
+    font-size: 0.88rem;
+    margin: 0.25rem 0;
+}
+footer a {
+    color: #8DC2F0;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #fff;
+}
+footer .copyright {
+    margin-top: 1.2rem;
+    font-size: 0.78rem;
+    opacity: 0.6;
+}
+/* STICKY MOBILE BAR */
+.mobile-bar {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: #1E3B5C;
+}
+.mobile-bar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 1;
+    padding: 0.8rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.mobile-bar a:first-child {
+    border-right: 1px solid rgba(255,255,255,0.15);
+}
+@media (max-width: 768px) {
+    nav .nav-links { display: none; }
+    nav { justify-content: center; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-text { padding: 3rem 1.5rem; }
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-img { min-height: 240px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .mobile-bar { display: flex; }
+    footer { padding-bottom: 5rem; }
+}
+@media (max-width: 480px) {
+    .process-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <div class="container">
-      <div class="logo"><i class="fas fa-leaf"></i>Green Lake</div>
-      <ul class="nav-links" id="navLinks">
+<nav>
+    <div class="logo">Green <span>Lake</span> Landscaping</div>
+    <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Quote</button></li>
-      </ul>
-      <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></div>
-    </div>
-  </nav>
+    </ul>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div>
-        <h1>Fresh. Green.<br><span>Flowing.</span></h1>
-        <p>Eco-conscious landscaping that works with nature, not against it. Native plants, smart water use, and sustainable design for every season.</p>
-        <div class="hero-buttons">
-          <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Your Project</button>
-          <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-circle">
-          <img src="https://picsum.photos/seed/greenlake-hero/400/400" alt=" " style="width:100%;height:100%;object-fit:cover;border-radius:50%" />
-        </div>
-      </div>
+<section class="hero">
+    <div class="hero-text">
+        <h1>Green Lake Landscaping</h1>
+        <div class="sub">Creating beautiful outdoor spaces</div>
+        <p>From lush gardens to elegant hardscapes, we bring your landscape dreams to life with creativity and care.</p>
+        <a href="#contact" class="btn">Get a Free Quote</a>
     </div>
-  </section>
-
-  <!-- Tag Bar -->
-  <div class="tag-bar">
-    <div class="container">
-      <span><i class="fas fa-seedling"></i> Eco-Friendly</span>
-      <span><i class="fas fa-tree"></i> Native Plants</span>
-      <span><i class="fas fa-sprinkler"></i> Smart Irrigation</span>
-      <span><i class="fas fa-calculator"></i> Free Estimates</span>
+    <div class="hero-img">
+        <img src="https://picsum.photos/seed/greenlake-hero/800/600" alt="Beautiful garden landscape" loading="lazy">
     </div>
-  </div>
+</section>
 
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">What We <span>Grow</span></h2>
-      <div class="services-grid">
-        <div class="service-card"><i class="fas fa-leaf"></i><h3>Native Plant Gardens</h3><p>Drought-tolerant native plantings that support local pollinators and thrive without excessive water.</p></div>
-        <div class="service-card"><i class="fas fa-seedling"></i><h3>Eco-Friendly Lawn Care</h3><p>Organic lawn programs that build healthy soil and reduce the need for synthetic inputs.</p></div>
-        <div class="service-card"><i class="fas fa-cloud-rain"></i><h3>Rain Garden Design</h3><p>Beautiful rain gardens that capture runoff, filter water, and add visual interest to low areas.</p></div>
-        <div class="service-card"><i class="fas fa-sprinkler"></i><h3>Smart Irrigation</h3><p>Weather-based irrigation systems that deliver the right amount of water at the right time.</p></div>
-        <div class="service-card"><i class="fas fa-tree"></i><h3>Tree Planting</h3><p>Species-appropriate tree selection and planting for shade, screening, and long-term canopy health.</p></div>
-        <div class="service-card"><i class="fas fa-hand-sparkles"></i><h3>Organic Weed Control</h3><p>Targeted, chemical-free weed management that keeps your landscape healthy and safe.</p></div>
-      </div>
+<div class="wave-divider"></div>
+
+<section class="services" id="services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-1/128/128" alt="" loading="lazy">
+            <h3>Landscape Design</h3>
+            <p>Custom landscape plans blending beauty, function, and sustainability for your property.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-2/128/128" alt="" loading="lazy">
+            <h3>Planting &amp; Gardens</h3>
+            <p>Perennial beds, shrub borders, native plantings, and edible garden installations.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-3/128/128" alt="" loading="lazy">
+            <h3>Patios &amp; Decks</h3>
+            <p>Custom patio and deck construction using premium hardwoods, pavers, and stone.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-4/128/128" alt="" loading="lazy">
+            <h3>Lawn Care</h3>
+            <p>Full-service lawn maintenance including mowing, fertilization, aeration, and overseeding.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-5/128/128" alt="" loading="lazy">
+            <h3>Water Features</h3>
+            <p>Ponds, fountains, waterfalls, and rain gardens to add tranquility to your yard.</p>
+        </div>
+        <div class="service-card">
+            <img src="https://picsum.photos/seed/gl-6/128/128" alt="" loading="lazy">
+            <h3>Tree &amp; Shrub Care</h3>
+            <p>Pruning, removal, planting, and health care for trees and shrubs of all sizes.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="about-content">
-        <h2>Working With <span>Nature</span>, Not Against It</h2>
-        <p>Green Lake Landscaping believes the healthiest landscapes are the ones that work with nature. We use sustainable practices, native plants, and smart water management to create outdoor spaces that are as resilient as they are beautiful.</p>
-        <p>Whether you're looking to replace a thirsty lawn with native groundcovers, install a rain garden, or redesign your entire property with eco-conscious principles, we bring deep knowledge and a gentle hand to every project.</p>
-      </div>
+<section class="about" id="about">
+    <div class="about-inner">
+        <h2 class="section-title">About Green Lake Landscaping</h2>
+        <p>We are a family-owned landscaping company serving Silver Spring and surrounding communities. Our team brings years of hands-on experience in landscape design, hardscaping, and horticulture. We take pride in creating outdoor environments that are as functional as they are beautiful — from cozy backyard retreats to expansive front-yard transformations. Every project is built on trust, quality, and a genuine love for the craft.</p>
     </div>
-  </section>
+</section>
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <div class="container">
-      <h2 class="section-title">What Clients <span>Say</span></h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+<div class="wave-divider" style="--divider-bg: #EBF5FB;"></div>
+
+<section class="process" id="process">
+    <h2 class="section-title">How We Work</h2>
+    <div class="process-grid">
+        <div class="process-step">
+            <div class="num">1</div>
+            <h4>Consultation</h4>
+            <p>We listen to your ideas and assess the space together.</p>
         </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+        <div class="process-step">
+            <div class="num">2</div>
+            <h4>Design</h4>
+            <p>We create a tailored plan with material selections.</p>
         </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+        <div class="process-step">
+            <div class="num">3</div>
+            <h4>Build</h4>
+            <p>Our crew brings the design to life with expert craftsmanship.</p>
         </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+        <div class="process-step">
+            <div class="num">4</div>
+            <h4>Enjoy</h4>
+            <p>Your new landscape is ready to enjoy for years to come.</p>
         </div>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get in <span>Touch</span></h2>
-      <div class="contact-grid">
-        <div class="contact-info-card">
-          <h3><span>Visit</span> Us</h3>
-          <div class="detail"><i class="fas fa-map-pin"></i> 13842 Outlet Dr, Somewhere, MD</div>
-          <div class="detail"><i class="fas fa-phone"></i> (301) 661-1814</div>
-          <div class="detail"><i class="fas fa-envelope"></i> hello@greenlakelandscaping.com</div>
-          <div class="detail"><i class="fas fa-clock"></i> Mon–Fri: 7AM – 6PM</div>
+<section class="reviews" id="reviews">
+    <h2 class="section-title">Happy Customers</h2>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Green Lake designed and built our dream patio. The attention to detail was incredible and the team was a pleasure to work with."</blockquote>
+            <cite>— Amy R., Silver Spring</cite>
         </div>
-        <div class="contact-form">
-          <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your name">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com">
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us about your project..."></textarea>
-          <button class="btn-cta">Send Message</button>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"They transformed our overgrown front yard into a beautiful native garden. We get compliments from neighbors every week."</blockquote>
+            <cite>— Tom W., Takoma Park</cite>
         </div>
-      </div>
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9NhogTk8ZLk4Tjon1JURr9XHBEOgd5T8&q=13842+Outlet+Dr+Silver+Spring+MD" width="100%" height="260" style="border:0;border-radius:12px;margin-top:16px" allowfullscreen="" loading="lazy"></iframe>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Professional, punctual, and talented. Our new water feature is the centerpiece of the backyard. Highly recommend."</blockquote>
+            <cite>— Jennifer L., Bethesda</cite>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <blockquote>"Excellent lawn care service. Our grass has never looked greener. The team is reliable and communicates well."</blockquote>
+            <cite>— Kevin M., Silver Spring</cite>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div>
-        <h4>Green Lake</h4>
-        <p>Sustainable landscaping rooted in care for the environment.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#services">Services</a><br>
-        <a href="#about">About</a><br>
-        <a href="#testimonials">Testimonials</a><br>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>13842 Outlet Dr<br>Somewhere, MD</p>
-        <p>(301) 661-1814</p>
-      </div>
-      <div class="copy">&copy; 2026 Green Lake Landscaping. All rights reserved.</div>
-    </div>
-  </footer>
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p style="text-align:center;color:#666;margin-top:0.5rem;">Silver Spring, MD</p>
+    <form>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
 
-  <!-- Floating Quote -->
-  <a href="tel:+13016611814" class="floating-quote">
-    <i class="fas fa-comment-dots"></i> Free Estimate
-  </a>
+<footer>
+    <p><strong>Green Lake Landscaping</strong></p>
+    <p>Silver Spring, MD</p>
+    <p><a href="tel:+13016611814">(301) 661-1814</a> &bull; <a href="mailto:info@greenlakelandscaping.com">info@greenlakelandscaping.com</a></p>
+    <p class="copyright">&copy; 2026 Green Lake Landscaping. All rights reserved.</p>
+</footer>
+
+<div class="mobile-bar">
+    <a href="tel:+13016611814">&#x260E; Call (301) 661-1814</a>
+    <a href="sms:+13016611814">&#x2709; Text Us</a>
+</div>
 
 </body>
 </html>

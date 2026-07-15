@@ -1,416 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Villeda Landscaping — Silver Spring, MD</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --green-900: #1B4332;
-      --green-800: #2D6A4F;
-      --green-700: #40916C;
-      --green-600: #52B788;
-      --green-500: #74C69D;
-      --green-100: #D8F3DC;
-      --green-50: #F0FAF3;
-      --cream: #FEFCF8;
-      --white: #FFFFFF;
-      --gray-900: #1A1A1A;
-      --gray-700: #4A4A4A;
-      --gray-500: #7A7A7A;
-      --gray-300: #D4D4D4;
-      --gray-100: #F0F0F0;
-      --max-w: 1140px;
-      --font-heading: 'Playfair Display', Georgia, serif;
-      --font-body: 'Inter', system-ui, sans-serif;
-      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-      --shadow-md: 0 8px 30px rgba(0,0,0,0.06);
-      --shadow-lg: 0 16px 48px rgba(0,0,0,0.08);
-      --radius: 12px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); background: var(--cream); color: var(--gray-900); line-height: 1.7; font-size: 1rem; }
-    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
-    section { padding: 96px 0; }
-    .section-label { display: inline-flex; align-items: center; gap: 8px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--green-700); margin-bottom: 16px; }
-    .section-label::before { content: ''; width: 24px; height: 2px; background: var(--green-600); }
-    h2 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 600; line-height: 1.15; margin-bottom: 16px; color: var(--gray-900); }
-    h2 em { font-style: italic; color: var(--green-800); font-weight: 400; }
-    .section-desc { color: var(--gray-500); max-width: 560px; font-size: 1.05rem; margin-bottom: 48px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Villeda Landscaping | Silver Spring, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --plum: #1A1225; --plum-light: #2A1E3C; --gold: #C99A3E; --gold-light: #E0B85C; --black: #0D0912; --text: #E8E0F0; --text-muted: #9A8AAA; --shadow: 0 8px 32px rgba(0,0,0,0.3); }
 
-    /* Nav */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0; transition: all 0.35s ease; }
-    nav.scrolled { background: rgba(255,255,255,0.92); backdrop-filter: blur(16px); padding: 12px 0; box-shadow: 0 1px 0 var(--gray-100); }
-    nav .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: var(--font-heading); font-size: 1.35rem; font-weight: 600; text-decoration: none; color: var(--gray-900); }
-    .logo i { color: var(--green-700); margin-right: 6px; }
-    .nav-links { display: flex; gap: 36px; list-style: none; align-items: center; }
-    .nav-links a { font-size: 0.8rem; font-weight: 500; color: var(--gray-500); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--green-800); }
-    .nav-cta { background: var(--green-800); color: #fff !important; padding: 10px 24px; border-radius: 8px; font-weight: 600 !important; transition: background 0.2s !important; }
-    .nav-cta:hover { background: var(--green-900) !important; }
-    .mobile-toggle { display: none; background: none; border: none; font-size: 1.3rem; color: var(--gray-900); cursor: pointer; padding: 4px; }
-    @media (max-width: 768px) {
-      .mobile-toggle { display: block; }
-      .nav-links { display: none; flex-direction: column; gap: 16px; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 24px; box-shadow: var(--shadow-md); border-radius: 0 0 var(--radius) var(--radius); }
-      .nav-links.open { display: flex; }
-      .nav-cta { width: 100%; text-align: center; }
-    }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--plum); line-height: 1.7; }
 
-    /* Hero */
-    .hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; position: relative; overflow: hidden; }
-    .hero-bg { position: absolute; inset: 0; }
-    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.4) 100%); }
-    .hero .container { position: relative; z-index: 1; }
-    .hero-content { max-width: 720px; }
-    .hero h1 { font-family: var(--font-heading); font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 600; line-height: 1.08; margin-bottom: 20px; }
-    .hero h1 em { display: block; font-style: italic; color: var(--green-800); font-weight: 400; }
-    .hero p { color: var(--gray-500); font-size: 1.1rem; max-width: 500px; margin-bottom: 36px; line-height: 1.6; }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 30px; font-family: var(--font-body); font-weight: 600; font-size: 0.85rem; border: none; cursor: pointer; transition: all 0.25s; text-decoration: none; border-radius: 10px; }
-    .btn-primary { background: var(--green-800); color: #fff; }
-    .btn-primary:hover { background: var(--green-900); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .btn-outline { background: transparent; color: var(--gray-900); border: 1.5px solid var(--gray-300); }
-    .btn-outline:hover { border-color: var(--green-700); color: var(--green-800); transform: translateY(-2px); }
+h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
 
-    /* Hero Trust Stats */
-    .hero-stats { display: flex; gap: 40px; margin-top: 48px; padding-top: 40px; border-top: 1px solid var(--gray-100); }
-    .hero-stat h3 { font-family: var(--font-heading); font-size: 1.8rem; color: var(--green-800); font-weight: 600; }
-    .hero-stat p { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray-500); margin: 0; }
-    @media (max-width: 768px) {
-      .hero { text-align: center; }
-      .hero p { margin: 0 auto 36px; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { justify-content: center; gap: 24px; }
-    }
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: var(--black); border-bottom: 1px solid rgba(201,154,62,0.15); padding: 0 24px; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--gold); letter-spacing: 0.02em; }
+.nav-logo span { color: var(--text); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-muted); font-weight: 500; font-size: 0.85rem; transition: color 0.2s; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.8rem; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--gold); color: var(--black) !important; padding: 8px 22px; border-radius: 999px; font-weight: 700 !important; }
 
-    /* Trust Bar */
-    .trust-bar { background: var(--white); border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); padding: 32px 0; }
-    .trust-bar .container { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 10px; color: var(--gray-500); font-size: 0.85rem; font-weight: 500; }
-    .trust-item i { color: var(--green-600); font-size: 1.1rem; }
+/* MOBILE BAR */
+.mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--black); border-top: 1px solid rgba(201,154,62,0.2); padding: 10px 24px; justify-content: space-around; align-items: center; }
+.mobile-bar a { color: var(--gold); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+.mobile-bar .divider { width: 1px; height: 24px; background: rgba(201,154,62,0.2); }
 
-    /* Services Grid */
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .service-card { background: var(--white); border-radius: var(--radius); padding: 32px 28px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100); transition: all 0.3s ease; }
-    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--green-100); }
-    .service-icon { width: 52px; height: 52px; background: var(--green-50); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--green-700); font-size: 1.2rem; }
-    .service-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
-    .service-card p { color: var(--gray-500); font-size: 0.9rem; line-height: 1.6; }
-    @media (max-width: 992px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+/* GOLD DIVIDER */
+.gold-divider { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 0 auto; }
+.diamond-divider { text-align: center; color: var(--gold); font-size: 1rem; letter-spacing: 12px; margin: 0 0 24px; opacity: 0.5; }
 
-    /* About */
-    .about { background: var(--white); }
-    .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .about-text p { color: var(--gray-500); margin-bottom: 16px; }
-    .about-text blockquote { font-family: var(--font-heading); font-size: 1.2rem; font-style: italic; color: var(--green-800); border-left: 3px solid var(--green-600); padding-left: 24px; margin: 24px 0; }
-    .about-image { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
-    .about-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    @media (max-width: 768px) { .about-wrap { grid-template-columns: 1fr; gap: 32px; } }
+/* HERO */
+.hero { max-width: 1200px; margin: 0 auto; padding: 100px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; min-height: 80vh; position: relative; }
+.hero-content h1 { font-size: clamp(2.6rem, 5vw, 4rem); font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 8px; }
+.hero-content h1 span { color: var(--gold); }
+.hero-content .tagline { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.15rem; color: var(--text-muted); margin-bottom: 20px; }
+.hero-content p { font-size: 1rem; color: var(--text-muted); max-width: 440px; margin-bottom: 32px; line-height: 1.7; }
+.hero-btn { display: inline-block; background: var(--gold); color: var(--black); text-decoration: none; padding: 14px 36px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; transition: all 0.2s; letter-spacing: 0.03em; text-transform: uppercase; }
+.hero-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,154,62,0.25); }
+.hero-image { position: relative; }
+.hero-image img { width: 100%; height: 420px; object-fit: cover; display: block; border-radius: 4px; border: 2px solid var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
 
-    /* Testimonials */
-    .testimonials { background: var(--green-50); }
-    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .testimonial-card { background: var(--white); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100); }
-    .testimonial-stars { color: #F4B740; font-size: 0.9rem; margin-bottom: 16px; letter-spacing: 2px; }
-    .testimonial-card p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; }
-    .testimonial-author img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--gray-100); }
-    .testimonial-author h4 { font-size: 0.9rem; font-weight: 600; }
-    .testimonial-author span { font-size: 0.75rem; color: var(--gray-500); }
-    @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+/* SECTION HEADERS */
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-header h2 { font-size: 2.4rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.section-header h2 span { color: var(--gold); }
+.section-header p { color: var(--text-muted); max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
 
-    /* Contact */
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .contact-info { display: flex; flex-direction: column; gap: 20px; }
-    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
-    .contact-item i { color: var(--green-700); font-size: 1.1rem; margin-top: 3px; width: 24px; text-align: center; }
-    .contact-item h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 2px; }
-    .contact-item p, .contact-item a { color: var(--gray-500); font-size: 0.9rem; text-decoration: none; }
-    .contact-item a:hover { color: var(--green-800); }
-    .contact-form { display: flex; flex-direction: column; gap: 12px; }
-    .contact-form input, .contact-form textarea { padding: 14px 16px; border: 1.5px solid var(--gray-100); border-radius: 10px; background: var(--white); font-family: var(--font-body); font-size: 0.9rem; transition: border 0.2s; }
-    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--green-600); }
-    .contact-form textarea { resize: vertical; min-height: 110px; }
-    .contact-form .btn { width: 100%; justify-content: center; }
-    .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .contact-form .row { grid-template-columns: 1fr; }
-    }
+/* SECTION */
+section { padding: 100px 24px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
 
-    /* Footer */
-    footer { background: var(--green-900); color: rgba(255,255,255,0.6); padding: 64px 0 32px; }
-    footer .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 40px; }
-    footer h4 { font-family: var(--font-heading); color: #fff; font-size: 1.1rem; margin-bottom: 16px; font-weight: 600; }
-    footer p, footer a { font-size: 0.85rem; color: rgba(255,255,255,0.55); text-decoration: none; line-height: 2; }
-    footer a:hover { color: var(--green-500); }
-    footer .footer-brand p { max-width: 300px; line-height: 1.7; margin-top: 12px; }
-    footer .footer-brand i { color: var(--green-500); margin-right: 6px; }
-    .footer-social { display: flex; gap: 10px; margin-top: 16px; }
-    .footer-social a { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; font-size: 0.85rem; }
-    .footer-social a:hover { border-color: var(--green-500); color: var(--green-500); background: rgba(255,255,255,0.04); }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
-    .footer-bottom p { font-size: 0.8rem; margin: 0; }
-    @media (max-width: 768px) { footer .footer-top { grid-template-columns: 1fr; gap: 32px; } .footer-bottom { flex-direction: column; text-align: center; } }
+/* SERVICES */
+.services { background: var(--plum-light); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card { background: var(--plum); border: 1px solid rgba(201,154,62,0.2); border-radius: 4px; padding: 32px 24px; text-align: center; transition: all 0.3s; }
+.service-card:hover { border-color: var(--gold); box-shadow: 0 0 30px rgba(201,154,62,0.05); transform: translateY(-4px); }
+.service-card .icon { font-size: 2.4rem; margin-bottom: 16px; display: block; filter: grayscale(20%); }
+.service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--gold); margin-bottom: 10px; }
+.service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
 
-    /* Animations */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-d1 { transition-delay: 0.1s; }
-    .reveal-d2 { transition-delay: 0.2s; }
-    .reveal-d3 { transition-delay: 0.3s; }
-    .reveal-d4 { transition-delay: 0.4s; }
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image { position: relative; }
+.about-image img { width: 100%; height: 400px; object-fit: cover; display: block; border-radius: 4px; border: 2px solid rgba(201,154,62,0.3); }
+.about-image::after { content: '◆'; position: absolute; bottom: -12px; right: -12px; color: var(--gold); font-size: 1.5rem; }
+.about-text h2 { font-size: 2.4rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
+.about-text h2 span { color: var(--gold); }
+.about-text p { color: var(--text-muted); margin-bottom: 14px; font-size: 0.95rem; }
+.about-text .sig { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; color: var(--gold); margin-top: 20px; font-size: 1rem; }
 
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .hero-anim { animation: fadeUp 0.8s ease forwards; opacity: 0; }
-    .hero-anim:nth-child(1) { animation-delay: 0.1s; }
-    .hero-anim:nth-child(2) { animation-delay: 0.25s; }
-    .hero-anim:nth-child(3) { animation-delay: 0.4s; }
-    .hero-anim:nth-child(4) { animation-delay: 0.55s; }
-    .hero-anim:nth-child(5) { animation-delay: 0.7s; }
-  </style>
+/* PROCESS */
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.process-step { text-align: center; position: relative; padding: 24px 16px; border-top: 2px solid rgba(201,154,62,0.15); }
+.process-step:not(:last-child)::after { content: '◆'; position: absolute; top: -10px; right: -14px; color: var(--gold); font-size: 0.8rem; opacity: 0.4; }
+.step-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 12px; }
+.process-step h3 { font-size: 1.05rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+.process-step p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+
+/* REVIEWS */
+.reviews { background: var(--black); }
+.reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.review-card { background: var(--plum); border: 1px solid rgba(201,154,62,0.12); border-radius: 4px; padding: 28px; position: relative; }
+.review-card .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 3px; margin-bottom: 12px; }
+.review-card blockquote { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin-bottom: 16px; }
+.review-card blockquote::before { content: '\201C'; font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--gold); line-height: 0; vertical-align: -10px; margin-right: 4px; }
+.review-card cite { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); font-style: normal; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 600; color: var(--gold); margin-bottom: 16px; }
+.contact-info p { color: var(--text-muted); margin-bottom: 6px; font-size: 0.95rem; }
+.contact-info .info-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.contact-info .info-item .label { font-weight: 600; color: var(--gold); min-width: 70px; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form textarea { padding: 14px 16px; border: 1px solid rgba(201,154,62,0.15); border-radius: 4px; font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text); background: var(--plum); transition: border 0.2s; }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--text-muted); }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,154,62,0.08); }
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button { background: var(--gold); color: var(--black); border: none; padding: 14px 36px; border-radius: 999px; font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; align-self: flex-start; letter-spacing: 0.03em; text-transform: uppercase; }
+.contact-form button:hover { background: var(--gold-light); }
+
+/* FOOTER */
+footer { background: var(--black); color: var(--text-muted); padding: 40px 24px 80px; border-top: 1px solid rgba(201,154,62,0.08); }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-inner p { font-size: 0.85rem; }
+.footer-inner a { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-inner a:hover { color: var(--gold); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; text-align: center; }
+  .hero-content p { margin: 0 auto 32px; }
+  .hero-image img { height: 300px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .process-step:not(:last-child)::after { display: none; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .mobile-bar { display: flex; }
+  footer { padding-bottom: 70px; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .hero-content h1 { font-size: 2rem; }
+  .section-header h2 { font-size: 1.8rem; }
+}
+</style>
 </head>
 <body>
-  <nav id="nav">
-    <div class="container">
-      <a href="#" class="logo"><i class="fas fa-leaf"></i>Villeda Landscaping</a>
-      <button class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="https://picsum.photos/seed/villeda-hero/800/600" alt="Beautiful landscape" />
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Villeda<span> Landscaping</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Inquire</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="tagline">◆ Premium Landscape Craft ◆</div>
+    <h1>Exterior<br>Mastery by <span>Villeda</span></h1>
+    <p>Bespoke landscape architecture for discerning property owners in the Washington DC area.</p>
+    <a href="#contact" class="hero-btn">Begin the Journey</a>
+  </div>
+  <div class="hero-image">
+    <img src="https://picsum.photos/seed/villeda-hero/640/480" alt="Villeda Landscaping" loading="lazy">
+  </div>
+</section>
+
+<div class="diamond-divider">◆ ◆ ◆</div>
+
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Our <span>Services</span></h2>
+      <p>Comprehensive luxury landscape solutions</p>
     </div>
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <div class="hero-content">
-        <p class="hero-anim section-label" style="border:none;padding:0;margin-bottom:20px">Silver Spring, MD</p>
-        <h1 class="hero-anim">Professional landscaping<br><em>for your property</em></h1>
-        <p class="hero-anim">From routine lawn care to full hardscaping, we bring quality and reliability to every project in Montgomery County.</p>
-        <div class="hero-actions hero-anim">
-          <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Get a Free Estimate</a>
-          <a href="tel:+12403543766" class="btn btn-outline"><i class="fas fa-phone-alt"></i> (240) 354-3766</a>
-        </div>
-        <div class="hero-stats hero-anim">
-          <div class="hero-stat"><h3>15+</h3><p>Years Experience</p></div>
-          <div class="hero-stat"><h3>500+</h3><p>Properties Served</p></div>
-          <div class="hero-stat"><h3>4.9★</h3><p>Average Rating</p></div>
-        </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="icon">🌿</span><h3>Garden Architecture</h3><p>Structured garden designs with geometric precision, specimen plantings, and sculptural elements.</p></div>
+      <div class="service-card"><span class="icon">🏗️</span><h3>Structural Hardscape</h3><p>Engineered patios, retaining walls, columns, and custom stone features for lasting impact.</p></div>
+      <div class="service-card"><span class="icon">💧</span><h3>Water Features</h3><p>Custom fountains, reflecting pools, cascades, and koi ponds as centerpiece installations.</p></div>
+      <div class="service-card"><span class="icon">🌳</span><h3>Arboriculture</h3><p>Expert tree preservation, transplanting, and canopy management for mature properties.</p></div>
+      <div class="service-card"><span class="icon">🔥</span><h3>Outdoor Living</h3><p>Fire pits, outdoor kitchens, pergolas, and lighting for extended-season entertainment.</p></div>
+      <div class="service-card"><span class="icon">✨</span><h3>Estate Maintenance</h3><p>Weekly grounds keeping, fertilization, pest management, and seasonal overhauls.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="diamond-divider">◆ ◆ ◆</div>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image"><img src="https://picsum.photos/seed/villeda-about/640/480" alt="About Villeda" loading="lazy"></div>
+      <div class="about-text">
+        <h2><span>Refined</span> Outdoor<br>Environments</h2>
+        <p>Villeda Landscaping brings a curated approach to outdoor design. Every project is treated as a collaboration between the land, the architect, and the client's personal aesthetic.</p>
+        <p>We specialize in transforming ordinary yards into extraordinary landscapes — blending modernist principles with natural beauty for results that are both dramatic and harmonious.</p>
+        <p class="sig">— Villeda Design Team</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Trust Bar -->
-  <section class="trust-bar" style="padding:24px 0">
-    <div class="container">
-      <span class="trust-item"><i class="fas fa-check-circle"></i> Licensed &amp; Insured</span>
-      <span class="trust-item"><i class="fas fa-truck"></i> Free Estimates</span>
-      <span class="trust-item"><i class="fas fa-clock"></i> Reliable Scheduling</span>
-      <span class="trust-item"><i class="fas fa-tree"></i> Eco-Friendly Practices</span>
-      <span class="trust-item"><i class="fas fa-smile"></i> 100% Satisfaction</span>
+<div class="diamond-divider">◆ ◆ ◆</div>
+
+<section class="services" id="process">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Our <span>Process</span></h2>
+      <p>A methodical approach to landscape excellence</p>
     </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <span class="section-label reveal">Our Services</span>
-      <h2 class="reveal reveal-d1">Full-service care <em>for every season</em></h2>
-      <p class="section-desc reveal reveal-d2">Whatever your property needs, we have the expertise and equipment to get the job done right.</p>
-      <div class="services-grid">
-        <div class="service-card reveal reveal-d1">
-          <div class="service-icon"><i class="fas fa-cut"></i></div>
-          <h3>Lawn Mowing</h3>
-          <p>Regular mowing, edging, and trimming to keep your lawn looking crisp and well-manicured all season long.</p>
-        </div>
-        <div class="service-card reveal reveal-d2">
-          <div class="service-icon"><i class="fas fa-seedling"></i></div>
-          <h3>Mulching</h3>
-          <p>Fresh mulch installation to retain moisture, suppress weeds, and give your garden beds a clean, finished look.</p>
-        </div>
-        <div class="service-card reveal reveal-d3">
-          <div class="service-icon"><i class="fas fa-tree"></i></div>
-          <h3>Tree Trimming</h3>
-          <p>Professional pruning and trimming to maintain tree health, improve shape, and keep your property safe.</p>
-        </div>
-        <div class="service-card reveal reveal-d1">
-          <div class="service-icon"><i class="fas fa-flower"></i></div>
-          <h3>Planting</h3>
-          <p>Seasonal flowers, shrubs, and trees planted with care to boost curb appeal and create lasting beauty.</p>
-        </div>
-        <div class="service-card reveal reveal-d2">
-          <div class="service-icon"><i class="fas fa-broom"></i></div>
-          <h3>Cleanups</h3>
-          <p>Spring and fall cleanups including leaf removal, weeding, debris hauling, and full property refresh.</p>
-        </div>
-        <div class="service-card reveal reveal-d3">
-          <div class="service-icon"><i class="fas fa-ruler-combined"></i></div>
-          <h3>Hardscaping</h3>
-          <p>Patios, walkways, retaining walls, and more — durable, attractive structures that enhance your outdoor space.</p>
-        </div>
-      </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">01</div><h3>Consultation</h3><p>In-depth site analysis and vision alignment with our principal designer.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h3>Master Plan</h3><p>Detailed architectural drawings, material selections, and 3D visualization.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h3>Execution</h3><p>Precision installation by our trained craftsmen with project management oversight.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h3>Stewardship</h3><p>Ongoing care program to preserve and enhance your landscape investment.</p></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="about-wrap">
-        <div class="about-text">
-          <span class="section-label reveal">About Us</span>
-          <h2 class="reveal reveal-d1">Family-owned, <em>rooted in Silver Spring</em></h2>
-          <p class="reveal reveal-d2">Villeda Landscaping has been serving Montgomery County with reliable, high-quality landscaping since 2010. What started as a small lawn-mowing operation has grown into a full-service company trusted by hundreds of homeowners and businesses.</p>
-          <blockquote class="reveal reveal-d2">"We treat every yard like it's our own. That's not just a saying — it's how we show up every single day."</blockquote>
-          <p class="reveal reveal-d3">We believe in honest pricing, clear communication, and doing the job right the first time. No shortcuts, no surprises.</p>
-        </div>
-        <div class="about-image reveal reveal-d3">
-          <img src="https://picsum.photos/seed/villeda-about/600/400" alt="Villeda Landscaping team at work" />
-        </div>
-      </div>
+<div class="diamond-divider">◆ ◆ ◆</div>
+
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Client <span>Testimonials</span></h2>
+      <p>Trusted by homeowners across the region</p>
     </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="testimonials">
-    <div class="container">
-      <span class="section-label reveal">Testimonials</span>
-      <h2 class="reveal reveal-d1">What our <em>clients say</em></h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card reveal reveal-d2">
-          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"Villeda transformed our overgrown backyard into a beautiful space we actually use. They were professional, on time, and left everything spotless. Highly recommend."</p>
-          <div class="testimonial-author">
-            <img src="https://i.pravatar.cc/80?img=12" alt="" />
-            <div>
-              <h4>Maria Gonzalez</h4>
-              <span>Silver Spring, MD</span>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card reveal reveal-d3">
-          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p>"We've been using Villeda for regular lawn maintenance for over two years. They're consistent, reliable, and their pricing is very fair. Great team to work with."</p>
-          <div class="testimonial-author">
-            <img src="https://i.pravatar.cc/80?img=32" alt="" />
-            <div>
-              <h4>James Carter</h4>
-              <span>Burtonsville, MD</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>Villeda transformed our property into something truly special. The attention to detail and material quality is exceptional.</blockquote><cite>— Jonathan S., Potomac</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>From the initial consultation to final walkthrough, every step was handled with professionalism and artistry.</blockquote><cite>— Patricia W., Chevy Chase</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>Our water feature and garden redesign is the talk of the neighborhood. Absolutely stunning work.</blockquote><cite>— Derek M., Silver Spring</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>They manage our estate grounds year-round. Impeccable service and beautiful results every season.</blockquote><cite>— Elizabeth T., Olney</cite></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <span class="section-label reveal">Get in Touch</span>
-      <h2 class="reveal reveal-d1">Let's discuss <em>your project</em></h2>
-      <p class="section-desc reveal reveal-d2">Call us or fill out the form and we'll get back to you within 24 hours with a free estimate.</p>
-      <div class="contact-grid">
-        <div>
-          <div class="contact-info reveal reveal-d2">
-            <div class="contact-item"><i class="fas fa-map-pin"></i><div><h4>Address</h4><p>1002 Hollywood Ave, Silver Spring, MD 20904</p></div></div>
-            <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Phone</h4><p><a href="tel:+12403543766">(240) 354-3766</a></p></div></div>
-            <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Hours</h4><p>Mon–Fri: 7 AM – 6 PM<br>Sat: 8 AM – 4 PM</p></div></div>
-          </div>
-          <div class="reveal reveal-d3" style="margin-top:16px">
-            <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9NhogTk8ZLk4Tjon1JURr9XHBEOgd5T8&q=Villeda+Landscaping+Silver+Spring+MD" width="100%" height="260" style="border:0;border-radius:12px;margin-top:16px" allowfullscreen="" loading="lazy"></iframe>
-          </div>
-        </div>
-        <form class="contact-form reveal reveal-d3">
-          <div class="row">
-            <input type="text" placeholder="Your name" required />
-            <input type="tel" placeholder="Phone number" required />
-          </div>
-          <input type="email" placeholder="Email address (optional)" />
-          <textarea placeholder="Tell us about your project..."></textarea>
-          <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send Message</button>
-        </form>
-      </div>
+<div class="diamond-divider">◆ ◆ ◆</div>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Make an <span>Inquiry</span></h2>
+      <p>Begin your landscape journey with a conversation</p>
     </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <h4><i class="fas fa-leaf"></i> Villeda Landscaping</h4>
-          <p>Professional landscaping services for residential and commercial properties in Montgomery County, MD. Quality, reliability, and care — every time.</p>
-          <div class="footer-social">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
-          </div>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <a href="#">Lawn Mowing</a><br />
-          <a href="#">Mulching</a><br />
-          <a href="#">Tree Trimming</a><br />
-          <a href="#">Planting</a><br />
-          <a href="#">Cleanups</a><br />
-          <a href="#">Hardscaping</a>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>1002 Hollywood Ave<br />Silver Spring, MD 20904</p>
-          <p><a href="tel:+12403543766">(240) 354-3766</a></p>
-          <p>Mon–Fri: 7 AM – 6 PM<br />Sat: 8 AM – 4 PM</p>
-        </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact</h3>
+        <div class="info-item"><span class="label">Address</span><span>1002 Hollywood Ave, Silver Spring, MD 20904</span></div>
+        <div class="info-item"><span class="label">Phone</span><span>(240) 354-3766</span></div>
+        <div class="info-item"><span class="label">Email</span><span>info@villedalandscaping.com</span></div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Villeda Landscaping. All rights reserved.</p>
-        <p>Silver Spring, MD</p>
-      </div>
+      <form class="contact-form" action="#">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Tell us about your property..." required></textarea>
+        <button type="submit">Send Inquiry</button>
+      </form>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    const nav = document.getElementById('nav');
-    const toggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2026 Villeda Landscaping. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
 
-    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+<div class="mobile-bar">
+  <a href="tel:+12403543766">&#9742; Call (240) 354-3766</a>
+  <span class="divider"></span>
+  <a href="sms:+12403543766">&#9993; Text Us</a>
+</div>
 
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          nav.classList.toggle('scrolled', window.scrollY > 80);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-  </script>
 </body>
 </html>

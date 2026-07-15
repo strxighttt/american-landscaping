@@ -1,403 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Colonial Lawn Landscape | Trusted Lawn Care Since 2005</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      color: #1F2937;
-      background: #FFFFFF;
-      line-height: 1.6;
-    }
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #1B4332; }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    a { text-decoration: none; color: inherit; }
-    img { max-width: 100%; display: block; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colonial Lawn Landscape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;color:#3d3d3d;line-height:1.7;background:#F5F0E8}
+img{max-width:100%;height:auto;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section{padding:96px 0}
+.section-title{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:#1B3A2D;margin-bottom:16px}
+.section-subtitle{font-size:1.05rem;color:#6a6a6a;max-width:620px;margin-bottom:48px}
 
-    /* Nav */
-    nav {
-      background: #FFFFFF;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-      position: sticky; top: 0; z-index: 100;
-      padding: 0 24px;
-    }
-    .nav-inner {
-      max-width: 1140px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 72px;
-    }
-    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: #1B4332; letter-spacing: -0.3px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 0.9rem; font-weight: 500; color: #4B5563; transition: color 0.2s; }
-    .nav-links a:hover { color: #1B4332; }
-    .nav-cta {
-      background: #1B4332; color: #fff; padding: 10px 22px; border-radius: 8px;
-      font-weight: 500; font-size: 0.85rem; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: #2D6A4F; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { width: 24px; height: 2px; background: #1B4332; border-radius: 2px; }
+/* Leaf Divider */
+.leaf-divider{text-align:center;font-size:1.2rem;color:#C8A951;letter-spacing:8px;margin:48px 0;position:relative}
+.leaf-divider::before,.leaf-divider::after{content:'';position:absolute;top:50%;width:80px;height:1px;background:#C8A951;opacity:.5}
+.leaf-divider::before{right:calc(50% + 40px)}.leaf-divider::after{left:calc(50% + 40px)}
 
-    /* Hero */
-    .hero {
-      text-align: center; padding: 100px 24px 80px;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAF8 100%);
-    }
-    .hero h1 { font-size: 3rem; font-weight: 800; line-height: 1.15; max-width: 700px; margin: 0 auto 16px; }
-    .hero p { font-size: 1.1rem; color: #6B7280; max-width: 560px; margin: 0 auto 32px; }
-    .gold-line {
-      width: 64px; height: 3px; background: #D4AF37; border-radius: 2px;
-      margin: 0 auto 28px;
-    }
-    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary {
-      background: #1B4332; color: #fff; padding: 14px 32px; border-radius: 8px;
-      font-weight: 500; font-size: 0.95rem; transition: background 0.2s;
-    }
-    .btn-primary:hover { background: #2D6A4F; }
-    .btn-outline {
-      border: 2px solid #1B4332; color: #1B4332; padding: 12px 30px; border-radius: 8px;
-      font-weight: 500; font-size: 0.95rem; transition: all 0.2s;
-    }
-    .btn-outline:hover { background: #1B4332; color: #fff; }
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 36px;font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;border:none;cursor:pointer;transition:all .3s ease;text-decoration:none}
+.btn-primary{background:#1B3A2D;color:#F5F0E8;border-radius:50px}
+.btn-primary:hover{background:#122a21;transform:translateY(-2px);box-shadow:0 6px 20px rgba(27,58,45,.3)}
+.btn-outline{background:transparent;color:#1B3A2D;border:2px solid #1B3A2D;border-radius:50px}
+.btn-outline:hover{background:#1B3A2D;color:#F5F0E8}
 
-    /* Trust bar */
-    .trust-bar {
-      background: #F8FAF8; padding: 20px 24px;
-      border-top: 1px solid rgba(27, 67, 50, 0.06);
-      border-bottom: 1px solid rgba(27, 67, 50, 0.06);
-    }
-    .trust-inner {
-      max-width: 1140px; margin: 0 auto;
-      display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 16px;
-    }
-    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; color: #1B4332; }
-    .trust-item i { color: #2D6A4F; font-size: 1rem; }
+/* Nav */
+nav{position:sticky;top:0;z-index:1000;background:#1B3A2D;padding:14px 0}
+nav .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Lora',serif;font-size:1.3rem;font-weight:700;color:#F5F0E8;line-height:1.3}
+.logo span{color:#C8A951;font-weight:400;font-style:italic}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(245,240,232,.8);font-size:.9rem;font-weight:400;transition:color .3s;letter-spacing:.3px}
+.nav-links a:hover{color:#C8A951}
+.mobile-toggle{display:none;background:none;border:none;color:#F5F0E8;font-size:1.5rem;cursor:pointer}
 
-    /* Section */
-    section { padding: 80px 24px; }
-    .section-title {
-      text-align: center; font-size: 2rem; font-weight: 700; margin-bottom: 8px;
-    }
-    .section-sub {
-      text-align: center; color: #6B7280; font-size: 1rem; margin-bottom: 48px;
-    }
+/* Hero */
+.hero{background:#F5F0E8;padding:120px 0 80px;text-align:center;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,#C8A951,transparent)}
+.hero .container{max-width:800px}
+.hero h1{font-family:'Lora',serif;font-size:3.25rem;font-weight:700;color:#1B3A2D;line-height:1.2;margin-bottom:8px}
+.gold-divider{width:80px;height:3px;background:#C8A951;margin:20px auto}
+.hero h1 + .gold-divider{margin-top:20px;margin-bottom:28px}
+.hero p{font-size:1.125rem;color:#5a5a5a;margin-bottom:36px;max-width:650px;margin-left:auto;margin-right:auto}
+.hero-actions{display:flex;gap:16px;justify-content:center}
+.hero-image{margin-top:48px;border-radius:0;overflow:hidden}
+.hero-image img{width:100%;height:420px;object-fit:cover}
 
-    /* Services */
-    #services { background: #F8FAF8; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    .service-card {
-      background: #FFFFFF; border-radius: 8px; padding: 32px 24px;
-      border-left: 4px solid #1B4332;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .service-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); transform: translateY(-2px); }
-    .service-card i { font-size: 1.5rem; color: #D4AF37; margin-bottom: 12px; }
-    .service-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-    .service-card p { font-size: 0.9rem; color: #6B7280; line-height: 1.5; }
+/* Services */
+.services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.service-card{background:#fff;padding:36px 28px;border-bottom:3px solid #C8A951;box-shadow:0 4px 16px rgba(0,0,0,.04);transition:all .3s ease}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.service-card .icon{font-size:2.2rem;margin-bottom:14px;display:block}
+.service-card h3{font-family:'Lora',serif;font-size:1.2rem;font-weight:600;color:#1B3A2D;margin-bottom:10px}
+.service-card p{font-size:.92rem;color:#6a6a6a;line-height:1.7}
 
-    /* About */
-    #about { background: #FFFFFF; }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
-    }
-    .about-image {
-      background: #E8EDE8; border-radius: 8px; height: 360px;
-      display: flex; align-items: center; justify-content: center;
-      color: #6B7280; font-size: 0.9rem;
-    }
-    .about-text h2 { font-size: 2rem; margin-bottom: 16px; }
-    .about-text p { color: #6B7280; line-height: 1.7; }
+/* About */
+.about .container{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-image img{width:100%;height:460px;object-fit:cover;border-radius:0}
+.about-content h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:#1B3A2D;margin-bottom:20px}
+.about-content p{color:#5a5a5a;margin-bottom:16px;font-size:1.02rem}
+.leaf-divider{margin:36px 0}
 
-    /* Testimonials */
-    .test-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-    }
-    .test-card {
-      background: #F3F4F6; border-radius: 8px; padding: 28px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-    }
-    .test-stars { margin-bottom: 10px; }
-    .test-stars i { color: #D1D5DB; font-size: 0.95rem; margin-right: 2px; }
-    .test-text { font-size: 0.95rem; color: #4B5563; line-height: 1.6; margin-bottom: 12px; font-style: italic; }
-    .test-name { font-weight: 500; font-size: 0.85rem; color: #6B7280; }
+/* Process */
+.process{background:#fff}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.process-step{text-align:center;padding:32px 16px}
+.process-step .step-num{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:#C8A951;margin-bottom:12px;line-height:1}
+.process-step h3{font-family:'Lora',serif;font-size:1.15rem;font-weight:600;color:#1B3A2D;margin-bottom:8px}
+.process-step p{font-size:.9rem;color:#6a6a6a;line-height:1.6}
 
-    /* Contact */
-    #contact { background: #F8FAF8; }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
-    }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .contact-form input, .contact-form textarea, .contact-form select {
-      padding: 12px 16px; border: 1px solid #D1D5DB; border-radius: 8px;
-      font-family: 'Inter', sans-serif; font-size: 0.9rem; outline: none; transition: border 0.2s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: #2D6A4F; }
-    .contact-form textarea { min-height: 120px; resize: vertical; }
-    .contact-form button {
-      background: #1B4332; color: #fff; padding: 14px; border: none; border-radius: 8px;
-      font-weight: 500; font-size: 0.95rem; cursor: pointer; transition: background 0.2s;
-    }
-    .contact-form button:hover { background: #2D6A4F; }
-    .contact-info h3 { font-size: 1.5rem; margin-bottom: 16px; }
-    .contact-info p { color: #6B7280; margin-bottom: 8px; font-size: 0.95rem; }
-    .contact-info i { color: #D4AF37; width: 20px; margin-right: 8px; }
+/* Reviews */
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+.review-card{padding:48px 40px}
+.review-card:nth-child(1){background:#F5F0E8}.review-card:nth-child(2){background:#1B3A2D}
+.review-card:nth-child(3){background:#1B3A2D}.review-card:nth-child(4){background:#F5F0E8}
+.review-card .stars{font-size:1.1rem;margin-bottom:12px}
+.review-card:nth-child(1) .stars,.review-card:nth-child(4) .stars{color:#C8A951}
+.review-card:nth-child(2) .stars,.review-card:nth-child(3) .stars{color:#C8A951}
+.review-card:nth-child(1) blockquote,.review-card:nth-child(4) blockquote{color:#3d3d3d;font-style:italic;font-size:.98rem;line-height:1.7;margin-bottom:16px}
+.review-card:nth-child(2) blockquote,.review-card:nth-child(3) blockquote{color:rgba(245,240,232,.9);font-style:italic;font-size:.98rem;line-height:1.7;margin-bottom:16px}
+.review-card cite{font-style:normal;font-weight:600;font-size:.88rem}
+.review-card:nth-child(1) cite,.review-card:nth-child(4) cite{color:#1B3A2D}
+.review-card:nth-child(2) cite,.review-card:nth-child(3) cite{color:#C8A951}
+.review-card cite span{display:block;font-weight:400;font-size:.8rem;opacity:.65}
 
-    /* Footer */
-    footer {
-      background: #1B4332; color: rgba(255,255,255,0.85); padding: 60px 24px 32px;
-    }
-    .footer-grid {
-      max-width: 1140px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;
-    }
-    .footer-col h4 { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.1rem; margin-bottom: 16px; }
-    .footer-col p, .footer-col a { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.8; display: block; }
-    .footer-col a:hover { color: #D4AF37; }
-    .footer-bottom {
-      max-width: 1140px; margin: 0 auto; padding-top: 32px; margin-top: 32px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      text-align: center; font-size: 0.85rem; color: rgba(255,255,255,0.5);
-    }
+/* Contact */
+.contact{background:#fff}
+.contact .container{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.contact-info h2{font-family:'Lora',serif;font-size:2.5rem;font-weight:700;color:#1B3A2D;margin-bottom:24px}
+.contact-info p{color:#5a5a5a;margin-bottom:32px}
+.contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.contact-detail .icon{width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:#F5F0E8;font-size:1.15rem;color:#C8A951}
+.contact-detail div strong{display:block;font-size:.88rem;color:#333}
+.contact-detail div span{font-size:.88rem;color:#777}
+.contact-form{background:#F5F0E8;padding:40px;border-bottom:3px solid #C8A951}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.contact-form input,.contact-form textarea{width:100%;padding:14px 16px;border:1px solid #ddd;font-family:'Inter',sans-serif;font-size:.92rem;border-radius:0;transition:border-color .3s;background:#fff}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:#C8A951}
+.contact-form textarea{height:140px;resize:vertical}
 
-    /* Floating quote */
-    .float-quote {
-      position: fixed; bottom: 24px; right: 24px; z-index: 99;
-      background: linear-gradient(135deg, #1B4332, #2D6A4F);
-      color: #fff; padding: 14px 24px; border-radius: 8px;
-      display: flex; align-items: center; gap: 10px;
-      font-weight: 500; font-size: 0.95rem;
-      box-shadow: 0 4px 16px rgba(27,67,50,0.35);
-      transition: transform 0.2s;
-    }
-    .float-quote:hover { transform: translateY(-2px); }
-    .float-quote i { font-size: 1.1rem; }
+/* Footer */
+footer{background:#1B3A2D;color:rgba(245,240,232,.7);padding:64px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+footer h4{font-family:'Lora',serif;color:#F5F0E8;font-size:1.1rem;font-weight:600;margin-bottom:20px}
+footer p{font-size:.9rem;line-height:1.7;color:rgba(245,240,232,.6)}
+footer ul li{margin-bottom:10px}
+footer ul li a{font-size:.88rem;color:rgba(245,240,232,.55);transition:color .3s}
+footer ul li a:hover{color:#C8A951}
+.footer-bottom{border-top:1px solid rgba(245,240,232,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:rgba(245,240,232,.5)}
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hamburger { display: flex; }
-      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: #fff; flex-direction: column; padding: 16px 24px; gap: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-      .nav-links.open { display: flex; }
-      .nav-cta-wrap { display: none; }
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .services-grid, .test-grid { grid-template-columns: 1fr; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .trust-inner { flex-direction: column; align-items: flex-start; }
-      .float-quote { bottom: 16px; right: 16px; font-size: 0.85rem; padding: 12px 18px; }
-    }
-  </style>
+/* Mobile Bar */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:#1B3A2D;border-top:1px solid rgba(245,240,232,.1)}
+.mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px;font-size:.92rem;font-weight:500;color:#F5F0E8;text-decoration:none;transition:background .3s}
+.mobile-bar a.call{background:#C8A951;color:#1B3A2D}
+.mobile-bar a.call:hover{background:#b8973a}
+.mobile-bar a.text{background:rgba(255,255,255,.06)}
+.mobile-bar a.text:hover{background:rgba(255,255,255,.1)}
+
+@media(max-width:968px){
+  .services-grid{grid-template-columns:repeat(2,1fr)}
+  .about .container{grid-template-columns:1fr;gap:40px}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .reviews-grid{grid-template-columns:1fr}
+  .contact .container{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .hero h1{font-size:2.5rem}
+}
+@media(max-width:600px){
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#1B3A2D;flex-direction:column;padding:20px 24px;gap:16px}
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .hero{padding:100px 0 60px}
+  .hero h1{font-size:2rem}
+  .hero-actions{flex-direction:column;align-items:center}
+  .services-grid{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .mobile-bar{display:flex}
+  .section{padding:64px 0}
+  footer{padding-bottom:80px}
+}
+</style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <div class="nav-inner">
-      <div class="nav-logo">Colonial Lawn Landscape</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-cta-wrap"><a href="#contact" class="nav-cta">Get a Quote</a></div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
+<nav>
+  <div class="container">
+    <div class="logo">Colonial Lawn <span>Landscape</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="this.nextElementSibling.classList.toggle('open')">☰</button>
+  </div>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Trusted Lawn Care Since 2005</h1>
-    <div class="gold-line"></div>
-    <p>Family-owned lawn maintenance serving Montgomery County with meticulous mowing, crisp edges, and healthy turf.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Get a Quote</a>
-      <a href="#services" class="btn-outline">Our Services</a>
+<section class="hero" id="home">
+  <div class="container">
+    <h1>Beautiful Landscapes<br>Rooted in Tradition</h1>
+    <div class="gold-divider"></div>
+    <p>Colonial Lawn Landscape brings timeless elegance to every yard we touch. From historic estates to modern homes, we design outdoor spaces that honor Maryland's natural beauty.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
     </div>
-  </section>
-
-  <!-- Trust Bar -->
-  <div class="trust-bar">
-    <div class="trust-inner">
-      <span class="trust-item"><i class="fas fa-tree"></i> Family Owned &amp; Operated</span>
-      <span class="trust-item"><i class="fas fa-calculator"></i> Free Estimates</span>
-      <span class="trust-item"><i class="fas fa-map-pin"></i> Montgomery County</span>
-      <span class="trust-item"><i class="fas fa-shield-alt"></i> Fully Insured</span>
+    <div class="hero-image">
+      <img src="https://picsum.photos/seed/colonial-hero/800/420" alt="Beautiful landscape design" loading="lazy">
     </div>
   </div>
+</section>
 
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-sub">Comprehensive lawn care tailored to your property</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <i class="fas fa-cut"></i>
-          <h3>Lawn Mowing &amp; Edging</h3>
-          <p>Precision mowing and clean edgework that gives your lawn a manicured, well-defined look every visit.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-leaf"></i>
-          <h3>Fertilization &amp; Weed Control</h3>
-          <p>Seasonal fertilization programs plus targeted weed management for thick, green, healthy turf.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-truck"></i>
-          <h3>Mulch &amp; Topsoil</h3>
-          <p>Fresh hardwood mulch and premium topsoil installation to enrich beds and refresh landscape borders.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-tree"></i>
-          <h3>Tree &amp; Shrub Care</h3>
-          <p>Pruning, shaping, and health treatments for trees and shrubs to maintain beauty and structure.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-broom"></i>
-          <h3>Seasonal Cleanups</h3>
-          <p>Spring and fall cleanup including leaf removal, debris hauling, and bed preparation for the season ahead.</p>
-        </div>
-        <div class="service-card">
-          <i class="fas fa-water"></i>
-          <h3>Aeration &amp; Overseeding</h3>
-          <p>Core aeration to relieve soil compaction followed by overseeding for denser, more resilient grass.</p>
-        </div>
+<section class="services section" id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle">Comprehensive landscaping services for residential and commercial properties across Maryland.</p>
+    <div class="services-grid">
+      <div class="service-card"><span class="icon">🌿</span><h3>Landscape Design</h3><p>Thoughtful, site-specific designs that enhance architecture and natural surroundings with enduring style.</p></div>
+      <div class="service-card"><span class="icon">🪨</span><h3>Stone & Masonry</h3><p>Natural stone patios, walkways, retaining walls, and columns built to complement your home's character.</p></div>
+      <div class="service-card"><span class="icon">🌳</span><h3>Tree Services</h3><p>Expert pruning, removal, and planting to maintain healthy trees that frame your property beautifully.</p></div>
+      <div class="service-card"><span class="icon">💧</span><h3>Water Features</h3><p>Ponds, fountains, and waterfalls that add tranquility and movement to any outdoor space.</p></div>
+      <div class="service-card"><span class="icon">🏡</span><h3>Porch & Deck</h3><p>Custom-designed porches and decks that create inviting outdoor rooms for relaxation and entertaining.</p></div>
+      <div class="service-card"><span class="icon">🌱</span><h3>Seasonal Color</h3><p>Annual and perennial plantings designed to deliver vibrant color from spring through fall.</p></div>
+    </div>
+  </div>
+  <div class="leaf-divider">── ✦ ──</div>
+</section>
+
+<section class="about section" id="about">
+  <div class="container">
+    <div class="about-image">
+      <img src="https://picsum.photos/seed/colonial-about/640/460" alt="Colonial Lawn Landscape team" loading="lazy">
+    </div>
+    <div class="about-content">
+      <h2>Stewards of the Land</h2>
+      <p>For over 20 years, Colonial Lawn Landscape has served Maryland homeowners and businesses with a philosophy rooted in respect for the land. We believe great landscapes are built on thoughtful planning, quality materials, and genuine care.</p>
+      <p>Our team combines traditional craftsmanship with modern techniques to create outdoor spaces that feel both timeless and fresh. Every project — big or small — receives the same dedication to detail and client satisfaction.</p>
+      <div class="leaf-divider" style="margin:28px 0">── ✦ ──</div>
+      <a href="#contact" class="btn btn-primary" style="border-radius:50px">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="process section" id="process">
+  <div class="container">
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-subtitle">A collaborative process that ensures your vision becomes reality.</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h3>Discover</h3>
+        <p>We listen to your ideas, evaluate the site, and discuss goals, style preferences, and budget.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h3>Design</h3>
+        <p>We create detailed landscape plans with plant selections, material choices, and visual mockups.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h3>Install</h3>
+        <p>Our skilled crews bring the design to life with careful installation and minimal site disruption.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h3>Nurture</h3>
+        <p>We follow up with care instructions and ongoing maintenance options to keep your landscape thriving.</p>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="leaf-divider">── ✦ ──</div>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-image">
-          <img src="https://picsum.photos/seed/colonial-lawn/600/400" alt="Landscaping" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" />
-        </div>
-        <div class="about-text">
-          <h2>Rooted in Quality Since 2005</h2>
-          <p>For over 15 years, Colonial Lawn Landscape has been caring for lawns across Silver Spring. We treat every property like our own &mdash; meticulous mowing, crisp edges, and healthy turf. Owner James Carter brings hands-on attention to every job, ensuring our standards never waiver. We believe in honest work, fair pricing, and lawns that make you proud.</p>
-        </div>
+<section class="section" id="reviews">
+  <div class="container" style="padding:0 24px">
+    <h2 class="section-title" style="padding-left:24px">Client Testimonials</h2>
+    <p class="section-subtitle" style="padding-left:24px">Hear from the homeowners and businesses we've served.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Colonial Lawn transformed our dull backyard into a gorgeous garden retreat. Their design sense is impeccable and the crew was a pleasure to work with."</blockquote>
+      <cite>Margaret O. <span>Homeowner, Olney</span></cite>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"They rebuilt our front walkway and planted a beautiful mix of native shrubs and perennials. The quality of the stonework is exceptional. Highly recommend."</blockquote>
+      <cite>Tom W. <span>Homeowner, Kensington</span></cite>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"We hired Colonial for our commercial property's landscaping. Professional, punctual, and the results have drawn compliments from tenants and visitors alike."</blockquote>
+      <cite>Patricia Nguyen <span>Property Owner, Takoma Park</span></cite>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>"From the first consultation to final walkthrough, everything was seamless. They listened carefully and delivered exactly what we envisioned for our home."</blockquote>
+      <cite>Jonathan Reed <span>Homeowner, Silver Spring</span></cite>
+    </div>
+  </div>
+</section>
+
+<section class="contact section" id="contact">
+  <div class="container">
+    <div class="contact-info">
+      <h2>Start Your Landscape Journey</h2>
+      <p>Ready to transform your outdoor space? Reach out and we'll schedule a consultation at your convenience.</p>
+      <div class="contact-detail">
+        <div class="icon">📞</div>
+        <div><strong>Phone</strong><span>(301) 519-3150</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">✉️</div>
+        <div><strong>Email</strong><span>info@coloniallawnlandscape.com</span></div>
+      </div>
+      <div class="contact-detail">
+        <div class="icon">📍</div>
+        <div><strong>Location</strong><span>Silver Spring, MD</span></div>
       </div>
     </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" style="background: #F8FAF8;">
-    <div class="container">
-      <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-sub">Real feedback from homeowners in our community</p>
-      <div class="test-grid">
-        <div class="test-card">
-          <div class="test-stars">
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-          </div>
-          <p class="test-text">&ldquo;Share your experience here &mdash; add a real client testimonial.&rdquo;</p>
-          <p class="test-name">&mdash; [Client Name]</p>
-        </div>
-        <div class="test-card">
-          <div class="test-stars">
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-            <i class="fa-regular fa-star"></i>
-          </div>
-          <p class="test-text">&ldquo;Share your experience here &mdash; add a real client testimonial.&rdquo;</p>
-          <p class="test-name">&mdash; [Client Name]</p>
-        </div>
+    <form class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get a Free Estimate</h2>
-      <p class="section-sub">We&rsquo;ll get back to you within 24 hours</p>
-      <div class="contact-grid">
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required>
-          <input type="tel" placeholder="Phone Number" required>
-          <select>
-            <option value="">Select a Service</option>
-            <option>Lawn Mowing &amp; Edging</option>
-            <option>Fertilization &amp; Weed Control</option>
-            <option>Mulch &amp; Topsoil</option>
-            <option>Tree &amp; Shrub Care</option>
-            <option>Seasonal Cleanups</option>
-            <option>Aeration &amp; Overseeding</option>
-          </select>
-          <textarea placeholder="Tell us about your property..."></textarea>
-          <button type="submit">Send Estimate Request</button>
-        </form>
-        <div class="contact-info">
-          <h3>Get in Touch</h3>
-          <p><i class="fas fa-phone-alt"></i> (301) 519-3150</p>
-          <p><i class="fas fa-envelope"></i> info@coloniallawnlandscape.com</p>
-          <p><i class="fas fa-map-marker-alt"></i> Silver Spring, MD</p>
-          <p style="margin-top: 20px; font-style: italic; color: #6B7280;">Serving Montgomery County and surrounding areas. Free estimates are always available.</p>
-        </div>
+      <div class="form-row">
+        <input type="tel" placeholder="Phone Number">
+        <input type="text" placeholder="Subject">
       </div>
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9NhogTk8ZLk4Tjon1JURr9XHBEOgd5T8&q=Colonial+Lawn+Landscape+Silver+Spring+MD" width="100%" height="260" style="border:0;border-radius:12px;margin-top:16px" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-  </section>
+      <textarea placeholder="Describe your project..." required></textarea>
+      <button type="submit" class="btn btn-primary" style="margin-top:8px">Send Inquiry</button>
+    </form>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
+<footer>
+  <div class="container">
     <div class="footer-grid">
-      <div class="footer-col">
+      <div>
         <h4>Colonial Lawn Landscape</h4>
-        <p>Family-owned lawn care serving Montgomery County since 2005. We treat every lawn like our own.</p>
+        <p>Bringing timeless elegance to Maryland landscapes since 2005. We design, build, and nurture outdoor spaces with craftsmanship and care.</p>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Services</h4>
-        <a href="#">Lawn Mowing &amp; Edging</a>
-        <a href="#">Fertilization &amp; Weed Control</a>
-        <a href="#">Mulch &amp; Topsoil</a>
-        <a href="#">Tree &amp; Shrub Care</a>
-        <a href="#">Seasonal Cleanups</a>
-        <a href="#">Aeration &amp; Overseeding</a>
+        <ul>
+          <li><a href="#services">Landscape Design</a></li>
+          <li><a href="#services">Stone & Masonry</a></li>
+          <li><a href="#services">Tree Services</a></li>
+          <li><a href="#services">Water Features</a></li>
+          <li><a href="#services">Porch & Deck</a></li>
+        </ul>
       </div>
-      <div class="footer-col">
+      <div>
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
         <h4>Contact</h4>
-        <a href="tel:13015193150">(301) 519-3150</a>
-        <p>info@coloniallawnlandscape.com</p>
-        <p>Silver Spring, MD</p>
-        <p style="margin-top: 8px;">Mon &ndash; Fri: 7:00 AM &ndash; 6:00 PM</p>
+        <ul>
+          <li><a href="tel:+13015193150">(301) 519-3150</a></li>
+          <li><a href="mailto:info@coloniallawnlandscape.com">Email Us</a></li>
+          <li><a href="#">Silver Spring, MD</a></li>
+        </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2025 Colonial Lawn Landscape. All rights reserved.
+      <span>&copy; 2026 Colonial Lawn Landscape. All rights reserved.</span>
+      <span>Licensed &amp; Insured</span>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Floating Quote -->
-  <a href="tel:13015193150" class="float-quote">
-    <i class="fas fa-phone-alt"></i> (301) 519-3150
-  </a>
+<div class="mobile-bar">
+  <a href="tel:+13015193150" class="call">📞 Call</a>
+  <a href="sms:+13015193150" class="text">✉️ Text</a>
+</div>
 
-  <script>
-    document.getElementById('hamburger').addEventListener('click', function() {
-      document.getElementById('navLinks').classList.toggle('open');
-    });
-  </script>
+<script>
+document.querySelectorAll('nav a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+document.querySelector('.contact-form').addEventListener('submit', function(e){
+  e.preventDefault(); alert('Thank you! We will be in touch shortly.');
+});
+</script>
 </body>
 </html>

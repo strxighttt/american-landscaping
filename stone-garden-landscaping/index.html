@@ -1,494 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stone Garden Landscaping | Where Earth Meets Design</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: #F5F0EB;
-      color: #292524;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stone Garden Landscaping | Silver Spring, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: #4a3f35; line-height: 1.6; background: #E8DDD0; }
 
-    /* Nav */
-    nav {
-      background: #F5F0EB;
-      padding: 16px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
-    }
-    nav .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 22px;
-      font-weight: 800;
-      color: #292524;
-      letter-spacing: -0.3px;
-    }
-    .logo span { color: #707D4B; }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #78716C;
-      font-weight: 500;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: #292524; }
-    .btn-cta {
-      background: #707D4B;
-      color: #fff;
-      border: none;
-      padding: 10px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: background 0.2s;
-    }
-    .btn-cta:hover { background: #5d6a3e; }
-    .hamburger { display: none; font-size: 24px; cursor: pointer; color: #292524; }
+/* Repeating dot texture */
+body::before { content: ''; position: fixed; inset: 0; background-image: radial-gradient(#c8b9a4 1px, transparent 1px); background-size: 24px 24px; pointer-events: none; z-index: -1; opacity: 0.3; }
 
-    /* Hero */
-    .hero {
-      padding: 100px 0 80px;
-      text-align: center;
-      position: relative;
-    }
-    .hero::before {
-      content: "\f6fc";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      font-size: 120px;
-      color: #EDE8E0;
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 0;
-      opacity: 0.7;
-    }
-    .hero h1 {
-      font-size: 56px;
-      font-weight: 800;
-      letter-spacing: -1.5px;
-      line-height: 1.1;
-      position: relative;
-      z-index: 1;
-    }
-    .hero h1 span { color: #707D4B; }
-    .hero p {
-      font-size: 18px;
-      color: #78716C;
-      max-width: 560px;
-      margin: 16px auto 32px;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-buttons { display: flex; gap: 16px; justify-content: center; position: relative; z-index: 1; }
-    .btn-outline {
-      background: transparent;
-      color: #707D4B;
-      border: 2px solid #707D4B;
-      padding: 10px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { background: #707D4B; color: #fff; }
+/* Sticky Nav */
+nav { position: sticky; top: 0; z-index: 100; background: rgba(232,221,208,0.95); backdrop-filter: blur(6px); padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; height: 68px; border-bottom: 2px solid #6B7D3A; }
+nav .logo { font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #6B7D3A; }
+nav ul { list-style: none; display: flex; gap: 2rem; }
+nav ul a { color: #4a3f35; text-decoration: none; font-size: 0.9rem; font-weight: 400; }
+nav ul a:hover { color: #6B7D3A; }
 
-    /* Divider */
-    .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 8px 0;
-      color: #9CAF88;
-      font-size: 20px;
-    }
-    .divider::before, .divider::after {
-      content: "";
-      flex: 1;
-      max-width: 200px;
-      height: 1px;
-      background: #E0D8CE;
-    }
+/* Hero */
+.hero { position: relative; min-height: 80vh; display: flex; align-items: center; background: #E8DDD0; }
+.hero .container { max-width: 1140px; margin: 0 auto; padding: 2rem; display: flex; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-family: 'DM Serif Display', serif; font-size: 3.4rem; font-weight: 400; color: #6B7D3A; line-height: 1.15; margin-bottom: 1rem; }
+.hero-text p { font-size: 1.05rem; color: #5a4f42; margin-bottom: 2rem; }
+.hero .btn { display: inline-block; background: #6B7D3A; color: #fff; padding: 0.95rem 2.2rem; font-size: 0.95rem; font-weight: 500; text-decoration: none; }
+.hero .btn:hover { background: #55662a; }
+.hero-image { flex: 1; }
+.hero-image img { width: 100%; display: block; }
 
-    /* Sections */
-    section { padding: 80px 0; }
-    section:nth-child(even) { background: #EDE8E0; }
-    .section-title {
-      font-size: 36px;
-      font-weight: 700;
-      text-align: center;
-      margin-bottom: 48px;
-      letter-spacing: -0.5px;
-    }
-    .section-title span { color: #707D4B; }
+/* Sections */
+.container { max-width: 1140px; margin: 0 auto; padding: 5rem 2rem; }
+.section-title { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; color: #6B7D3A; margin-bottom: 0.5rem; }
+.section-sub { font-size: 0.95rem; color: #7a6e5e; margin-bottom: 3rem; }
 
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: #F5F0EB;
-      border-radius: 8px;
-      padding: 32px 24px;
-      border-left: 4px solid #707D4B;
-      transition: box-shadow 0.2s;
-    }
-    .service-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
-    .service-card i {
-      font-size: 28px;
-      color: #707D4B;
-      margin-bottom: 16px;
-    }
-    .service-card h3 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .service-card p {
-      font-size: 14px;
-      color: #78716C;
-    }
+/* Services */
+#services { background: rgba(232,221,208,0.5); position: relative; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service-card { background: #E8DDD0; border-left: 5px solid #6B7D3A; padding: 2rem 1.5rem; }
+.service-card .icon { font-size: 2rem; color: #6B7D3A; margin-bottom: 0.75rem; display: block; }
+.service-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.15rem; font-weight: 400; color: #4a3f35; margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.9rem; color: #5a4f42; }
 
-    /* About */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about-text h2 { font-size: 36px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 20px; }
-    .about-text h2 span { color: #707D4B; }
-    .about-text p { color: #78716C; font-size: 15px; margin-bottom: 12px; }
-    .about-block {
-      background: #8B7355;
-      border-radius: 8px;
-      height: 360px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 100px;
-      color: rgba(255,255,255,0.3);
-    }
+/* About */
+#about { background: transparent; position: relative; }
+.about-wrap { display: flex; gap: 4rem; align-items: center; }
+.about-wrap .text { flex: 1; }
+.about-wrap .text p { font-size: 1rem; color: #4a3f35; margin-bottom: 1rem; }
+.about-wrap .image { flex: 1; }
+.about-wrap .image img { width: 100%; display: block; border: 2px solid #6B7D3A; }
 
-    /* Why */
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      text-align: center;
-    }
-    .why-item i {
-      font-size: 36px;
-      color: #707D4B;
-      margin-bottom: 16px;
-    }
-    .why-item h4 {
-      font-size: 17px;
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-    .why-item p {
-      font-size: 13px;
-      color: #78716C;
-    }
+/* Process */
+#process { background: rgba(232,221,208,0.5); position: relative; }
+.process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.process-step { background: #E8DDD0; padding: 2rem 1.5rem; text-align: center; border: 1px solid #c8b9a4; }
+.process-step .num { font-family: 'DM Serif Display', serif; font-size: 2.2rem; font-weight: 400; color: #6B7D3A; display: block; margin-bottom: 0.5rem; }
+.process-step h3 { font-family: 'DM Serif Display', serif; font-size: 1.05rem; font-weight: 400; color: #4a3f35; margin-bottom: 0.5rem; }
+.process-step p { font-size: 0.88rem; color: #5a4f42; }
 
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card {
-      background: #F5F0EB;
-      border-radius: 8px;
-      padding: 28px;
-    }
-    .testimonial-card p {
-      font-size: 14px;
-      color: #78716C;
-      font-style: italic;
-      margin-bottom: 12px;
-    }
-    .testimonial-card .name {
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 8px;
-    }
-    .stars i { color: #D1D5DB; margin-right: 2px; font-size: 13px; }
+/* Reviews */
+#reviews { background: transparent; position: relative; }
+.reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+.review-card { background: #E8DDD0; padding: 2rem; border-left: 5px solid #6B7D3A; }
+.review-card .quote { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #6B7D3A; line-height: 1; margin-bottom: 0.5rem; }
+.review-card p { font-size: 0.93rem; color: #4a3f35; font-style: italic; margin-bottom: 1rem; }
+.review-card .author { font-family: 'DM Serif Display', serif; font-weight: 400; color: #6B7D3A; font-size: 0.95rem; }
 
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-    }
-    .contact-form label {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #292524;
-    }
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px 14px;
-      border: 1px solid #E0D8CE;
-      border-radius: 8px;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 14px;
-      background: #fff;
-      margin-bottom: 16px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus { border-color: #707D4B; }
-    .contact-form textarea { height: 120px; resize: vertical; }
-    .contact-info h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-    .contact-info h3 span { color: #707D4B; }
-    .contact-info p { color: #78716C; font-size: 14px; margin-bottom: 8px; }
-    .contact-info i { color: #707D4B; width: 20px; margin-right: 8px; }
-    .contact-info .detail { margin-bottom: 16px; }
+/* Contact */
+#contact { background: transparent; position: relative; }
+.contact-wrap { display: flex; gap: 4rem; }
+.contact-wrap form { flex: 1; }
+.contact-wrap .info { flex: 1; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-family: 'DM Serif Display', serif; font-size: 0.95rem; color: #6B7D3A; margin-bottom: 0.35rem; }
+.form-group input, .form-group textarea { width: 100%; padding: 0.8rem 1rem; border: 1px solid #c8b9a4; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; background: #E8DDD0; }
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: #6B7D3A; }
+.form-group textarea { height: 120px; resize: vertical; }
+.btn-submit { background: #6B7D3A; color: #fff; border: none; padding: 0.85rem 2rem; font-size: 0.95rem; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.btn-submit:hover { background: #55662a; }
+.contact-info h3 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; color: #6B7D3A; margin-bottom: 1rem; }
+.contact-info p { font-size: 0.95rem; color: #4a3f35; margin-bottom: 0.75rem; }
+.contact-info a { color: #6B7D3A; text-decoration: none; font-weight: 500; }
+.contact-info a:hover { text-decoration: underline; }
 
-    /* Footer */
-    footer {
-      background: #707D4B;
-      color: #F5F0EB;
-      padding: 48px 0 32px;
-    }
-    footer .container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    footer h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
-    footer p, footer a { font-size: 14px; color: rgba(245,240,235,0.8); text-decoration: none; line-height: 2; }
-    footer a:hover { color: #fff; }
-    footer .copy { grid-column: 1 / -1; text-align: center; padding-top: 32px; font-size: 13px; color: rgba(245,240,235,0.6); }
+/* Footer */
+footer { background: #6B7D3A; padding: 2.5rem 2rem; text-align: center; }
+footer p { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
 
-    /* Floating Quote */
-    .floating-quote {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: #707D4B;
-      color: #fff;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(112,125,75,0.3);
-      z-index: 200;
-      text-decoration: none;
-      transition: transform 0.2s;
-    }
-    .floating-quote:hover { transform: scale(1.03); }
-    .floating-quote i { font-size: 18px; }
+/* Mobile Bar */
+.mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: #6B7D3A; }
+.mobile-bar a { flex: 1; text-align: center; padding: 0.9rem; color: #fff; text-decoration: none; font-weight: 500; font-size: 0.9rem; display: block; }
+.mobile-bar a:first-child { border-right: 1px solid rgba(255,255,255,0.2); }
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #F5F0EB; flex-direction: column; padding: 20px 24px; gap: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-      .nav-links.open { display: flex; }
-      .hamburger { display: block; }
-      .hero h1 { font-size: 34px; }
-      .hero { padding: 64px 0 48px; }
-      .services-grid { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; gap: 32px; }
-      .about-block { height: 200px; }
-      .why-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .contact-grid { grid-template-columns: 1fr; }
-      footer .container { grid-template-columns: 1fr; gap: 24px; }
-      .hero::before { font-size: 60px; }
-    }
-  </style>
+@media (max-width: 768px) {
+  nav { padding: 0 1rem; }
+  nav ul { display: none; }
+  .hero .container { flex-direction: column-reverse; gap: 2rem; }
+  .hero { min-height: auto; padding: 3rem 0; }
+  .hero-text h1 { font-size: 2.3rem; }
+  .services-grid, .process-grid { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .about-wrap, .contact-wrap { flex-direction: column; gap: 2rem; }
+  .container { padding: 3rem 1.25rem; }
+  .mobile-bar { display: flex; }
+  footer { padding-bottom: 4rem; }
+  .section-title { font-size: 1.7rem; }
+}
+
+@media (max-width: 480px) {
+  .services-grid, .process-grid { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <div class="container">
-      <div class="logo">Stone <span>Garden</span></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Consultation</button></li>
-      </ul>
-      <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><i class="fas fa-bars"></i></div>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">Stone Garden</div>
+  <ul>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Where Earth<br><span>Meets Design</span></h1>
-      <p>We craft enduring stone and hardscape spaces that blend naturally with the land — bringing timeless beauty to every landscape.</p>
-      <div class="hero-buttons">
-        <button class="btn-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Free Consultation</button>
-        <button class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Our Services</button>
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <h1>Built on Solid Ground</h1>
+      <p>Natural stone landscapes that stand the test of time. Crafted with care in Silver Spring.</p>
+      <a href="#contact" class="btn">Request a Quote</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://picsum.photos/seed/stone-garden-hero/600/500" alt="Stone garden landscaping" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Stone, soil, and skilled hands</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="icon">&#9968;</span>
+        <h3>Flagstone Patios</h3>
+        <p>Natural flagstone laid by hand for timeless outdoor living spaces.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">&#127963;</span>
+        <h3>Retaining Walls</h3>
+        <p>Mortared and dry-stack stone walls for structure and beauty.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">&#128167;</span>
+        <h3>Water Features</h3>
+        <p>Natural stone fountains, ponds, and cascades for tranquil gardens.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">&#127795;</span>
+        <h3>Garden Beds</h3>
+        <p>Raised stone-edged beds for vegetables, perennials, and shrubs.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">&#9969;</span>
+        <h3>Stone Steps</h3>
+        <p>Granite and bluestone steps that gracefully navigate slopes.</p>
+      </div>
+      <div class="service-card">
+        <span class="icon">&#127796;</span>
+        <h3>Landscape Design</h3>
+        <p>Full property plans that integrate stone, plants, and terrain.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Divider -->
-  <div class="divider"><i class="fas fa-leaf"></i><i class="fas fa-mountain"></i><i class="fas fa-leaf"></i></div>
-
-  <!-- Services -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">What We <span>Build</span></h2>
-      <div class="services-grid">
-        <div class="service-card"><i class="fas fa-road"></i><h3>Patios &amp; Walkways</h3><p>Custom stone patios and winding walkways that invite exploration and anchor your outdoor living space.</p></div>
-        <div class="service-card"><i class="fas fa-layer-group"></i><h3>Retaining Walls</h3><p>Structural retaining walls built to last — combining engineering with natural stone aesthetics.</p></div>
-        <div class="service-card"><i class="fas fa-border-all"></i><h3>Stone Veneer</h3><p>Thin-cut natural stone veneer for facades, columns, and accent features that add texture and depth.</p></div>
-        <div class="service-card"><i class="fas fa-fire"></i><h3>Outdoor Fire Pits</h3><p>Hand-laid fire pits and fireplaces that extend your outdoor season and create a natural gathering point.</p></div>
-        <div class="service-card"><i class="fas fa-water"></i><h3>Drainage Solutions</h3><p>Site-appropriate drainage systems that protect your landscape and foundation from water damage.</p></div>
-        <div class="service-card"><i class="fas fa-tree"></i><h3>Landscape Design</h3><p>Thoughtful planting and hardscape design that works with your site's existing contours and light.</p></div>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Stone Garden</h2>
+    <p class="section-sub">Craftsmen of natural stone</p>
+    <div class="about-wrap">
+      <div class="text">
+        <p>Stone Garden Landscaping is built on a passion for natural stone and timeless design. Every wall, patio, and path we craft is a reflection of our commitment to quality and permanence.</p>
+        <p>Based in Silver Spring, MD, we work with locally sourced stone to create landscapes that feel ancient and enduring. From intimate garden paths to sweeping terraces, our work is defined by clean lines and honest materials.</p>
+        <p>We build for the long haul — landscapes that only get better with age.</p>
+      </div>
+      <div class="image">
+        <img src="https://picsum.photos/seed/stone-garden-about/600/450" alt="Stone garden craftsman at work" loading="lazy">
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container about-grid">
-      <div class="about-text">
-        <h2>Built on <span>Stone</span>, Rooted in <span>Craft</span></h2>
-        <p>Stone Garden Landscaping was founded on a simple belief: the best landscapes feel like they've always been there. We work with natural materials — stone, gravel, earth — letting the site guide our hand.</p>
-        <p>Every wall is leveled by eye. Every patio is thoughtfully integrated into the land. We don't rush. We build landscapes that settle in and age gracefully, season after season.</p>
+<section id="process">
+  <div class="container">
+    <h2 class="section-title">Our Process</h2>
+    <p class="section-sub">Methodical from the ground up</p>
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="num">01</span>
+        <h3>Site Survey</h3>
+        <p>We assess grade, drainage, and stone material requirements on-site.</p>
       </div>
-      <div class="about-block">
-        <img src="https://picsum.photos/seed/stone-garden/600/400" alt="Landscaping" style="width:100%;height:100%;object-fit:cover;border-radius:inherit" />
+      <div class="process-step">
+        <span class="num">02</span>
+        <h3>Stone Selection</h3>
+        <p>Choose from local granite, bluestone, and fieldstone matched to your project.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Why Stone Garden -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Why <span>Stone Garden</span></h2>
-      <div class="why-grid">
-        <div class="why-item"><i class="fas fa-mountain"></i><h4>Quality Materials</h4><p>Selected natural stone and premium hardscape materials sourced for durability.</p></div>
-        <div class="why-item"><i class="fas fa-users"></i><h4>Experienced Team</h4><p>Skilled craftsmen with years of hands-on stone and hardscape experience.</p></div>
-        <div class="why-item"><i class="fas fa-comments"></i><h4>Free Consultations</h4><p>On-site consultations with no obligation — we assess and discuss your vision.</p></div>
-        <div class="why-item"><i class="fas fa-check-circle"></i><h4>Satisfaction Guaranteed</h4><p>We stand behind every project with a commitment to quality and care.</p></div>
+      <div class="process-step">
+        <span class="num">03</span>
+        <h3>Installation</h3>
+        <p>Skilled masons place every stone with precision and care.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <div class="container">
-      <h2 class="section-title">Client <span>Stories</span></h2>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
-        </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
-        </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
-        </div>
-        <div class="testimonial-card">
-          <p class="name">[Client Name]</p>
-          <p>"Share your experience here — add a real client testimonial."</p>
-          <div class="stars"><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
-        </div>
+      <div class="process-step">
+        <span class="num">04</span>
+        <h3>Finish &amp; Seal</h3>
+        <p>Joint sanding, sealing, and final clean-up for a lasting finish.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get in <span>Touch</span></h2>
-      <div class="contact-grid">
-        <div class="contact-form">
+<section id="reviews">
+  <div class="container">
+    <h2 class="section-title">Client Reviews</h2>
+    <p class="section-sub">Hear from our clients</p>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="quote">&ldquo;</div>
+        <p>Stone Garden built a beautiful flagstone patio for us. The workmanship is exceptional — every stone fits perfectly. Highly recommend.</p>
+        <div class="author">— Rachel S., Silver Spring</div>
+      </div>
+      <div class="review-card">
+        <div class="quote">&ldquo;</div>
+        <p>We hired them for a retaining wall and ended up doing the whole backyard. The natural stone look is exactly what we wanted.</p>
+        <div class="author">— Mark D., Kensington</div>
+      </div>
+      <div class="review-card">
+        <div class="quote">&ldquo;</div>
+        <p>The water feature they installed is the centerpiece of our garden. It sounds amazing and looks completely natural.</p>
+        <div class="author">— Helen T., Takoma Park</div>
+      </div>
+      <div class="review-card">
+        <div class="quote">&ldquo;</div>
+        <p>True craftsmen. They take pride in their work and it shows. Our stone steps and paths are absolutely gorgeous.</p>
+        <div class="author">— Bob K., Silver Spring</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-sub">Let's build something lasting</p>
+    <div class="contact-wrap">
+      <form action="#" method="post">
+        <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" placeholder="Your name">
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="you@example.com">
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+        <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" placeholder="Tell us about your project..."></textarea>
-          <button class="btn-cta">Send Message</button>
+          <textarea id="message" name="message" required></textarea>
         </div>
-        <div class="contact-info">
-          <h3>Visit Our <span>Yard</span></h3>
-          <div class="detail"><i class="fas fa-map-pin"></i> 2709 Hardy Ave, Somewhere, MD</div>
-          <div class="detail"><i class="fas fa-phone"></i> (301) 213-7136</div>
-          <div class="detail"><i class="fas fa-envelope"></i> hello@stonegarden.com</div>
-          <div class="detail"><i class="fas fa-clock"></i> Mon–Fri: 8AM – 5PM</div>
-        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+      <div class="contact-info">
+        <h3>Stone Garden Landscaping</h3>
+        <p>Silver Spring, MD</p>
+        <p>Phone: <a href="tel:+13012137136">(301) 213-7136</a></p>
+        <p>Email: <a href="mailto:info@stonegardenlandscaping.com">info@stonegardenlandscaping.com</a></p>
       </div>
-      <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9NhogTk8ZLk4Tjon1JURr9XHBEOgd5T8&q=2709+Hardy+Ave+Silver+Spring+MD" width="100%" height="260" style="border:0;border-radius:12px;margin-top:16px" allowfullscreen="" loading="lazy"></iframe>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div>
-        <h4>Stone Garden</h4>
-        <p>Natural stone and hardscape craftsmanship built to last. Where earth meets design.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#services">Services</a><br>
-        <a href="#about">About</a><br>
-        <a href="#testimonials">Testimonials</a><br>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>2709 Hardy Ave<br>Somewhere, MD</p>
-        <p>(301) 213-7136</p>
-      </div>
-      <div class="copy">&copy; 2026 Stone Garden Landscaping. All rights reserved.</div>
-    </div>
-  </footer>
+<footer>
+  <p>&copy; 2026 Stone Garden Landscaping. All rights reserved.</p>
+</footer>
 
-  <!-- Floating Quote -->
-  <a href="tel:+13012137136" class="floating-quote">
-    <i class="fas fa-comment-dots"></i> Get a Free Quote
-  </a>
+<div class="mobile-bar">
+  <a href="tel:+13012137136">Call Us</a>
+  <a href="sms:+13012137136">Text Us</a>
+</div>
 
 </body>
 </html>

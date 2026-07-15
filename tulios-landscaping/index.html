@@ -1,285 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tulio's Landscaping – Quality Since 1993</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #2d3748;
-            background: #fefef7;
-            line-height: 1.6;
-        }
-        h1, h2, h3, h4 { font-family: 'Merriweather', serif; font-weight: 700; line-height: 1.3; }
-        h2 { font-size: 2rem; text-align: center; margin-bottom: 2.5rem; color: #1a3c2e; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
-        section { padding: 4.5rem 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tulio's Landscaping | Silver Spring, MD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --brick: #F2E8E0; --brick-dark: #E6D5C8; --olive: #5C6B3F; --olive-dark: #4A5833; --terracotta: #C87D5A; --warm-white: #FDFAF7; --text: #3D322C; --text-light: #6B5E56; --shadow: 0 6px 20px rgba(92,107,63,0.10); }
 
-        /* Nav */
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background: #ffffff; box-shadow: 0 2px 12px rgba(0,0,0,.06);
-            z-index: 1000; padding: 0.8rem 1.5rem;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        nav .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 1.4rem; font-weight: 700;
-            color: #1a5a3a;
-        }
-        nav .logo i { color: #2d8a4e; margin-right: 0.4rem; }
-        nav ul { list-style: none; display: flex; gap: 1.8rem; align-items: center; }
-        nav a { text-decoration: none; color: #2d3748; font-weight: 500; font-size: 0.95rem; transition: color .2s; }
-        nav a:hover { color: #2d8a4e; }
+body { font-family: 'Inter', sans-serif; color: var(--text); line-height: 1.7; background: var(--warm-white); }
 
-        /* Hero */
-        .hero {
-            margin-top: 64px;
-            background: linear-gradient(135deg, #f8faf3 0%, #ecf3e8 100%);
-            display: flex; align-items: center; min-height: 85vh;
-        }
-        .hero .container { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-        .hero-text { flex: 1 1 45%; }
-        .hero-text .tag { color: #2d8a4e; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .hero-text h1 { font-size: 2.8rem; color: #1a3c2e; margin-bottom: 1rem; }
-        .hero-text p { font-size: 1.1rem; color: #4a5568; margin-bottom: 1.8rem; }
-        .hero-text .btn {
-            display: inline-block; background: #1a5a3a; color: #fff;
-            padding: 0.85rem 2.2rem; border-radius: 8px; text-decoration: none;
-            font-weight: 600; transition: background .2s;
-        }
-        .hero-text .btn:hover { background: #2d8a4e; }
-        .hero-stats { display: flex; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-        .hero-stats .stat { text-align: center; }
-        .hero-stats .stat .num { font-size: 1.8rem; font-weight: 800; color: #1a5a3a; }
-        .hero-stats .stat .label { font-size: 0.85rem; color: #4a5568; }
-        .hero-img { flex: 1 1 45%; }
-        .hero-img img { width: 100%; border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,.08); }
+h1, h2, h3 { font-family: 'Spectral', serif; }
 
-        /* Trust Bar */
-        .trust-bar {
-            background: #ffffff; border-top: 1px solid #e8ece4; border-bottom: 1px solid #e8ece4;
-            padding: 1.2rem 0;
-        }
-        .trust-bar .container { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; }
-        .trust-bar span { font-size: 0.9rem; color: #4a5568; }
-        .trust-bar span i { color: #2d8a4e; margin-right: 0.4rem; }
+/* NAV */
+nav { position: sticky; top: 0; z-index: 100; background: var(--warm-white); border-bottom: 3px solid var(--brick); padding: 0 24px; }
+.nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.nav-logo { font-family: 'Spectral', serif; font-weight: 700; font-size: 1.3rem; color: var(--olive); font-style: italic; }
+.nav-logo span { color: var(--terracotta); }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-light); font-weight: 500; font-size: 0.9rem; transition: color 0.2s; position: relative; }
+.nav-links a:hover { color: var(--olive); }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--terracotta); transition: width 0.2s; }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--olive); color: var(--warm-white) !important; padding: 8px 22px; border-radius: 999px; font-weight: 600 !important; }
+.nav-cta::after { display: none !important; }
 
-        /* Services */
-        .services { background: #fefef7; }
-        .services-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
-        .service-card {
-            background: #ffffff; border-radius: 12px; padding: 2rem 1.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,.04); border: 1px solid #e8ece4;
-            text-align: center; transition: transform .2s, box-shadow .2s;
-        }
-        .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
-        .service-card i { font-size: 2.2rem; color: #2d8a4e; margin-bottom: 1rem; }
-        .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; color: #1a3c2e; }
-        .service-card p { font-size: 0.9rem; color: #4a5568; }
+/* TILE DECORATION */
+.tile-border { display: block; width: 100%; height: 12px; background: repeating-conic-gradient(var(--terracotta) 0% 25%, var(--brick-dark) 0% 50%) 50% / 24px 12px; opacity: 0.4; }
 
-        /* About */
-        .about { background: #f8faf3; }
-        .about-wrap { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
-        .about-text { flex: 1 1 50%; }
-        .about-text h2 { text-align: left; margin-bottom: 1rem; }
-        .about-text p { margin-bottom: 1rem; color: #4a5568; }
-        .about-img { flex: 1 1 40%; }
-        .about-img img { width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+/* MOBILE BAR */
+.mobile-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--olive); padding: 10px 24px; justify-content: space-around; align-items: center; }
+.mobile-bar a { color: var(--warm-white); text-decoration: none; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+.mobile-bar .divider { width: 1px; height: 24px; background: rgba(255,255,255,0.2); }
 
-        /* Testimonials */
-        .testimonials { background: #fefef7; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-        .testimonial-card {
-            background: #ffffff; border: 1px solid #e8ece4; border-radius: 12px;
-            padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,.04);
-        }
-        .testimonial-card .stars { color: #e8a838; margin-bottom: 0.8rem; }
-        .testimonial-card blockquote { font-style: italic; color: #4a5568; margin-bottom: 1rem; }
-        .testimonial-card cite { font-style: normal; font-weight: 600; color: #1a3c2e; }
+/* HERO */
+.hero { padding: 100px 24px 80px; text-align: center; position: relative; background: var(--brick); }
+.hero::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 12px; background: repeating-conic-gradient(var(--terracotta) 0% 25%, var(--brick-dark) 0% 50%) 50% / 24px 12px; opacity: 0.5; }
+.hero-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700; color: var(--olive); margin-bottom: 8px; font-style: italic; line-height: 1.1; }
+.hero h1 span { color: var(--terracotta); font-style: normal; }
+.hero .subtitle { font-family: 'Spectral', serif; font-style: italic; font-size: 1.2rem; color: var(--text-light); margin-bottom: 20px; }
+.hero p { font-size: 1.05rem; color: var(--text-light); max-width: 600px; margin: 0 auto 32px; }
+.hero-btn { display: inline-block; background: var(--olive); color: var(--warm-white); text-decoration: none; padding: 14px 40px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; transition: all 0.2s; font-family: 'Inter', sans-serif; }
+.hero-btn:hover { background: var(--olive-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(92,107,63,0.3); }
+.hero-img { margin-top: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(92,107,63,0.12); }
+.hero-img img { width: 100%; height: 380px; object-fit: cover; display: block; }
 
-        /* Contact */
-        .contact { background: #f8faf3; }
-        .contact-wrap { display: flex; gap: 2.5rem; flex-wrap: wrap; }
-        .contact-info { flex: 1 1 35%; }
-        .contact-info h2 { text-align: left; margin-bottom: 1.5rem; }
-        .contact-info p { margin-bottom: 0.8rem; color: #4a5568; }
-        .contact-info i { color: #2d8a4e; width: 1.5rem; }
-        .contact-form { flex: 1 1 55%; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 0.8rem 1rem; border: 1px solid #d1d9c9;
-            border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem;
-            margin-bottom: 1rem; background: #ffffff;
-        }
-        .contact-form textarea { min-height: 120px; resize: vertical; }
-        .contact-form button {
-            background: #1a5a3a; color: #fff; border: none;
-            padding: 0.85rem 2.2rem; border-radius: 8px; font-weight: 600;
-            cursor: pointer; transition: background .2s;
-        }
-        .contact-form button:hover { background: #2d8a4e; }
+/* SECTION HEADERS */
+.section-header { text-align: center; margin-bottom: 48px; }
+.section-header h2 { font-size: 2.2rem; font-weight: 600; color: var(--olive); font-style: italic; margin-bottom: 8px; }
+.section-header p { color: var(--text-light); max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
 
-        /* Footer */
-        footer {
-            background: #1a3c2e; color: #c8d9cf; padding: 2.5rem 0 1.5rem;
-        }
-        footer .container { display: flex; flex-direction: column; align-items: center; text-align: center; }
-        footer .social { margin-bottom: 1rem; }
-        footer .social a { color: #c8d9cf; margin: 0 0.6rem; font-size: 1.2rem; transition: color .2s; }
-        footer .social a:hover { color: #6fcf97; }
-        footer p { font-size: 0.85rem; }
-        footer .logo { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 700; color: #6fcf97; margin-bottom: 0.5rem; }
+/* SECTION PADDING */
+section { padding: 90px 24px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            h2 { font-size: 1.6rem; }
-            nav ul { gap: 1rem; }
-            nav a { font-size: 0.85rem; }
-            .hero-text h1 { font-size: 2rem; }
-            .services-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .contact-wrap { flex-direction: column; }
-            .about-wrap { flex-direction: column-reverse; }
-            .hero .container { flex-direction: column-reverse; }
-            section { padding: 3rem 0; }
-        }
-    </style>
+/* SERVICES */
+.services { background: var(--warm-white); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card { background: var(--warm-white); border-radius: 8px; padding: 32px 24px; box-shadow: var(--shadow); border: 1px solid var(--brick); text-align: center; position: relative; overflow: hidden; }
+.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: repeating-conic-gradient(var(--terracotta) 0% 25%, var(--olive) 0% 50%) 50% / 20px 4px; opacity: 0.6; }
+.service-card .icon { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+.service-card h3 { font-family: 'Spectral', serif; font-size: 1.2rem; font-weight: 600; color: var(--olive); margin-bottom: 10px; font-style: italic; }
+.service-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.about-text h2 { font-size: 2.2rem; font-weight: 600; color: var(--olive); font-style: italic; margin-bottom: 16px; }
+.about-text p { color: var(--text-light); margin-bottom: 14px; font-size: 0.95rem; }
+.about-text .sig { font-family: 'Spectral', serif; font-style: italic; font-weight: 600; color: var(--terracotta); margin-top: 20px; font-size: 1rem; }
+.about-image { border-radius: 12px; overflow: hidden; box-shadow: 0 12px 40px rgba(92,107,63,0.08); }
+.about-image img { width: 100%; height: 380px; object-fit: cover; display: block; }
+
+/* PROCESS */
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.process-step { background: var(--brick); border-radius: 8px; padding: 28px 20px; text-align: center; position: relative; border-bottom: 3px solid var(--terracotta); }
+.step-num { font-family: 'Spectral', serif; font-size: 2rem; font-weight: 700; color: var(--terracotta); font-style: italic; margin-bottom: 8px; line-height: 1; }
+.process-step h3 { font-size: 1rem; font-weight: 600; color: var(--olive); margin-bottom: 8px; font-style: italic; }
+.process-step p { font-size: 0.85rem; color: var(--text-light); line-height: 1.5; }
+
+/* REVIEWS */
+.reviews { background: var(--brick); }
+.reviews-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.review-card { background: var(--warm-white); border-radius: 8px; padding: 28px; border-left: 4px solid var(--terracotta); }
+.review-card .stars { color: #C87D5A; font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 10px; }
+.review-card blockquote { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin-bottom: 14px; font-style: italic; }
+.review-card blockquote::before { content: '\201C'; font-family: 'Spectral', serif; font-size: 2rem; color: var(--terracotta); line-height: 0; vertical-align: -8px; margin-right: 4px; }
+.review-card cite { font-size: 0.85rem; font-weight: 600; color: var(--olive); font-style: normal; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.contact-info h3 { font-family: 'Spectral', serif; font-size: 1.6rem; font-weight: 600; color: var(--olive); font-style: italic; margin-bottom: 16px; }
+.contact-info p { color: var(--text-light); margin-bottom: 6px; font-size: 0.95rem; }
+.contact-info .info-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 14px; }
+.contact-info .info-item .label { font-weight: 600; color: var(--olive); min-width: 70px; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form textarea { padding: 14px 16px; border: 1px solid var(--brick-dark); border-radius: 8px; font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--text); background: var(--warm-white); transition: border 0.2s; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--olive); box-shadow: 0 0 0 3px rgba(92,107,63,0.08); }
+.contact-form textarea { min-height: 120px; resize: vertical; }
+.contact-form button { background: var(--olive); color: var(--warm-white); border: none; padding: 14px 36px; border-radius: 999px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; font-family: 'Inter', sans-serif; align-self: flex-start; }
+.contact-form button:hover { background: var(--olive-dark); }
+
+/* FOOTER */
+footer { background: var(--olive); color: rgba(255,255,255,0.85); padding: 40px 24px 80px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+.footer-inner p { font-size: 0.85rem; }
+.footer-inner a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.85rem; }
+.footer-inner a:hover { color: var(--warm-white); }
+.footer-links { display: flex; gap: 24px; }
+
+@media (max-width: 900px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .mobile-bar { display: flex; }
+  footer { padding-bottom: 70px; }
+}
+@media (max-width: 600px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 2rem; }
+}
+</style>
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav>
-        <div class="logo"><i class="fas fa-tree"></i> Tulio's Landscaping</div>
-        <ul>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">Tulio's<span> Landscaping</span></div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+    </ul>
+  </div>
+</nav>
 
-    <!-- Hero -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-text">
-                <div class="tag"><i class="fas fa-leaf"></i> Quality landscaping since 1993</div>
-                <h1>Your Property, Our Passion</h1>
-                <p>Tulio's Landscaping brings three decades of expertise to every project. We craft outdoor spaces that inspire.</p>
-                <a href="#contact" class="btn"><i class="fas fa-phone-alt"></i> Get a Quote</a>
-                <div class="hero-stats">
-                    <div class="stat"><div class="num">30+</div><div class="label">Years Experience</div></div>
-                    <div class="stat"><div class="num">2,400+</div><div class="label">Happy Clients</div></div>
-                    <div class="stat"><div class="num">100%</div><div class="label">Satisfaction</div></div>
-                </div>
-            </div>
-            <div class="hero-img">
-                <img src="https://picsum.photos/seed/tulios-hero/800/600" alt="Beautiful landscaping">
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Tulio's <span>Landscaping</span></h1>
+    <div class="subtitle">Mediterranean Beauty for Your Home</div>
+    <p>Bringing warmth, tradition, and timeless garden craft to every property we touch. Rooted in Silver Spring since 2008.</p>
+    <a href="#contact" class="hero-btn">Request a Consultation</a>
+    <div class="hero-img"><img src="https://picsum.photos/seed/tulio-hero/640/480" alt="Tulio's Landscaping" loading="lazy"></div>
+  </div>
+</section>
 
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        <div class="container">
-            <span><i class="fas fa-check-circle"></i> Licensed &amp; Insured</span>
-            <span><i class="fas fa-calendar-alt"></i> Serving Silver Spring Since 1993</span>
-            <span><i class="fas fa-star"></i> 4.9 Average Rating</span>
-            <span><i class="fas fa-truck"></i> Free Estimates</span>
-        </div>
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Our Services</h2>
+      <p>Handcrafted outdoor care with Mediterranean attention to detail</p>
     </div>
+    <div class="services-grid">
+      <div class="service-card"><span class="icon">🌿</span><h3>Mediterranean Gardens</h3><p>Drought-tolerant, aromatic plantings inspired by the hills of Tuscany and coastal Greece.</p></div>
+      <div class="service-card"><span class="icon">🍇</span><h3>Edible Landscapes</h3><p>Vegetable beds, herb gardens, and fruit trees integrated beautifully into your yard.</p></div>
+      <div class="service-card"><span class="icon">🏛️</span><h3>Stone & Tile Work</h3><p>Hand-laid stone patios, decorative tile borders, and traditional masonry features.</p></div>
+      <div class="service-card"><span class="icon">🌳</span><h3>Tree & Shrub Care</h3><p>Pruning, shaping, and health management for mature trees and ornamental shrubs.</p></div>
+      <div class="service-card"><span class="icon">💧</span><h3>Drip Irrigation</h3><p>Water-efficient systems delivering moisture precisely where plants need it most.</p></div>
+      <div class="service-card"><span class="icon">🌸</span><h3>Seasonal Color</h3><p>Rotating annuals, perennials, and bulbs for four-season garden interest.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Services -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card"><i class="fas fa-seedling"></i><h3>Lawn Maintenance</h3><p>Regular mowing, edging, fertilization, and weed control to keep your lawn lush and healthy.</p></div>
-                <div class="service-card"><i class="fas fa-mountain"></i><h3>Artificial Turf</h3><p>Premium synthetic grass installation for a pristine, low-maintenance lawn year-round.</p></div>
-                <div class="service-card"><i class="fas fa-broom"></i><h3>Yard Cleanup</h3><p>Seasonal cleanups, debris removal, leaf hauling, and property grooming services.</p></div>
-                <div class="service-card"><i class="fas fa-water"></i><h3>Water Fountains</h3><p>Custom water features, fountains, and pond installations to add tranquility to your space.</p></div>
-                <div class="service-card"><i class="fas fa-wall"></i><h3>Hardscaping</h3><p>Patios, walkways, retaining walls, and stonework built to last with timeless craftsmanship.</p></div>
-                <div class="service-card"><i class="fas fa-tree"></i><h3>Tree Care</h3><p>Pruning, removal, stump grinding, and health assessments by trained arborists.</p></div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Where Tradition<br>Meets the Garden</h2>
+        <p>Tulio's Landscaping brings generations of horticultural tradition to the Washington DC area. Our founder, Tulio Marchetti, learned the craft in the olive groves of southern Italy before bringing his passion to Silver Spring.</p>
+        <p>We believe every garden tells a story. Our designs weave together Mediterranean warmth with Mid-Atlantic ecology, creating spaces that feel both timeless and alive.</p>
+        <p class="sig">— Tulio Marchetti</p>
+      </div>
+      <div class="about-image"><img src="https://picsum.photos/seed/tulio-about/640/480" alt="About Tulio's" loading="lazy"></div>
+    </div>
+  </div>
+</section>
 
-    <!-- About -->
-    <section id="about" class="about">
-        <div class="container about-wrap">
-            <div class="about-text">
-                <h2>About Tulio's Landscaping</h2>
-                <p>Founded in 1993, Tulio's Landscaping has been transforming outdoor spaces across Silver Spring and the greater Maryland area for over three decades. What started as a small family operation has grown into a trusted full-service landscaping company known for reliability, craftsmanship, and attention to detail.</p>
-                <p>We treat every property as if it were our own. From routine lawn care to ambitious hardscaping projects, our team brings the same dedication and pride to every job — large or small.</p>
-            </div>
-            <div class="about-img">
-                <img src="https://picsum.photos/seed/tulios-about/600/400" alt="Tulio's team at work">
-            </div>
-        </div>
-    </section>
+<section class="services" id="process">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Our Approach</h2>
+      <p>Four steps to your dream landscape</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">01</div><h3>Discover</h3><p>We visit your property, listen to your vision, and study the land's natural character.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h3>Design</h3><p>Hand-drawn plans and material samples crafted with care for your approval.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h3>Cultivate</h3><p>Our skilled team installs every plant and stone with artisan precision.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h3>Nurture</h3><p>Ongoing stewardship keeps your garden flourishing through every season.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"Tulio's transformed our overgrown backyard into a beautiful outdoor living space. Professional, on time, and the quality exceeded our expectations."</blockquote>
-                    <cite>— Maria G., Silver Spring</cite>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"We've been using Tulio's for our lawn maintenance for years. Reliable, fair pricing, and our lawn has never looked better. Highly recommend."</blockquote>
-                    <cite>— James T., Takoma Park</cite>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Kind Words</h2>
+      <p>From neighbors who trusted us with their gardens</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>Tulio's team transformed our overgrown yard into a Mediterranean paradise. The tile work alone is worth the call.</blockquote><cite>— Elena V., Silver Spring</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>They designed a beautiful herb garden and stone pathway. Professional, artistic, and genuinely kind people.</blockquote><cite>— Michael P., Takoma Park</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>Our olive trees arrived healthy and perfectly planted. Tulio's knowledge of Mediterranean plants is incredible.</blockquote><cite>— Francesca D., Bethesda</cite></div>
+      <div class="review-card"><div class="stars">★★★★★</div><blockquote>Year after year, our garden looks better thanks to their ongoing care. Absolutely worth every penny.</blockquote><cite>— Robert K., Colesville</cite></div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <div class="container contact-wrap">
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p><i class="fas fa-map-marker-alt"></i> 723 Thayer Ave, Silver Spring, MD 20910</p>
-                <p><i class="fas fa-phone-alt"></i> (301) 565-2399</p>
-                <p><i class="fas fa-envelope"></i> info@tulioslandscaping.com</p>
-                <p><i class="far fa-clock"></i> Mon–Fri 7am–6pm | Sat 8am–3pm</p>
-                <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA9NhogTk8ZLk4Tjon1JURr9XHBEOgd5T8&q=Tulios+Landscaping+Silver+Spring+MD" width="100%" height="260" style="border:0;border-radius:12px;margin-top:16px" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <div class="contact-form">
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone Number">
-                    <textarea placeholder="Tell us about your project..."></textarea>
-                    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2>Let's Grow Together</h2>
+      <p>Reach out and let's start planning your garden</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Visit Us</h3>
+        <div class="info-item"><span class="label">Address</span><span>723 Thayer Ave, Silver Spring, MD 20910</span></div>
+        <div class="info-item"><span class="label">Phone</span><span>(301) 565-2399</span></div>
+        <div class="info-item"><span class="label">Email</span><span>info@tulioslandscaping.com</span></div>
+      </div>
+      <form class="contact-form" action="#">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Tell us about your garden..." required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="logo">Tulio's Landscaping</div>
-            <div class="social">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Yelp"><i class="fab fa-yelp"></i></a>
-            </div>
-            <p>&copy; 2026 Tulio's Landscaping &mdash; 723 Thayer Ave, Silver Spring, MD 20910</p>
-        </div>
-    </footer>
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2026 Tulio's Landscaping. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+13015652399">&#9742; Call (301) 565-2399</a>
+  <span class="divider"></span>
+  <a href="sms:+13015652399">&#9993; Text Us</a>
+</div>
 
 </body>
 </html>
