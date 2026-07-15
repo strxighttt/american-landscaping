@@ -150,17 +150,35 @@
     .page-loader .logo span { color: #D4A343; }
     @keyframes loaderPulse { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
 
-    .quote-float { position: fixed; bottom: 90px; right: 24px; z-index: 999; opacity: 0; transform: translateY(20px) scale(0.96); transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; }
-    .quote-float.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-    .quote-float-inner { background: #1C231F; border: 1px solid rgba(212,163,67,0.12); border-radius: 14px; padding: 20px 24px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); display: flex; flex-direction: column; gap: 8px; min-width: 220px; position: relative; }
-    .quote-float-inner::after { content: ''; position: absolute; top: -1px; left: 24px; right: 24px; height: 1px; background: linear-gradient(90deg, transparent, #D4A343, transparent); }
-    .quote-float .label { font-size: 11px; color: rgba(232,227,216,0.3); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
-    .quote-float .phone { font-size: 20px; font-weight: 700; color: #D4A343; text-decoration: none; }
-    .quote-float .phone:hover { color: #E0B95A; }
-    .quote-float .small-link { font-size: 13px; color: rgba(232,227,216,0.35); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
-    .quote-float .small-link:hover { color: #E8E3D8; }
-    .quote-float .close-btn { position: absolute; top: 8px; right: 10px; background: none; border: none; color: rgba(232,227,216,0.15); cursor: pointer; font-size: 14px; padding: 4px; transition: color 0.2s; }
-    .quote-float .close-btn:hover { color: rgba(232,227,216,0.5); }
+    .quote-btn { position: fixed; bottom: 90px; right: 24px; z-index: 999; opacity: 0; transform: translateY(20px); transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .quote-btn.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .quote-btn .btn-quote { background: #D4A343; color: #141A17; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; font-family: 'Inter', sans-serif; box-shadow: 0 4px 20px rgba(212,163,67,0.3); transition: all 0.2s; width: 100%; }
+    .quote-btn .btn-quote:hover { background: #E0B95A; transform: scale(1.03); }
+    .quote-btn .btn-phone { color: rgba(232,227,216,0.4); font-size: 11px; text-decoration: none; font-weight: 500; letter-spacing: 0.02em; }
+    .quote-btn .btn-phone:hover { color: #E8E3D8; }
+
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 9998; opacity: 0; pointer-events: none; transition: opacity 300ms ease; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal { background: #1C231F; border: 1px solid rgba(212,163,67,0.1); border-radius: 14px; padding: 36px 32px 32px; max-width: 420px; width: 100%; position: relative; transform: translateY(16px) scale(0.97); transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
+    .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+    .modal-close { position: absolute; top: 14px; right: 16px; background: none; border: none; color: rgba(232,227,216,0.2); font-size: 20px; cursor: pointer; padding: 4px; line-height: 1; transition: color 0.2s; }
+    .modal-close:hover { color: rgba(232,227,216,0.6); }
+    .modal h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 600; color: #E8E3D8; margin-bottom: 4px; }
+    .modal p { color: rgba(232,227,216,0.35); font-size: 13px; margin-bottom: 24px; }
+    .modal input, .modal select, .modal textarea { width: 100%; padding: 12px 14px; border: 1px solid rgba(232,227,216,0.08); border-radius: 8px; font-size: 14px; font-family: 'Inter', sans-serif; margin-bottom: 12px; background: #141A17; color: #E8E3D8; transition: border-color 0.2s; }
+    .modal input::placeholder, .modal textarea::placeholder { color: rgba(232,227,216,0.15); }
+    .modal select { appearance: none; cursor: pointer; color: rgba(232,227,216,0.5); }
+    .modal select option { background: #141A17; color: #E8E3D8; }
+    .modal input:focus, .modal select:focus, .modal textarea:focus { outline: none; border-color: #D4A343; box-shadow: 0 0 0 3px rgba(212,163,67,0.08); }
+    .modal textarea { height: 90px; resize: vertical; }
+    .modal .btn-submit { width: 100%; padding: 13px; background: #D4A343; color: #141A17; border: none; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+    .modal .btn-submit:hover { background: #E0B95A; }
+    .modal .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .modal .success-msg { display: none; text-align: center; padding: 24px 0; }
+    .modal .success-msg.show { display: block; }
+    .modal .success-msg .check { width: 48px; height: 48px; border-radius: 50%; background: rgba(212,163,67,0.1); color: #D4A343; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-size: 20px; }
+    .modal .success-msg h4 { color: #E8E3D8; font-size: 18px; margin-bottom: 6px; font-family: 'Playfair Display', Georgia, serif; }
+    .modal .success-msg p { color: rgba(232,227,216,0.35); font-size: 13px; margin-bottom: 0; }
 
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 400ms cubic-bezier(0.16, 1, 0.3, 1), transform 400ms cubic-bezier(0.16, 1, 0.3, 1); }
     .revealed { opacity: 1; transform: translateY(0); }
@@ -186,7 +204,7 @@
     }
 
     @media (max-width: 900px) {
-      .quote-float { display: none; }
+      .quote-btn { display: none; }
     }
 
     @media (max-width: 900px) {
@@ -223,7 +241,7 @@
   </style>
 </head>
 <body>
-  <div class="page-loader" id="pageLoader"><div class="logo">Marquez<span>.</span></div></div>
+  <div class="page-loader" id="pageLoader"><div class="logo">American<span>.</span>Landscaping</div></div>
 
   <nav>
     <div class="container">
@@ -439,12 +457,37 @@
     </div>
   </footer>
 
-  <div class="quote-float" id="quoteFloat">
-    <div class="quote-float-inner">
-      <button class="close-btn" id="quoteClose" aria-label="Close">&times;</button>
-      <span class="label">Free Estimate</span>
-      <a href="tel:+15551234567" class="phone">(555) 123-4567</a>
-      <a href="tel:+15551234567" class="small-link">&#8594; Call for a free quote</a>
+  <div class="quote-btn" id="quoteBtn">
+    <button class="btn-quote" id="openModal">Get a Quote</button>
+    <a href="tel:13013844486" class="btn-phone">(301) 384-4486</a>
+  </div>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-label="Request a quote">
+      <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      <h3>Get a free quote</h3>
+      <p>We'll get back to you within 24 hours</p>
+      <form id="quoteForm">
+        <input type="text" name="name" placeholder="Full name" required>
+        <input type="tel" name="phone" placeholder="Phone number" required>
+        <input type="email" name="email" placeholder="Email (optional)">
+        <select name="service" required>
+          <option value="">What service do you need?</option>
+          <option>Lawn Maintenance</option>
+          <option>Mulching &amp; Planting</option>
+          <option>Stone Walkways &amp; Patios</option>
+          <option>Drainage &amp; Grading</option>
+          <option>Tree &amp; Shrub Care</option>
+          <option>Something else</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
+        <button type="submit" class="btn-submit">Send Request</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        <div class="check">&#10003;</div>
+        <h4>Thanks!</h4>
+        <p>We'll call you within 24 hours with your free estimate.</p>
+      </div>
     </div>
   </div>
   <div class="sticky-mobile">
@@ -456,23 +499,35 @@
     window.addEventListener('load', () => {
       setTimeout(() => {
         document.getElementById('pageLoader')?.classList.add('fade-out');
-        setTimeout(() => document.getElementById('quoteFloat')?.classList.add('visible'), 200);
+        setTimeout(() => document.getElementById('quoteBtn')?.classList.add('visible'), 200);
       }, 400);
     });
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('revealed');
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    document.querySelectorAll('.reveal-children').forEach(el => observer.observe(el));
-    document.querySelectorAll('img:not(.no-fade)').forEach(img => {
-      if (img.complete) img.classList.add('img-fade');
-      else img.addEventListener('load', () => img.classList.add('img-fade'));
-    });
-    document.getElementById('quoteClose')?.addEventListener('click', () => {
-      document.getElementById('quoteFloat')?.classList.remove('visible');
+    const modalOverlay = document.getElementById('modalOverlay');
+    document.getElementById('openModal')?.addEventListener('click', () => modalOverlay?.classList.add('open'));
+    document.getElementById('modalClose')?.addEventListener('click', () => modalOverlay?.classList.remove('open'));
+    modalOverlay?.addEventListener('click', e => { if (e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') modalOverlay?.classList.remove('open'); });
+
+    document.getElementById('quoteForm')?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.btn-submit');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      setTimeout(() => {
+        this.style.display = 'none';
+        document.getElementById('successMsg')?.classList.add('show');
+        setTimeout(() => {
+          modalOverlay?.classList.remove('open');
+          setTimeout(() => {
+            this.reset();
+            this.style.display = '';
+            document.getElementById('successMsg')?.classList.remove('show');
+            btn.disabled = false;
+            btn.textContent = 'Send Request';
+          }, 300);
+        }, 2000);
+      }, 800);
     });
 
     document.querySelectorAll('.nav-links a').forEach(link => {
